@@ -10,19 +10,19 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="文章目录`java.util.ArrayList`数组和`ArrayList`的比较例1例2书后的练习 java.util.ArrayList&amp;lt;E&amp;gt; 从书中各种代码来看，java.util.ArrayList&amp;lt;E&amp;gt; 是非常重要的一个类，在代码中广泛使用，E表示泛型，ArrayList是一个泛型类。 ArrayList相当于C++ 的vector，用于存储对象。与数组不同，">
+  <meta name="description" content="文章目录`java.util.ArrayList`数组和`ArrayList`的比较例1例2书后的练习">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArrayList类">
 <meta property="og:url" content="ayjcsgm.github.io/2019/10/01/简单实现一个ArrayList/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="文章目录`java.util.ArrayList`数组和`ArrayList`的比较例1例2书后的练习 java.util.ArrayList&amp;lt;E&amp;gt; 从书中各种代码来看，java.util.ArrayList&amp;lt;E&amp;gt; 是非常重要的一个类，在代码中广泛使用，E表示泛型，ArrayList是一个泛型类。 ArrayList相当于C++ 的vector，用于存储对象。与数组不同，">
+<meta property="og:description" content="文章目录`java.util.ArrayList`数组和`ArrayList`的比较例1例2书后的练习">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://picsum.photos/800/203">
-<meta property="og:updated_time" content="2019-10-01T15:12:08.386Z">
+<meta property="og:updated_time" content="2019-10-01T15:56:00.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArrayList类">
-<meta name="twitter:description" content="文章目录`java.util.ArrayList`数组和`ArrayList`的比较例1例2书后的练习 java.util.ArrayList&amp;lt;E&amp;gt; 从书中各种代码来看，java.util.ArrayList&amp;lt;E&amp;gt; 是非常重要的一个类，在代码中广泛使用，E表示泛型，ArrayList是一个泛型类。 ArrayList相当于C++ 的vector，用于存储对象。与数组不同，">
+<meta name="twitter:description" content="文章目录`java.util.ArrayList`数组和`ArrayList`的比较例1例2书后的练习">
 <meta name="twitter:image" content="https://picsum.photos/800/203">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
@@ -275,10 +275,10 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p><img src="https://picsum.photos/800/203" alt></p>
-<h3>文章目录</h3><ul><li><a href="#javautilArrayListE_1" rel="nofollow" data-token="a618d5c35048e22d7511fddbfa6ee751" target="_self">`java.util.ArrayList`</a></li><li><a href="#ArrayList_22" rel="nofollow" data-token="5a05523de9f87613c99147e08fca875e" target="_self">数组和`ArrayList`的比较</a></li><li><a href="#1_54" rel="nofollow" data-token="dfaf009b3756283764874bc887e1f05a" target="_self">例1</a></li><li><a href="#2_127" rel="nofollow" data-token="a248e5df85b56d1bafc8ae15376be2f4" target="_self">例2</a></li><li><a href="#font_color0099fffont_173" rel="nofollow" data-token="379d5f661a035f153be4b7639bbc7353" target="_self"><font color="#0099ff">书后的练习<font></font></font></a></li></ul><p></p>
+<h3>文章目录</h3><ul><li><a href="#javautilArrayListE_1" rel="nofollow" data-token="a618d5c35048e22d7511fddbfa6ee751" target="_self">`java.util.ArrayList`</a></li><li><a href="#ArrayList_22" rel="nofollow" data-token="5a05523de9f87613c99147e08fca875e" target="_self">数组和`ArrayList`的比较</a></li><li><a href="#1_54" rel="nofollow" data-token="dfaf009b3756283764874bc887e1f05a" target="_self">例1</a></li><li><a href="#2_127" rel="nofollow" data-token="a248e5df85b56d1bafc8ae15376be2f4" target="_self">例2</a></li><li><a href="#font_color0099fffont_173" rel="nofollow" data-token="379d5f661a035f153be4b7639bbc7353" target="_self"><font color="#0099ff">书后的练习<font></font></font></a></li></ul><p></p><a id="more"></a> 
 <h1><a name="t1"></a><a id="javautilArrayListE_1"></a><code>java.util.ArrayList&lt;E&gt;</code></h1>
 <p>从书中各种代码来看，<code>java.util.ArrayList&lt;E&gt;</code> 是非常重要的一个类，在代码中广泛使用，<code>E</code>表示泛型，<code>ArrayList</code>是一个泛型类。<br>
-<code>ArrayList</code>相当于C++ 的<code>vector</code>，用于存储对象。与数组不同，数组一旦创建，长度固定，但是<code>ArrayList</code>的长度是动态的，不受限制，可以存储任意多的对象，但是只能存储对象，不能存储原生数据类型例如<code>int</code>。</p><a id="more"></a> 
+<code>ArrayList</code>相当于C++ 的<code>vector</code>，用于存储对象。与数组不同，数组一旦创建，长度固定，但是<code>ArrayList</code>的长度是动态的，不受限制，可以存储任意多的对象，但是只能存储对象，不能存储原生数据类型例如<code>int</code>。</p>
 
 <div class="table-box"><table>
 <thead>
