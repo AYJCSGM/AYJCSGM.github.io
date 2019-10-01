@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>HQP</title>
+  <title>HQP的个人博客</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="ayjcsgm.github.io/"/>
   <updated>2019-10-01T07:18:28.161Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>ayjcsgm.github.io/</id>
   
   <author>
     <name>Huangqiuping</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>SQL语句测试题带答案</title>
-    <link href="http://yoursite.com/2019/10/01/SQL%E8%AF%AD%E5%8F%A5%E6%B5%8B%E8%AF%95%E9%A2%98%E5%B8%A6%E7%AD%94%E6%A1%88/"/>
-    <id>http://yoursite.com/2019/10/01/SQL语句测试题带答案/</id>
+    <link href="ayjcsgm.github.io/2019/10/01/SQL%E8%AF%AD%E5%8F%A5%E6%B5%8B%E8%AF%95%E9%A2%98%E5%B8%A6%E7%AD%94%E6%A1%88/"/>
+    <id>ayjcsgm.github.io/2019/10/01/SQL语句测试题带答案/</id>
     <published>2019-10-01T07:15:44.000Z</published>
     <updated>2019-10-01T07:18:28.161Z</updated>
     
@@ -33,14 +33,14 @@
     
     
     
-      <category term="SQL" scheme="http://yoursite.com/tags/SQL/"/>
+      <category term="SQL" scheme="ayjcsgm.github.io/tags/SQL/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot个人博客</title>
-    <link href="http://yoursite.com/2019/09/23/my-fisrt-post/"/>
-    <id>http://yoursite.com/2019/09/23/my-fisrt-post/</id>
+    <link href="ayjcsgm.github.io/2019/09/23/my-fisrt-post/"/>
+    <id>ayjcsgm.github.io/2019/09/23/my-fisrt-post/</id>
     <published>2019-09-23T06:20:34.960Z</published>
     <updated>2019-10-01T07:43:57.432Z</updated>
     
@@ -56,14 +56,14 @@
     
     
     
-      <category term="Spring Boot" scheme="http://yoursite.com/tags/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="ayjcsgm.github.io/tags/Spring-Boot/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/09/23/hello-world/"/>
-    <id>http://yoursite.com/2019/09/23/hello-world/</id>
+    <link href="ayjcsgm.github.io/2019/09/23/hello-world/"/>
+    <id>ayjcsgm.github.io/2019/09/23/hello-world/</id>
     <published>2019-09-23T06:06:49.578Z</published>
     <updated>2019-10-01T07:44:10.051Z</updated>
     
