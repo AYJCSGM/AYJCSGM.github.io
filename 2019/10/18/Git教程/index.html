@@ -6,28 +6,100 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="ayjcsgm.github.io">
-  <title>HashMap源码分析(JDK1.8) | HQP的个人博客</title>
+  <title>Git教程 | HQP的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="HashMap简介：HashMap在底层数据结构上采用了数组＋链表＋红黑树，通过散列映射来存储键值对数据因为在查询上使用散列码（通过键生成一个数字作为数组下标， 这个数字就是hashcode）所以在查询上的访问速度比较快，HashMap最多允许一对键值对的Key为Null，允许多对键值对的value为Null。 它是非线程安全的。在排序上面是无序的。">
-<meta name="keywords" content="Java">
+  <meta name="description" content="Git教程">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HashMap源码分析(JDK1.8)">
-<meta property="og:url" content="ayjcsgm.github.io/2019/10/03/HashMap源码分析-JDK1-8/index.html">
+<meta property="og:title" content="Git教程">
+<meta property="og:url" content="ayjcsgm.github.io/2019/10/18/Git教程/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="HashMap简介：HashMap在底层数据结构上采用了数组＋链表＋红黑树，通过散列映射来存储键值对数据因为在查询上使用散列码（通过键生成一个数字作为数组下标， 这个数字就是hashcode）所以在查询上的访问速度比较快，HashMap最多允许一对键值对的Key为Null，允许多对键值对的value为Null。 它是非线程安全的。在排序上面是无序的。">
+<meta property="og:description" content="Git教程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/205">
-<meta property="og:image" content="https://img-blog.csdn.net/20180529155827859">
-<meta property="og:image" content="https://img-blog.csdn.net/20180529164049237">
-<meta property="og:image" content="https://img-blog.csdn.net/20180529165142867">
-<meta property="og:image" content="https://img-blog.csdn.net/20160914094110132?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2019-10-03T08:42:54.818Z">
+<meta property="og:image" content="https://picsum.photos/800/209">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026115656421-1232561908.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026115755015-870706331.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026115900843-708583464.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026133415953-510886306.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/762349/201703/762349-20170302095211016-803148825.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/762349/201703/762349-20170302095226032-216100673.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/762349/201703/762349-20170302095258110-884907314.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026133459750-1915959821.png">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyr2rpcnj20en025mx9.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyr1x3lzj20h004tgm1.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyr0wkxbj20ch028dfu.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyqz56axj20dp03djrr.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyqrg067j20d102zwen.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyqq7ts6j20h504r74x.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyqnrvxgj20ds05maal.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyqmcupsj20h609i402.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyql1473j20cp03vdga.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyqd9m1dj20gt08ggn8.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyqc3ziwj20gs02paai.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyqavyf7j20ch04laap.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyqa5xjfj20ct02xaad.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyq9fck2j20c402d74c.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyq6bhrlj20dc063dgk.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyq5dtfrj20e603e0t5.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyq4m3oqj20e104974t.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyq3ykzsj20hv06pwfi.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyq2gn7sj20d206p0t8.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyq1gpk0j20h704mdgm.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyq0rzrcj20ax03vaaa.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyq034qhj20hs04oaam.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypz44y5j20eh03w0t4.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloypybh8pj20h40deq52.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypxcttej20hr0awmzc.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypvtweyj20jj05cwf4.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyput1l8j20fh06s0tr.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypq7esij20kx04pt9c.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyppfdu3j20vh0nwdl0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloypnrj0cj20l60ad75p.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypmocbsj20u40gttbc.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypm6o2gj20si0idwh4.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypk8b34j20hk070764.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypjhn5ij20t40i7mzp.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyphv15sj20t10gs775.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypexzvuj20ss0dgabs.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypec5t0j20hp03jwf6.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypdbpwnj20jt05hmxr.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypab36sj20bc04nweu.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyp9es90j20at0awjsq.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyp8mng3j20hm05qaav.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyp83uksj20es073gmi.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyp4jq8yj20ft0cu40a.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyp3w0l1j20g80dwmz7.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyp1wo2ij20hm0gddi9.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyp11x4zj20g107e3zd.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyp0aj6uj20dt0o5gph.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyoz5m31j20gr0lon0y.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyoy0x5yj20he04m74v.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyoxn4t8j20i3058dgo.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyowmdooj20gp0etq55.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyou5898j20bq03s0t6.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyot6ny2j20c202lmxg.jpg">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026134059296-2019917854.png">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyor8ayjj20h704pt9e.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyoolky9j20n00crt9x.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyoljbdoj20bp05p74u.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyoklccxj20f105nmy8.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyojp2l7j20mi0dgdh4.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyoilae8j20dz047jrw.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyofwtkzj20e404qdgn.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyoerppxj20jy07475a.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyodj3j4j20gq0katc9.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyocm8nlj20hz0l3jvp.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyoblpvij20gi07ugmx.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyoab9gfj20hy05j0tu.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyo7l3o6j20ef07p74y.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyo5em1aj20gt0dcwgv.jpg">
+<meta property="og:updated_time" content="2019-10-18T08:22:33.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HashMap源码分析(JDK1.8)">
-<meta name="twitter:description" content="HashMap简介：HashMap在底层数据结构上采用了数组＋链表＋红黑树，通过散列映射来存储键值对数据因为在查询上使用散列码（通过键生成一个数字作为数组下标， 这个数字就是hashcode）所以在查询上的访问速度比较快，HashMap最多允许一对键值对的Key为Null，允许多对键值对的value为Null。 它是非线程安全的。在排序上面是无序的。">
-<meta name="twitter:image" content="https://picsum.photos/800/205">
+<meta name="twitter:title" content="Git教程">
+<meta name="twitter:description" content="Git教程">
+<meta name="twitter:image" content="https://picsum.photos/800/209">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -225,14 +297,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HashMap源码分析-JDK1-8" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Git教程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      HashMap源码分析(JDK1.8)
+      Git教程
     </h1>
   
 
@@ -244,8 +316,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/10/03/HashMap源码分析-JDK1-8/" class="archive-article-date">
-        <time datetime="2019-10-03T07:55:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
+<a href="/2019/10/18/Git教程/" class="archive-article-date">
+        <time datetime="2019-10-18T08:21:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-18</time>
 </a>
 
   
@@ -258,7 +330,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">7.1k字</span>
+      <span class="post-count">7k字</span>
     </span>
   </span>
 
@@ -267,7 +339,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">33分</span>
+      <span class="post-count">26分</span>
     </span>
   </span>
 </div>
@@ -278,43 +350,672 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/205" alt></p>
-<h1 id="HashMap简介："><a href="#HashMap简介：" class="headerlink" title="HashMap简介："></a><strong>HashMap简介</strong>：</h1><pre><code>HashMap在底层数据结构上采用了数组＋链表＋红黑树，通过散列映射来存储键值对数据因为在查询上使用散列码（通过键生成一个数字作为数组下标，
-这个数字就是hashcode）所以在查询上的访问速度比较快，HashMap最多允许一对键值对的Key为Null，允许多对键值对的value为Null。
-它是非线程安全的。在排序上面是无序的。</code></pre><a id="more"></a>
+    <p><img src="https://picsum.photos/800/209" alt></p>
+<div id="article_content" class="article_content clearfix">
+                                    <link rel="stylesheet" href="https://blog.csdn.net/weixin_43664418/article/details/102627420">
+                                        <link rel="stylesheet" href="https://blog.csdn.net/weixin_43664418/article/details/102627420">
+                <div class="htmledit_views" id="content_views">
+                                            <h1><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" id="cb_post_title_url" data-token="0deb5f3a1d47256108b5292807fb43e9" target="_blank">Git教程</a></h1>
+<a id="more"></a>
+<p><a name="_labelTop"></a></p>
+
+<p><strong>阅读目录</strong></p>
+
+<ul><li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="f55873a6499c57780bbd0769b0fd4e39" target="_blank">Git是什么</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="003fc9e0417c246fd177b00387461e59" target="_blank">SVN与Git的最主要的区别</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="edd9f6ad1d578611f6449bbd2595d754" target="_blank">在windows上如何安装Git</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="36b53cbebff787ca309b12a573f7c292" target="_blank">如何操作</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="5588ef7897290fbbc6ff3159967391e6" target="_blank">&nbsp; 创建版本库</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="c64814bdc4a1f2beaf1e97b248365934" target="_blank">&nbsp; &nbsp; &nbsp;把文件添加到版本库中</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="eec059421a2b43de188bf72f501ad5c8" target="_blank">版本回退</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="62a6b44463de939c0b6fca1ce4524aad" target="_blank">&nbsp;理解工作区与暂存区的区别</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="331a7246200d302f9eb0bbe53900af85" target="_blank">Git撤销修改和删除文件操作</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="3d0c886f2148dd7df051e34beba4c242" target="_blank">撤销修改</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="fb7cb7f1fd2cc2d4ead88a966c7ae1de" target="_blank">删除文件</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="de28b942c5bea136f0617a737b81aa90" target="_blank">&nbsp;远程仓库</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="7faf4af62f24e20462714289d470853b" target="_blank">如何解决冲突</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="d97fda7b8c4393ebb0a80a22221d0292" target="_blank">分支管理策略</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="166ded8e6cc5ed715e8ae3c5d79f8e8a" target="_blank">多人协作</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="082207916a3e71cfdf491c82aad4a727" target="_blank">抓取分支</a></li>
+    <li><a href="https://blog.csdn.net/weixin_43664418/article/details/102627420" rel="noopener" data-token="1ac011c203ffbf7f933b9d697822703d" target="_blank">Git基本常用命令如下</a></li>
+
+<h6 id="Git是什么"><a href="#Git是什么" class="headerlink" title="Git是什么"></a>Git是什么</h6><p>Git是目前世界上最先进的分布式版本控制系统。</p>
+
+<p><a name="_label1"></a></p>
+
+<p><strong>SVN与Git的最主要的区别</strong></p>
+
+<p>SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而干活的时候，用的都是自己的电脑，所以首先要从中央服务器哪里得到最新的版本，然后干活，干完后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，如果在局域网还可以，带宽够大，速度够快，如果在互联网下，如果网速慢的话，就纳闷了。</p>
+
+<p>&nbsp; &nbsp; &nbsp; Git是分布式版本控制系统，那么它就没有中央服务器的，每个人的电脑就是一个完整的版本库，这样，工作的时候就不需要联网了，因为版本都是在自己的电脑上。既然每个人的电脑都有一个完整的版本库，那多个人如何协作呢？比如说自己在电脑上改了文件A，其他人也在电脑上改了文件A，这时，你们两之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</p>
+
+<p><a name="_label2"></a></p>
+
+<p><strong>在windows上如何安装Git</strong></p>
+
+<p><strong><img alt class="has" src="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026115656421-1232561908.png"></strong></p>
+
+<p><strong>&nbsp; &nbsp;<a href="http://pan.baidu.com/s/1bpqprob" rel="noopener" data-token="2c07791d39e2368357b31332f0c46557" target="_blank">http://pan.baidu.com/s/1bpqprob</a>&nbsp;（点此可直接下载安装，建议默认安装，不要改动安装路径）</strong></p>
+
+<p><strong>需要从网上下载一个，然后进行默认安装即可。安装完成后，在开始菜单里面找到 “Git –&gt; Git Bash”,如下：</strong></p>
+
+<p><strong><img alt class="has" src="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026115755015-870706331.png"></strong></p>
+
+<p>会弹出一个类似的命令窗口的东西，就说明Git安装成功。如下：</p>
+
+<p><img alt class="has" src="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026115900843-708583464.png"></p>
+
+<p>安装完成后，还需要最后一步设置，在命令行输入如下：</p>
+
+<p>&nbsp;<img alt class="has" src="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026133415953-510886306.png"></p>
+
+<p>因为Git是分布式版本控制系统，所以需要填写用户名和邮箱作为一个标识。</p>
+
+<p><strong>&nbsp; &nbsp;注意：</strong>git config&nbsp; –global 参数，有了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然你也可以对某个仓库指定的不同的用户名和邮箱。</p>
+
+<p>然后输入</p>
+
+<p>输入 ssh-keygen ，按三次enter，出现</p>
+
+<p><img alt class="has" src="https://images2015.cnblogs.com/blog/762349/201703/762349-20170302095211016-803148825.png"></p>
+
+<p>进入磁盘，找到</p>
+
+<p></p>
+
+<p><img alt class="has" src="https://images2015.cnblogs.com/blog/762349/201703/762349-20170302095226032-216100673.png"></p>
+
+<p>右键记事本打开然后复制里面内容</p>
+
+<p>进入git进入Setting，新增一个，名称随便起，将刚才复制的粘贴到内容即可</p>
+
+<p><img alt class="has" src="https://images2015.cnblogs.com/blog/762349/201703/762349-20170302095258110-884907314.png"></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p><a name="_label3"></a></p>
+
+<p><strong>如何操作</strong></p>
+
+<p><a name="_label4"></a></p>
+
+<p>&nbsp; 创建版本库</p>
+
+<p>&nbsp; &nbsp; &nbsp;什么是版本库？版本库又名仓库，英文名repository,你可以简单的理解一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改，删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻还可以将文件”还原”。</p>
+
+<p>&nbsp; &nbsp; 所以创建一个版本库也非常简单，如下我是D盘 –&gt; www下 目录下新建一个testgit版本库。</p>
+
+<p><img alt class="has" src="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026133459750-1915959821.png"></p>
+
+<p>pwd 命令是用于显示当前的目录。</p>
+
+<p>&nbsp; &nbsp; &nbsp; 1. 通过命令 git init 把这个目录变成git可以管理的仓库，如下：</p>
+
+<p><img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyr2rpcnj20en025mx9.jpg"></p>
+
+<p>&nbsp; &nbsp; &nbsp;这时候你当前testgit目录下会多了一个.git的目录，这个目录是Git来跟踪管理版本的，没事千万不要手动乱改这个目录里面的文件，否则，会把git仓库给破坏了。如下：</p>
+
+<p>&nbsp; &nbsp;&nbsp;<img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyr1x3lzj20h004tgm1.jpg"></p>
+
+<p><a name="_label5"></a></p>
+
+<p>&nbsp; &nbsp; &nbsp;把文件添加到版本库中</p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 首先要明确下，所有的版本控制系统，只能跟踪文本文件的改动，比如txt文件，网页，所有程序的代码等，Git也不列外，版本控制系统可以告诉你每次的改动，但是图片，视频这些二进制文件，虽能也能由版本控制系统管理，但没法跟踪文件的变化，只能把二进制文件每次改动串起来，也就是知道图片从1kb变成2kb，但是到底改了啥，版本控制也不知道。</p>
+
+<p><strong>&nbsp; &nbsp;&nbsp;下面先看下</strong><strong>demo</strong><strong>如下演示：</strong></p>
+
+<p>&nbsp; &nbsp; &nbsp;我在版本库testgit目录下新建一个记事本文件 readme.txt 内容如下：11111111</p>
+
+<p>&nbsp; &nbsp; &nbsp;第一步：使用命令 git add readme.txt添加到暂存区里面去。如下：</p>
+
+<p>&nbsp; &nbsp;&nbsp;<img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyr0wkxbj20ch028dfu.jpg"></p>
+
+<p>&nbsp; &nbsp;如果和上面一样，没有任何提示，说明已经添加成功了。</p>
+
+<p>&nbsp; &nbsp;第二步：用命令 git commit告诉Git，把文件提交到仓库。</p>
+
+<p>&nbsp; &nbsp;<img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyqz56axj20dp03djrr.jpg"></p>
+
+<p>&nbsp;&nbsp;现在我们已经提交了一个readme.txt文件了，我们下面可以通过命令git status来查看是否还有文件未提交，如下：</p>
+
+<p>&nbsp;</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyqrg067j20d102zwen.jpg"></p>
+
+<p>&nbsp;说明没有任何文件未提交，但是我现在继续来改下readme.txt内容，比如我在下面添加一行2222222222内容，继续使用git status来查看下结果，如下：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyqq7ts6j20h504r74x.jpg"></p>
+
+<p>上面的命令告诉我们 readme.txt文件已被修改，但是未被提交的修改。</p>
+
+<p>接下来我想看下readme.txt文件到底改了什么内容，如何查看呢？可以使用如下命令：</p>
+
+<p>git diff readme.txt 如下：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyqnrvxgj20ds05maal.jpg"></p>
+
+<p>如上可以看到，readme.txt文件内容从一行11111111改成 二行 添加了一行22222222内容。</p>
+
+<p>知道了对readme.txt文件做了什么修改后，我们可以放心的提交到仓库了，提交修改和提交文件是一样的2步(第一步是git add&nbsp; 第二步是：git commit)。</p>
+
+<p>如下：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyqmcupsj20h609i402.jpg"></p>
+
+<p><a name="_label6"></a></p>
+
+<p>版本回退</p>
+
+<p>&nbsp; &nbsp; &nbsp;如上，我们已经学会了修改文件，现在我继续对readme.txt文件进行修改，再增加一行</p>
+
+<p>内容为33333333333333.继续执行命令如下：</p>
+
+<p>&nbsp; &nbsp;<img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyql1473j20cp03vdga.jpg"></p>
+
+<p>现在我已经对readme.txt文件做了三次修改了，那么我现在想查看下历史记录，如何查呢？我们现在可以使用命令 git log 演示如下所示：</p>
+
+<p>&nbsp;&nbsp;<img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyqd9m1dj20gt08ggn8.jpg"></p>
+
+<p>&nbsp; &nbsp; git log命令显示从最近到最远的显示日志，我们可以看到最近三次提交，最近的一次是,增加内容为333333.上一次是添加内容222222，第一次默认是 111111.如果嫌上面显示的信息太多的话，我们可以使用命令 git log –pretty=oneline 演示如下：</p>
+
+<p>&nbsp;&nbsp;<img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyqc3ziwj20gs02paai.jpg"></p>
+
+<p>&nbsp; &nbsp; 现在我想使用版本回退操作，我想把当前的版本回退到上一个版本，要使用什么命令呢？可以使用如下2种命令，第一种是：git reset&nbsp; –hard HEAD^ 那么如果要回退到上上个版本只需把HEAD^ 改成 HEAD^^ 以此类推。那如果要回退到前100个版本的话，使用上面的方法肯定不方便，我们可以使用下面的简便命令操作：git reset&nbsp; –hard HEAD~100 即可。未回退之前的readme.txt内容如下：</p>
+
+<p>&nbsp;</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyqavyf7j20ch04laap.jpg"></p>
+
+<p>如果想回退到上一个版本的命令如下操作：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyqa5xjfj20ct02xaad.jpg"></p>
+
+<p>再来查看下 readme.txt内容如下：通过命令cat readme.txt查看</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyq9fck2j20c402d74c.jpg"></p>
+
+<p>可以看到，内容已经回退到上一个版本了。我们可以继续使用git log 来查看下历史记录信息，如下：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyq6bhrlj20dc063dgk.jpg"></p>
+
+<p>我们看到 增加333333 内容我们没有看到了，但是现在我想回退到最新的版本，如：有333333的内容要如何恢复呢？我们可以通过版本号回退，使用命令方法如下：</p>
+
+<p>git reset&nbsp; –hard 版本号 ，但是现在的问题假如我已经关掉过一次命令行或者333内容的版本号我并不知道呢？要如何知道增加3333内容的版本号呢？可以通过如下命令即可获取到版本号：git reflog&nbsp; 演示如下：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyq5dtfrj20e603e0t5.jpg"></p>
+
+<p>通过上面的显示我们可以知道，增加内容3333的版本号是 6fcfc89.我们现在可以命令</p>
+
+<p>git reset&nbsp; –hard 6fcfc89来恢复了。演示如下：</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyq4m3oqj20e104974t.jpg"></p>
+
+<p>可以看到 目前已经是最新的版本了。</p>
+
+<p><a name="_label7"></a></p>
+
+<p>&nbsp;理解工作区与暂存区的区别</p>
+
+<p><strong>工作区：</strong>就是你在电脑上看到的目录，比如目录下testgit里的文件(.git隐藏目录版本库除外)。或者以后需要再新建的目录文件等等都属于工作区范畴。</p>
+
+<p><strong>&nbsp; &nbsp; &nbsp; 版本库</strong><strong>(Repository)</strong><strong>：</strong>工作区有一个隐藏目录.git,这个不属于工作区，这是版本库。其中版本库里面存了很多东西，其中最重要的就是stage(暂存区)，还有Git为我们自动创建了第一个分支master,以及指向master的一个指针HEAD。</p>
+
+<p>我们前面说过使用Git提交文件到版本库有两步：</p>
+
+<p>&nbsp; 第一步：是使用 git add 把文件添加进去，实际上就是把文件添加到暂存区。</p>
+
+<p>&nbsp; 第二步：使用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支上。</p>
+
+<p>我们继续使用demo来演示下：</p>
+
+<p>我们在readme.txt再添加一行内容为4444444，接着在目录下新建一个文件为test.txt 内容为test，我们先用命令 git status来查看下状态，如下：</p>
+
+<p><img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyq3ykzsj20hv06pwfi.jpg"></p>
+
+<p>现在我们先使用git add 命令把2个文件都添加到暂存区中，再使用git status来查看下状态，如下：</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyq2gn7sj20d206p0t8.jpg"></p>
+
+<p>接着我们可以使用git commit一次性提交到分支上，如下：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyq1gpk0j20h704mdgm.jpg"></p>
+
+<p><a name="_label8"></a></p>
+
+<p>Git撤销修改和删除文件操作</p>
+
+<p><a name="_label9"></a></p>
+
+<p><strong>撤销修改</strong></p>
+
+<p>&nbsp;&nbsp;&nbsp; 比如我现在在readme.txt文件里面增加一行 内容为555555555555，我们先通过命令查看如下：</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyq0rzrcj20ax03vaaa.jpg"></p>
+
+<p>在我未提交之前，我发现添加5555555555555内容有误，所以我得马上恢复以前的版本，现在我可以有如下几种方法可以做修改：</p>
+
+<p>第一：如果我知道要删掉那些内容的话，直接手动更改去掉那些需要的文件，然后add添加到暂存区，最后commit掉。</p>
+
+<p>第二：我可以按以前的方法直接恢复到上一个版本。使用 git reset&nbsp; –hard HEAD^</p>
+
+<p>但是现在我不想使用上面的2种方法，我想直接想使用撤销命令该如何操作呢？首先在做撤销之前，我们可以先用 git status 查看下当前的状态。如下所示：</p>
+
+<p>&nbsp;</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyq034qhj20hs04oaam.jpg"></p>
+
+<p>可以发现，Git会告诉你，git checkout&nbsp; — file 可以丢弃工作区的修改，如下命令：</p>
+
+<p>git checkout&nbsp; —&nbsp; readme.txt,如下所示：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypz44y5j20eh03w0t4.jpg"></p>
+
+<p>命令 git checkout –readme.txt 意思就是，把readme.txt文件在工作区做的修改全部撤销，这里有2种情况，如下：</p>
+
+<ol><li>readme.txt自动修改后，还没有放到暂存区，使用 撤销修改就回到和版本库一模一样的状态。</li>
+    <li>另外一种是readme.txt已经放入暂存区了，接着又作了修改，撤销修改就回到添加暂存区后的状态。</li>
+</ol><p>对于第二种情况，我想我们继续做demo来看下，假如现在我对readme.txt添加一行 内容为6666666666666，我git add 增加到暂存区后，接着添加内容7777777，我想通过撤销命令让其回到暂存区后的状态。如下所示：</p>
+
+<p>&nbsp;&nbsp;<img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloypybh8pj20h40deq52.jpg"></p>
+
+<p><strong>注意：</strong>命令git checkout — readme.txt 中的 — 很重要，如果没有 — 的话，那么命令变成创建分支了。</p>
+
+<p><a name="_label10"></a></p>
+
+<p><strong>删除文件</strong></p>
+
+<p>&nbsp;假如我现在版本库testgit目录添加一个文件b.txt,然后提交。如下：</p>
+
+<p>&nbsp;&nbsp;<img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypxcttej20hr0awmzc.jpg"></p>
+
+<p>如上：一般情况下，可以直接在文件目录中把文件删了，或者使用如上rm命令：rm b.txt ，如果我想彻底从版本库中删掉了此文件的话，可以再执行commit命令 提交掉，现在目录是这样的，</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypvtweyj20jj05cwf4.jpg"></p>
+
+<p>只要没有commit之前，如果我想在版本库中恢复此文件如何操作呢？</p>
+
+<p>可以使用如下命令 git checkout&nbsp; — b.txt，如下所示：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyput1l8j20fh06s0tr.jpg"></p>
+
+<p>再来看看我们testgit目录，添加了3个文件了。如下所示：</p>
+
+<p><a name="_label11"></a></p>
+
+<p>&nbsp;远程仓库</p>
+
+<p>&nbsp;在了解之前，先注册github账号，由于你的本地Git仓库和github仓库之间的传输是通过SSH加密的，所以需要一点设置：</p>
+
+<p>&nbsp; &nbsp; &nbsp;第一步：创建SSH Key。在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果有的话，直接跳过此如下命令，如果没有的话，打开命令行，输入如下命令：</p>
+
+<p>ssh-keygen&nbsp; -t rsa –C “youremail@example.com”, 由于我本地此前运行过一次，所以本地有，如下所示：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypq7esij20kx04pt9c.jpg"></p>
+
+<p>id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。</p>
+
+<p>第二步：登录github,打开” settings”中的SSH Keys页面，然后点击“Add SSH Key”,填上任意title，在Key文本框里黏贴id_rsa.pub文件的内容。</p>
+
+<p><img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyppfdu3j20vh0nwdl0.jpg"></p>
+
+<p>点击 Add Key，你就应该可以看到已经添加的key。</p>
+
+<p><img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloypnrj0cj20l60ad75p.jpg"></p>
+
+<ol><li>如何添加远程库？</li>
+</ol><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;现在的情景是：我们已经在本地创建了一个Git仓库后，又想在github创建一个Git仓库，并且希望这两个仓库进行远程同步，这样github的仓库可以作为备份，又可以其他人通过该仓库来协作。</p>
+
+<p>&nbsp;&nbsp; 首先，登录github上，然后在右上角找到“create a new repo”创建一个新的仓库。如下：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypmocbsj20u40gttbc.jpg"></p>
+
+<p>在Repository name填入<code>testgit</code>，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypm6o2gj20si0idwh4.jpg"></p>
+
+<p>&nbsp; &nbsp; 目前，在GitHub上的这个<code>testgit</code>仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。</p>
+
+<p>现在，我们根据GitHub的提示，在本地的<code>testgit</code>仓库下运行命令：</p>
+
+<p>git remote add origin https://github.com/tugenhua0707/testgit.git</p>
+
+<p>所有的如下：</p>
+
+<p>&nbsp;&nbsp;<img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypk8b34j20hk070764.jpg"></p>
+
+<p>把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。</p>
+
+<p>由于远程库是空的，我们第一次推送master分支时，加上了 –u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。推送成功后，可以立刻在github页面中看到远程库的内容已经和本地一模一样了，上面的要输入github的用户名和密码如下所示：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypjhn5ij20t40i7mzp.jpg"></p>
+
+<p>从现在起，只要本地作了提交，就可以通过如下命令：</p>
+
+<p>git push origin master</p>
+
+<p>把本地master分支的最新修改推送到github上了，现在你就拥有了真正的分布式版本库了。</p>
+
+<p>2. 如何从远程库克隆？</p>
+
+<p>上面我们了解了先有本地库，后有远程库时候，如何关联远程库。</p>
+
+<p>现在我们想，假如远程库有新的内容了，我想克隆到本地来 如何克隆呢？</p>
+
+<p>首先，登录github，创建一个新的仓库，名字叫testgit2.如下：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyphv15sj20t10gs775.jpg"></p>
+
+<p>如下，我们看到：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloypexzvuj20ss0dgabs.jpg"></p>
+
+<p>现在，远程库已经准备好了，下一步是使用命令git clone克隆一个本地库了。如下所示：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypec5t0j20hp03jwf6.jpg"></p>
+
+<p>接着在我本地目录下 生成testgit2目录了，如下所示：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypdbpwnj20jt05hmxr.jpg"></p>
+
+<p>六：创建与合并分支。</p>
+
+<p>在 &nbsp;版本回填退里，你已经知道，每次提交，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。</p>
+
+<p>首先，我们来创建dev分支，然后切换到dev分支上。如下操作：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloypab36sj20bc04nweu.jpg"></p>
+
+<p>git checkout 命令加上 –b参数表示创建并切换，相当于如下2条命令</p>
+
+<p>git branch dev</p>
+
+<p>git checkout dev</p>
+
+<p>git branch查看分支，会列出所有的分支，当前分支前面会添加一个星号。然后我们在dev分支上继续做demo，比如我们现在在readme.txt再增加一行 7777777777777</p>
+
+<p>首先我们先来查看下readme.txt内容，接着添加内容77777777，如下：</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyp9es90j20at0awjsq.jpg"></p>
+
+<p>现在dev分支工作已完成，现在我们切换到主分支master上，继续查看readme.txt内容如下：</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyp8mng3j20hm05qaav.jpg"></p>
+
+<p>现在我们可以把dev分支上的内容合并到分支master上了，可以在master分支上，使用如下命令 git merge dev 如下所示：</p>
+
+<p><img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyp83uksj20es073gmi.jpg"></p>
+
+<p>git merge命令用于合并指定分支到当前分支上，合并后，再查看readme.txt内容，可以看到，和dev分支最新提交的是完全一样的。</p>
+
+<p>注意到上面的<em>Fast-forward</em>信息，Git告诉我们，这次合并是“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。</p>
+
+<p>合并完成后，我们可以接着删除dev分支了，操作如下：</p>
+
+<p>&nbsp;</p>
+
+<p>总结创建与合并分支命令如下：</p>
+
+<p>&nbsp;&nbsp; 查看分支：git branch</p>
+
+<p>&nbsp;&nbsp; 创建分支：git branch name</p>
+
+<p>&nbsp;&nbsp; 切换分支：git checkout name</p>
+
+<p>创建+切换分支：git checkout –b name</p>
+
+<p>合并某分支到当前分支：git merge name</p>
+
+<p>删除分支：git branch –d name</p>
+
+<p><a name="_label12"></a></p>
+
+<p>如何解决冲突</p>
+
+<p>下面我们还是一步一步来，先新建一个新分支，比如名字叫fenzhi1，在readme.txt添加一行内容8888888，然后提交，如下所示：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyp4jq8yj20ft0cu40a.jpg"></p>
+
+<p>同样，我们现在切换到master分支上来，也在最后一行添加内容，内容为99999999，如下所示：</p>
+
+<p><img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyp3w0l1j20g80dwmz7.jpg"></p>
+
+<p>现在我们需要在master分支上来合并fenzhi1，如下操作：</p>
+
+<p><img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyp1wo2ij20hm0gddi9.jpg"></p>
+
+<p>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容，其中&lt;&lt;&lt;HEAD是指主分支修改的内容，&gt;&gt;&gt;&gt;&gt;fenzhi1 是指fenzhi1上修改的内容，我们可以修改下如下后保存：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyp11x4zj20g107e3zd.jpg"></p>
+
+<p>如果我想查看分支合并的情况的话，需要使用命令 git log.命令行演示如下：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyp0aj6uj20dt0o5gph.jpg"></p>
+
+<p><a name="_label13"></a></p>
+
+<p>分支管理策略</p>
+
+<p>通常合并分支时，git一般使用”Fast forward”模式，在这种模式下，删除分支后，会丢掉分支信息，现在我们来使用带参数 –no-ff来禁用”Fast forward”模式。首先我们来做demo演示下：</p>
+
+<ol><li>创建一个dev分支。</li>
+    <li>修改readme.txt内容。</li>
+    <li>添加到暂存区。</li>
+    <li>切换回主分支(master)。</li>
+    <li>合并dev分支，使用命令 git merge –no-ff&nbsp; -m “注释” dev</li>
+    <li>查看历史记录</li>
+</ol><p>截图如下：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyoz5m31j20gr0lon0y.jpg"></p>
+
+<p><strong>分支策略：</strong>首先master主分支应该是非常稳定的，也就是用来发布新版本，一般情况下不允许在上面干活，干活一般情况下在新建的dev分支上干活，干完后，比如上要发布，或者说dev分支代码稳定后可以合并到主分支master上来。</p>
+
+<p>七：bug分支：</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在开发中，会经常碰到bug问题，那么有了bug就需要修复，在Git中，分支是很强大的，每个bug都可以通过一个临时分支来修复，修复完成后，合并分支，然后将临时的分支删除掉。</p>
+
+<p>比如我在开发中接到一个404 bug时候，我们可以创建一个404分支来修复它，但是，当前的dev分支上的工作还没有提交。比如如下：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyoy0x5yj20he04m74v.jpg"></p>
+
+<p>&nbsp; &nbsp;并不是我不想提交，而是工作进行到一半时候，我们还无法提交，比如我这个分支bug要2天完成，但是我issue-404 bug需要5个小时内完成。怎么办呢？还好，Git还提供了一个stash功能，可以把当前工作现场 ”隐藏起来”，等以后恢复现场后继续工作。如下：</p>
+
+<p>&nbsp;&nbsp;<img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyoxn4t8j20i3058dgo.jpg"></p>
+
+<p>&nbsp; &nbsp;所以现在我可以通过创建issue-404分支来修复bug了。</p>
+
+<p>首先我们要确定在那个分支上修复bug，比如我现在是在主分支master上来修复的，现在我要在master分支上创建一个临时分支，演示如下：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyowmdooj20gp0etq55.jpg"></p>
+
+<p>修复完成后，切换到master分支上，并完成合并，最后删除issue-404分支。演示如下：</p>
+
+<p>&nbsp;</p>
+
+<p>现在，我们回到dev分支上干活了。</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyou5898j20bq03s0t6.jpg"></p>
+
+<p>工作区是干净的，那么我们工作现场去哪里呢？我们可以使用命令 git stash list来查看下。如下：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyot6ny2j20c202lmxg.jpg"></p>
+
+<p>工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，可以使用如下2个方法：</p>
+
+<ol><li>git stash apply恢复，恢复后，stash内容并不删除，你需要使用命令git stash drop来删除。</li>
+    <li>另一种方式是使用git stash pop,恢复的同时把stash内容也删除了。</li>
+</ol><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 演示如下</p>
+
+<p>&nbsp;<img alt class="has" src="https://images2015.cnblogs.com/blog/762349/201610/762349-20161026134059296-2019917854.png"></p>
+
+<p><a name="_label14"></a></p>
+
+<p>多人协作</p>
+
+<p>当你从远程库克隆时候，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且远程库的默认名称是origin。</p>
+
+<ol><li>要查看远程库的信息 使用 git remote</li>
+    <li>要查看远程库的详细信息 使用 git remote –v</li>
+</ol><p>如下演示：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyor8ayjj20h704pt9e.jpg"></p>
+
+<p><strong>一：推送分支：</strong></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 推送分支就是把该分支上所有本地提交到远程库中，推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 使用命令 git push origin master</p>
+
+<p>比如我现在的github上的readme.txt代码如下：</p>
+
+<p><img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyoolky9j20n00crt9x.jpg"></p>
+
+<p>本地的readme.txt代码如下：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyoljbdoj20bp05p74u.jpg"></p>
+
+<p>现在我想把本地更新的readme.txt代码推送到远程库中，使用命令如下：</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyoklccxj20f105nmy8.jpg"></p>
+
+<p>我们可以看到如上，推送成功，我们可以继续来截图github上的readme.txt内容 如下：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyojp2l7j20mi0dgdh4.jpg"></p>
+
+<p>可以看到 推送成功了，如果我们现在要推送到其他分支，比如dev分支上，我们还是那个命令 git push origin dev</p>
+
+<p>那么一般情况下，那些分支要推送呢？</p>
+
+<ol><li>master分支是主分支，因此要时刻与远程同步。</li>
+    <li>一些修复bug分支不需要推送到远程去，可以先合并到主分支上，然后把主分支master推送到远程去。</li>
+    <li>
+    <p><a name="_label15"></a></p>
+<p>抓取分支</p>
+    </li>
+    <li>
+    <p>多人协作时，大家都会往master分支上推送各自的修改。现在我们可以模拟另外一个同事，可以在另一台电脑上（注意要把SSH key添加到github上）或者同一台电脑上另外一个目录克隆，新建一个目录名字叫testgit2</p>
+
+<p>但是我首先要把dev分支也要推送到远程去，如下</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyoilae8j20dz047jrw.jpg"></p>
+
+<p>接着进入testgit2目录，进行克隆远程的库到本地来，如下：</p>
+
+<p>&nbsp;<img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyofwtkzj20e404qdgn.jpg"></p>
+
+<p>现在目录下生成有如下所示：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyoerppxj20jy07475a.jpg"></p>
+
+<p>现在我们的小伙伴要在dev分支上做开发，就必须把远程的origin的dev分支到本地来，于是可以使用命令创建本地dev分支：git checkout&nbsp; –b dev origin/dev</p>
+
+<p>现在小伙伴们就可以在dev分支上做开发了，开发完成后把dev分支推送到远程库时。</p>
+<p>如下：</p>
+
+<p><img alt class="has" src="http://ww1.sinaimg.cn/mw690/6941baebgw1eloyodj3j4j20gq0katc9.jpg"></p>
+
+<p>小伙伴们已经向origin/dev分支上推送了提交，而我在我的目录文件下也对同样的文件同个地方作了修改，也试图推送到远程库时，如下：</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyocm8nlj20hz0l3jvp.jpg"></p>
+
+<p>由上面可知：推送失败，因为我的小伙伴最新提交的和我试图推送的有冲突，解决的办法也很简单，上面已经提示我们，先用git pull把最新的提交从origin/dev抓下来，然后在本地合并，解决冲突，再推送。</p>
+
+<p><img alt class="has" src="http://ww2.sinaimg.cn/mw690/6941baebgw1eloyoblpvij20gi07ugmx.jpg"></p>
+
+<p><em>git pull</em>也失败了，原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：如下：</p>
+
+<p><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyoab9gfj20hy05j0tu.jpg"></p>
+
+<p>这回<em>git pull</em>成功，但是合并有冲突，需要手动解决，解决的方法和分支管理中的 解决冲突完全一样。解决后，提交，再push：</p>
+
+<p>我们可以先来看看readme.txt内容了。</p>
+
+<p><img alt class="has" src="http://ww4.sinaimg.cn/mw690/6941baebgw1eloyo7l3o6j20ef07p74y.jpg"></p>
+
+<p>现在手动已经解决完了，我接在需要再提交，再push到远程库里面去。如下所示：<br><img alt class="has" src="http://ww3.sinaimg.cn/mw690/6941baebgw1eloyo5em1aj20gt0dcwgv.jpg"></p>
+
+<p>因此：多人协作工作模式一般是这样的：</p>
+
+<ol><li>首先，可以试图用git push origin branch-name推送自己的修改.</li>
+        <li>如果推送失败，则因为远程分支比你的本地更新早，需要先用git pull试图合并。</li>
+        <li>如果合并有冲突，则需要解决冲突，并在本地提交。再用git push origin branch-name推送。</li>
 
 
-<h4 id="HashMap的主要成员变量："><a href="#HashMap的主要成员变量：" class="headerlink" title="HashMap的主要成员变量："></a>HashMap的主要成员变量：</h4><p><strong>transient Node&lt;K,V&gt;[] table</strong>：这是一个Node类型的数组（也有称作Hash桶），可以从下面源码中看到静态内部类Node在这边可以看做就是一个节点，多个Node节点构成链表，当链表长度大于8的时候转换为红黑树。<br><img src="https://img-blog.csdn.net/20180529155827859" alt="Node"><br><strong>transient int size</strong>：表示当前HashMap包含的键值对数量</p>
-<p><strong>transient int modCount</strong>：表示当前HashMap修改次数</p>
-<p><strong>int threshold</strong>：表示当前HashMap能够承受的最多的键值对数量，一旦超过这个数量HashMap就会进行扩容</p>
-<p><strong>final float loadFactor</strong>：负载因子，用于扩容</p>
-<p><strong>static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4</strong>：默认的table初始容量</p>
-<p><strong>static final float DEFAULT_LOAD_FACTOR = 0.75f</strong>：默认的负载因子</p>
-<p>介绍完了重要的几个参数后我们来看看HashMap的构造参数。</p>
-<p>HashMap的构造方法有四种：<br><img src="https://img-blog.csdn.net/20180529164049237" alt="在这里插入图片描述"><br>详细代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(<span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (initialCapacity &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal initial capacity: "</span> +</span><br><span class="line">                                           initialCapacity);</span><br><span class="line">    <span class="keyword">if</span> (initialCapacity &gt; MAXIMUM_CAPACITY)</span><br><span class="line">        initialCapacity = MAXIMUM_CAPACITY;</span><br><span class="line">    <span class="keyword">if</span> (loadFactor &lt;= <span class="number">0</span> || Float.isNaN(loadFactor))</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Illegal load factor: "</span> +</span><br><span class="line">                                           loadFactor);</span><br><span class="line">    <span class="keyword">this</span>.loadFactor = loadFactor;</span><br><span class="line">    <span class="keyword">this</span>.threshold = tableSizeFor(initialCapacity);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(<span class="keyword">int</span> initialCapacity)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(initialCapacity, DEFAULT_LOAD_FACTOR);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.loadFactor = DEFAULT_LOAD_FACTOR; <span class="comment">// all other fields defaulted</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashMap</span><span class="params">(Map&lt;? extends K, ? extends V&gt; m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.loadFactor = DEFAULT_LOAD_FACTOR;</span><br><span class="line">    putMapEntries(m, <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>前面三个构造器的区别都是在于指定初始容量以及负载因子，如果你选择默认的构造器那么在创建的时候不会指定threshold的值，而第二个以及第三个构造器在一开始的时候就会根据下面的这个方法来确认threshold值，可以看到下面用到了移位算法，最后一个构造器很显然就是把另一个Map的值映射到当前新的Map中。<br><img src="https://img-blog.csdn.net/20180529165142867" alt="在这里插入图片描述"><br>这边先提下负载因子（loadFactor），源码中有个公式为threshold = loadFactor * 容量。HashMap和HashSet都允许你指定负载因子的构造器，表示当负载情况达到负载因子水平的时候，容器会自动扩容，HashMap默认使用的负载因子值为0.75f（当容量达到四分之三进行再散列（扩容））。当负载因子越大的时候能够容纳的键值对就越多但是查找的代价也会越高。所以如果你知道将要在HashMap中存储多少数据，那么你可以创建一个具有恰当大小的初始容量这可以减少扩容时候的开销。但是大多数情况下0.75在时间跟空间代价上达到了平衡所以不建议修改。</p>
-<p>下面将根据默认的构造为出发点，从初始化一个HashMap到使用Get，Put方法进行一些源码解析。</p>
-<h2 id="put-K-key-V-value-："><a href="#put-K-key-V-value-：" class="headerlink" title="put(K key, V value)："></a>put(K key, V value)：</h2><pre><code>在使用默认构造器初始化一个HashMap对象的时候，首次Put键值对的时候会先计算对应
-Key的hash值通过hash值来确定存放的地址。</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h;</span><br><span class="line">    <span class="keyword">return</span> (key == <span class="keyword">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>   紧接着调用了putVal方法，在刚刚初始化之后的table值为null因此程序会进入到resize()方法中。而resize方法就是用来进行扩容的（稍后提到）。扩容后得到了一个table的节点（Node）数组，接着根据传入的hash值去获得一个对应节点p并去判断是否为空，是的话就存入一个新的节点（Node）。反之如果当前存放的位置已经有值了就会进入到else中去。接着根据前面得到的节点p的hash值以及key跟传入的hash值以及参数进行比较，如果一样则替覆盖。如果存在Hash碰撞就会以链表的形式保存，把当前传进来的参数生成一个新的节点保存在链表的尾部（JDK1.7保存在首部）。而如果链表的长度大于8那么就会以红黑树的形式进行保存。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> V <span class="title">putVal</span><span class="params">(<span class="keyword">int</span> hash, K key, V value, <span class="keyword">boolean</span> onlyIfAbsent,</span></span></span><br><span class="line"><span class="function"><span class="params">               <span class="keyword">boolean</span> evict)</span> </span>&#123;</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="keyword">int</span> n, i;</span><br><span class="line">    <span class="keyword">if</span> ((tab = table) == <span class="keyword">null</span> || (n = tab.length) == <span class="number">0</span>) <span class="comment">//首次初始化的时候table为null</span></span><br><span class="line">        n = (tab = resize()).length; <span class="comment">//对HashMap进行扩容</span></span><br><span class="line">    <span class="keyword">if</span> ((p = tab[i = (n - <span class="number">1</span>) &amp; hash]) == <span class="keyword">null</span>) <span class="comment">//根据hash值来确认存放的位置。如果当前位置是空直接添加到table中</span></span><br><span class="line">        tab[i] = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//如果存放的位置已经有值</span></span><br><span class="line">        Node&lt;K,V&gt; e; K k;</span><br><span class="line">        <span class="keyword">if</span> (p.hash == hash &amp;&amp;</span><br><span class="line">            ((k = p.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            e = p; <span class="comment">//确认当前table中存放键值对的Key是否跟要传入的键值对key一致</span></span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p <span class="keyword">instanceof</span> TreeNode) <span class="comment">//确认是否为红黑树</span></span><br><span class="line">            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="keyword">this</span>, tab, hash, key, value);</span><br><span class="line">        <span class="keyword">else</span> &#123;<span class="comment">//如果hashCode一样的两个不同Key就会以链表的形式保存</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> binCount = <span class="number">0</span>; ; ++binCount) &#123;</span><br><span class="line">                <span class="keyword">if</span> ((e = p.next) == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    p.next = newNode(hash, key, value, <span class="keyword">null</span>);</span><br><span class="line">                    <span class="keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="number">1</span>) <span class="comment">// -1 for 1st 判断链表长度是否大于8</span></span><br><span class="line">                        treeifyBin(tab, hash);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                p = e;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123; <span class="comment">// existing mapping for key</span></span><br><span class="line">            V oldValue = e.value;</span><br><span class="line">            <span class="keyword">if</span> (!onlyIfAbsent || oldValue == <span class="keyword">null</span>)</span><br><span class="line">                e.value = value; <span class="comment">//替换新的value并返回旧的value</span></span><br><span class="line">            afterNodeAccess(e);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ++modCount;</span><br><span class="line">    <span class="keyword">if</span> (++size &gt; threshold)</span><br><span class="line">        resize();<span class="comment">//如果当前HashMap的容量超过threshold则进行扩容</span></span><br><span class="line">    afterNodeInsertion(evict);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Git</strong><strong>基本常用命令如下</strong></p>
 
-<h2 id="扩容机制核心方法Node-lt-K-V-gt-resize-："><a href="#扩容机制核心方法Node-lt-K-V-gt-resize-：" class="headerlink" title="扩容机制核心方法Node&lt;K,V&gt;[] resize()："></a>扩容机制核心方法Node&lt;K,V&gt;[] resize()：</h2><p>   HashMap扩容可以分为三种情况：</p>
-<p>第一种：使用默认构造方法初始化HashMap。从前文可以知道HashMap在一开始初始化的时候会返回一个空的table，并且thershold为0。因此第一次扩容的容量为默认值DEFAULT_INITIAL_CAPACITY也就是16。同时threshold = DEFAULT_INITIAL_CAPACITY * DEFAULT_LOAD_FACTOR = 12。</p>
-<p>第二种：指定初始容量的构造方法初始化HashMap。那么从下面源码可以看到初始容量会等于threshold，接着threshold = 当前的容量（threshold） * DEFAULT_LOAD_FACTOR。</p>
-<p>第三种：HashMap不是第一次扩容。如果HashMap已经扩容过的话，那么每次table的容量以及threshold量为原有的两倍。</p>
-<pre><code>这边也可以引申到一个问题就是HashMap是先插入数据再进行扩容的，但是如果是刚刚初始化容器的时候是先扩容再插入数据。</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> Node&lt;K,V&gt;[] resize() &#123;</span><br><span class="line">    Node&lt;K,V&gt;[] oldTab = table;<span class="comment">//首次初始化后table为Null</span></span><br><span class="line">    <span class="keyword">int</span> oldCap = (oldTab == <span class="keyword">null</span>) ? <span class="number">0</span> : oldTab.length;</span><br><span class="line">    <span class="keyword">int</span> oldThr = threshold;<span class="comment">//默认构造器的情况下为0</span></span><br><span class="line">    <span class="keyword">int</span> newCap, newThr = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (oldCap &gt; <span class="number">0</span>) &#123;<span class="comment">//table扩容过</span></span><br><span class="line">         <span class="comment">//当前table容量大于最大值得时候返回当前table</span></span><br><span class="line">         <span class="keyword">if</span> (oldCap &gt;= MAXIMUM_CAPACITY) &#123;</span><br><span class="line">            threshold = Integer.MAX_VALUE;</span><br><span class="line">            <span class="keyword">return</span> oldTab;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> ((newCap = oldCap &lt;&lt; <span class="number">1</span>) &lt; MAXIMUM_CAPACITY &amp;&amp;</span><br><span class="line">                 oldCap &gt;= DEFAULT_INITIAL_CAPACITY)</span><br><span class="line">        <span class="comment">//table的容量乘以2，threshold的值也乘以2           </span></span><br><span class="line">        newThr = oldThr &lt;&lt; <span class="number">1</span>; <span class="comment">// double threshold</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (oldThr &gt; <span class="number">0</span>) <span class="comment">// initial capacity was placed in threshold</span></span><br><span class="line">    <span class="comment">//使用带有初始容量的构造器时，table容量为初始化得到的threshold</span></span><br><span class="line">    newCap = oldThr;</span><br><span class="line">    <span class="keyword">else</span> &#123;  <span class="comment">//默认构造器下进行扩容  </span></span><br><span class="line">         <span class="comment">// zero initial threshold signifies using defaults</span></span><br><span class="line">        newCap = DEFAULT_INITIAL_CAPACITY;</span><br><span class="line">        newThr = (<span class="keyword">int</span>)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (newThr == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">//使用带有初始容量的构造器在此处进行扩容</span></span><br><span class="line">        <span class="keyword">float</span> ft = (<span class="keyword">float</span>)newCap * loadFactor;</span><br><span class="line">        newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (<span class="keyword">float</span>)MAXIMUM_CAPACITY ?</span><br><span class="line">                  (<span class="keyword">int</span>)ft : Integer.MAX_VALUE);</span><br><span class="line">    &#125;</span><br><span class="line">    threshold = newThr;</span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(&#123;<span class="string">"rawtypes"</span>,<span class="string">"unchecked"</span>&#125;)</span><br><span class="line">        Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])<span class="keyword">new</span> Node[newCap];</span><br><span class="line">    table = newTab;</span><br><span class="line">  <span class="keyword">if</span> (oldTab != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="comment">//对新扩容后的table进行赋值，条件中的代码删减</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newTab;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&nbsp; &nbsp;mkdir：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XX (创建一个空目录 XX指目录名)</p>
 
-<h2 id="get-Object-key-："><a href="#get-Object-key-：" class="headerlink" title="get(Object key)："></a>get(Object key)：</h2><p>   先前HashMap通过hashcode来存放数据，那么get方法一样要通过hashcode来获取数据。可以看到如果当前table没有数据的话直接返回null反之通过传进来的hash值找到对应节点（Node）first，如果first的hash值以及Key跟传入的参数匹配就返回对应的value反之判断是否是红黑树，如果是红黑树则从根节点开始进行匹配如果有对应的数据则结果否则返回Null，如果是链表的话就会循环查询链表，如果当前的节点不匹配的话就会从当前节点获取下一个节点来进行循环匹配，如果有对应的数据则返回结果否则返回Null。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    Node&lt;K,V&gt; e;</span><br><span class="line">    <span class="keyword">return</span> (e = getNode(hash(key), key)) == <span class="keyword">null</span> ? <span class="keyword">null</span> : e.value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp; pwd：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 显示当前目录的路径。</p>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> Node&lt;K,V&gt; <span class="title">getNode</span><span class="params">(<span class="keyword">int</span> hash, Object key)</span> </span>&#123;</span><br><span class="line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; <span class="keyword">int</span> n; K k;</span><br><span class="line">    <span class="comment">//如果当前table没有数据的话返回Null</span></span><br><span class="line">    <span class="keyword">if</span> ((tab = table) != <span class="keyword">null</span> &amp;&amp; (n = tab.length) &gt; <span class="number">0</span> &amp;&amp;</span><br><span class="line">        (first = tab[(n - <span class="number">1</span>) &amp; hash]) != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="comment">//根据当前传入的hash值以及参数key获取一个节点即为first,如果匹配的话返回对应的value值</span></span><br><span class="line">        <span class="keyword">if</span> (first.hash == hash &amp;&amp; <span class="comment">// always check first node</span></span><br><span class="line">            ((k = first.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            <span class="keyword">return</span> first;</span><br><span class="line">        <span class="comment">//如果参数与first的值不匹配的话</span></span><br><span class="line">        <span class="keyword">if</span> ((e = first.next) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">//判断是否是红黑树，如果是红黑树的话先判断first是否还有父节点，然后从根节点循环查询是否有对应的值</span></span><br><span class="line">            <span class="keyword">if</span> (first <span class="keyword">instanceof</span> TreeNode)</span><br><span class="line">                <span class="keyword">return</span> ((TreeNode&lt;K,V&gt;)first).getTreeNode(hash, key);</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="comment">//如果是链表的话循环拿出数据</span></span><br><span class="line">            <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">                    ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">                    <span class="keyword">return</span> e;</span><br><span class="line">            &#125; <span class="keyword">while</span> ((e = e.next) != <span class="keyword">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp; git init&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 把当前的目录变成可以管理的git仓库，生成隐藏.git文件。</p>
 
-<div class="htmledit_views" id="content_views">
-                                            <p><span style="font-size:18px;"> <span style="font-size:20px;">JDK1.8对HashMap进行了优化</span>， 真正理解它了吗？ <br></span></p><p><span style="font-size:18px;">考虑如下问题：&nbsp; <br></span></p><p><span style="font-size:18px;">1、哈希基本原理？（答：散列表、hash碰撞、链表、<strong><span style="color:#FF0000;">红黑树</span></strong>）<br></span></p><span style="font-size:18px;">2、hashmap查询的时间复杂度， 影响因素和原理？ （答：最好O（1），最差O（n）， 如果是<strong><span style="color:#FF0000;">红黑O（logn）</span></strong>）<br></span><p><span style="font-size:18px;">3、resize如何实现的， 记住已经没有rehash了！！！（答：拉链entry根据高位bit散列到当前位置i和size+i位置）</span></p><p><span style="font-size:18px;">4、<strong><span style="color:#FF0000;">为什么获取下标时用按位与&amp;，而不是取模%</span></strong>？ （答：不只是&amp;速度更快哦，&nbsp; 我觉得你能答上来便真正理解hashmap了）</span></p><p><span style="font-size:18px;">5、什么时机执行resize？</span></p><p><span style="font-size:18px;">答：hashmap实例里的元素个数大于threshold时执行resize(即桶数量扩容为2倍并散列原来的Entry)。 PS：threshold=桶数量*负载因子</span></p><p><span style="font-size:18px;"></span></p><pre><code class="hljs cs"><ol class="hljs-ln"><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-function">final V <span class="hljs-title">putVal</span>(<span class="hljs-params"><span class="hljs-params"><span class="hljs-keyword">int</span> hash, K key, V <span class="hljs-keyword">value</span>, boolean onlyIfAbsent,</span></span></span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-params">               boolean evict</span>) {</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span class="hljs-keyword">int</span> n, i;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">if</span> ((tab = table) == <span class="hljs-literal">null</span> || (n = tab.length) == <span class="hljs-number">0</span>)</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        n = (tab = resize()).length;   <span class="hljs-comment">//初始化桶，默认16个元素</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">if</span> ((p = tab[i = (n - <span class="hljs-number">1</span>) &amp; hash]) == <span class="hljs-literal">null</span>)   <span class="hljs-comment">//如果第i个桶为空，创建Node实例</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        tab[i] = newNode(hash, key, <span class="hljs-keyword">value</span>, <span class="hljs-literal">null</span>);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">else</span> { <span class="hljs-comment">//哈希碰撞的情况， 即(n-1)&amp;hash相等</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        Node&lt;K,V&gt; e; K k;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-keyword">if</span> (p.hash == hash &amp;&amp;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            ((k = p.key) == key || (key != <span class="hljs-literal">null</span> &amp;&amp; key.<span class="hljs-keyword">equals</span>(k))))</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            e = p;   <span class="hljs-comment">//key相同，后面会覆盖value</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (p instanceof TreeNode)</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(<span class="hljs-keyword">this</span>, tab, hash, key, <span class="hljs-keyword">value</span>);  <span class="hljs-comment">//红黑树添加当前node</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-keyword">else</span> {</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> binCount = <span class="hljs-number">0</span>; ; ++binCount) {</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                <span class="hljs-keyword">if</span> ((e = p.next) == <span class="hljs-literal">null</span>) {</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                    p.next = newNode(hash, key, <span class="hljs-keyword">value</span>, <span class="hljs-literal">null</span>);  <span class="hljs-comment">//链表添加当前元素</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                    <span class="hljs-keyword">if</span> (binCount &gt;= TREEIFY_THRESHOLD - <span class="hljs-number">1</span>) <span class="hljs-comment">// -1 for 1st</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="20"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                        treeifyBin(tab, hash);  <span class="hljs-comment">//当链表个数大于等于7时，将链表改造为红黑树</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="21"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                    <span class="hljs-keyword">break</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="22"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="23"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                <span class="hljs-keyword">if</span> (e.hash == hash &amp;&amp;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="24"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                    ((k = e.key) == key || (key != <span class="hljs-literal">null</span> &amp;&amp; key.<span class="hljs-keyword">equals</span>(k))))</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="25"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                    <span class="hljs-keyword">break</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="26"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                p = e;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="27"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="28"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="29"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-keyword">if</span> (e != <span class="hljs-literal">null</span>) { <span class="hljs-comment">// existing mapping for key</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="30"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            V oldValue = e.<span class="hljs-keyword">value</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="31"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            <span class="hljs-keyword">if</span> (!onlyIfAbsent || oldValue == <span class="hljs-literal">null</span>)</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="32"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                e.<span class="hljs-keyword">value</span> = <span class="hljs-keyword">value</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="33"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            afterNodeAccess(e);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="34"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            <span class="hljs-keyword">return</span> oldValue;            <span class="hljs-comment">//覆盖key相同的value并return， 即不会执行++size</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="35"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="36"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="37"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    ++modCount;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="38"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">if</span> (++size &gt; threshold)    <span class="hljs-comment">//key不相同时，每次插入一条数据自增1. 当size大于threshold时resize</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="39"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        resize();</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="40"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    afterNodeInsertion(evict);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="41"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="42"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">}</div></div></li></ol></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre><br><p><span style="font-size:18px;">6、为什么负载因子默认为0.75f ？ 能不能变为0.1、0.9、2、3等等呢？</span></p><p><span style="font-size:18px;">答：0.75是平衡了时间和空间等因素； 负载因子越小桶的数量越多，读写的时间复杂度越低（极限情况O(1), 哈希碰撞的可能性越小）； 负载因子越大桶的数量越少，读写的时间复杂度越高(极限情况O(n), 哈希碰撞可能性越高)。 0.1，0.9，2，3等都是合法值。</span></p><p><span style="font-size:18px;">7、影响HashMap性能的因素？</span></p><p><span style="font-size:18px;">1、 负载因子；</span></p><p><span style="font-size:18px;">2、哈希值；理想情况是均匀的散列到各个桶。 一般HashMap使用String类型作为key，而String类重写了hashCode函数。</span></p><p><span style="font-size:18px;"></span></p><pre><code class="hljs java"><ol class="hljs-ln"><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">   <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hash</span><span class="hljs-params">(Object key)</span> </span>{</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-keyword">int</span> h;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-keyword">return</span> (key == <span class="hljs-keyword">null</span>) ? <span class="hljs-number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="hljs-number">16</span>);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    }</div></div></li></ol></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre><p><span style="font-size:18px;">8、HashMap的key需要满足什么条件？&nbsp;</span></p><p><span style="font-size:18px;">答：必须重写hashCode和equals方法， 常用的String类实现了这两个方法。</span></p><p><span style="font-size:18px;">示例代码：</span></p><p></p><pre><code class="hljs cpp"><ol class="hljs-ln"><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KeyClass</span> {</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-keyword">int</span> age;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        String name;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> </div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-function"><span class="hljs-keyword">public</span> boolean <span class="hljs-title">equals</span><span class="hljs-params">(Object anyObject)</span> </span>{</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            <span class="hljs-keyword">if</span> (anyObject == <span class="hljs-keyword">this</span>) {</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> </div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            <span class="hljs-keyword">if</span> (anyObject instanceof KeyClass) {</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                KeyClass obj = (KeyClass) anyObject;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                <span class="hljs-keyword">if</span> (obj.age == <span class="hljs-keyword">this</span>.age</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                        &amp;&amp; obj.name == <span class="hljs-keyword">this</span>.name) {</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">                }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> </div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="20"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hashCode</span><span class="hljs-params">()</span> </span>{</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="21"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            <span class="hljs-keyword">return</span> name==null? age : age|name.hashCode();</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="22"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="23"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="24"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> </div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="25"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="26"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        HashMap&lt;KeyClass, String&gt; <span class="hljs-built_in">map</span> = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="27"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        KeyClass obj1 = <span class="hljs-keyword">new</span> KeyClass();</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="28"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        KeyClass obj2 = <span class="hljs-keyword">new</span> KeyClass();</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="29"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        obj1.age = <span class="hljs-number">1</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="30"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        obj1.name = <span class="hljs-string">"Tom"</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="31"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        obj2.age = <span class="hljs-number">2</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="32"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        obj2.name =<span class="hljs-string">"Jack"</span>;</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="33"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-built_in">map</span>.put(obj1, <span class="hljs-string">"aaa"</span>);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="34"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-built_in">map</span>.put(obj2, <span class="hljs-string">"bbb"</span>);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="35"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-built_in">map</span>.put(obj1, <span class="hljs-string">"ccc"</span>);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="36"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-built_in">map</span>.put(obj2, <span class="hljs-string">"ddd"</span>);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="37"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> </div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="38"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        <span class="hljs-built_in">map</span>.forEach((key, value) -&gt; {</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="39"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">            System.out.println(key.name + <span class="hljs-string">"---"</span> + value);</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="40"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">        });</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="41"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">    }</div></div></li></ol></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre>输出：<p></p><pre><code class="hljs sql"><ol class="hljs-ln"><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">Tom<span class="hljs-comment">---ccc</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">Jack<span class="hljs-comment">---ddd</span></div></div></li></ol></code><div class="hljs-button {2}" data-title="复制" onclick="hljs.copyCode(event)"></div></pre><p><span style="font-size:18px;">9、HashMap允许key/value为null， 但最多只有一个。 为什么？ &nbsp;</span></p><p><span style="font-size:16px;">答： 如果key为null会放在第一个桶（即下标0）位置， 而且是在链表最前面（即第一个位置）。&nbsp;</span></p><p><span style="font-size:18px;"><br></span></p><p><span style="font-size:18px;">JDK1.8的HashMap源码： http://www.grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/8u40-b25/java/util/HashMap.java#HashMap</span></p><p><span style="font-size:18px;"><br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我的习惯是先看注释再看源码并调试， 先翻译一下源码注释吧， 不准之处请指正哈。</span></p><p><span style="font-size:18px;"><br></span></p><p><span style="font-size:18px;">Hash table based implementation of the <tt>Map</tt> interface. This implementation provides all of the optional map<br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp; <span style="color:#009900;">HashTable实现了Map接口类， 这些接口实现了所有可选的map功能， 包括允许空值和空key。</span><br></span></p><p><span style="font-size:18px;">operations, and permits <tt>null</tt> values and the<tt>null</tt> key. (The<tt>HashMap</tt> class is roughly equivalent to<tt>Hashtable</tt>, except that it is unsynchronized and permits nulls.) This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will remain constant over time.<br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#009900;"> HashMap和HashTable基本一致，&nbsp; 区别是HashMap是线程不同步的且允许空key。 HashMap不保证map的顺序， 而且顺序是可变的。</span><br></span></p><p><span style="font-size:18px;">This implementation provides constant-time performance for the basic operations (<tt>get</tt> and<tt>put</tt>), assuming the hash function disperses the elements properly among the buckets.<br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;<span style="color:#33CC00;"> <span style="color:#009900;">如果将数据适当的分散到桶里， HashMap的添加、查询函数的执行周期是常量值。</span></span><br></span></p><p><span style="font-size:18px;">Iteration over collection views requires time proportional to the "capacity" of the<tt>HashMap</tt> instance (the number of buckets) plus its size (the number of key-value mappings). Thus, it's very important not to set the initial capacity too high (or the load factor too low) if iteration performance is important.<br></span></p><p><span style="font-size:18px;">&nbsp;<span style="color:#009900;">&nbsp;&nbsp; 使用迭代器遍历所有数据的性能跟HashMap的桶（bucket）数量有直接关系，&nbsp;&nbsp; 为了提高遍历的性能， 不能设置比较大的桶数量或者负载因子过低。</span><br></span></p><p><span style="font-size:18px;">An instance of <tt>HashMap</tt> has two parameters that affect its performance:<em>initial capacity</em> and<em>load factor</em>. The<em>capacity</em> is the number of buckets in the hash table, and the initial capacity is simply the capacity at the time the hash table is created.<br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#009900;">HashMap实例有2个重要参数影响它的性能： 初始容量和负载因子。 初始容量是指在哈希表里的桶总数， 一般在创建HashMap实例时设置初始容量。</span><br></span></p><p><span style="font-size:18px;">The <em>load factor</em> is a measure of how full the hash table is allowed to get before its capacity is automatically increased.<br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#009900;"> 负载因子是指哈希表在多满时扩容的百分比比例。</span><br></span></p><p><span style="font-size:18px;">When the number of entries in the hash table exceeds the product of the load factor and the current capacity, the hash table is<em>rehashed</em> (that is, internal data structures are rebuilt) so that the hash table has approximately twice the number of buckets.<br></span></p><p><span style="font-size:18px;">&nbsp;<span style="color:#009900;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 当哈希表的数据个数超过负载因子和当前容量的乘积时， 哈希表要再做一次哈希（重建内部数据结构）， 哈希表每次扩容为原来的2倍。</span><br></span></p><p><span style="font-size:18px;">As a general rule, the default load factor (.75) offers a good tradeoff between time and space costs. Higher values decrease the space overhead but increase the lookup cost (reflected in most of the operations of the<tt>HashMap</tt> class, including <tt>get</tt> and <tt>put</tt>). <br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#009900;">&nbsp;&nbsp;&nbsp; 负载因子的默认值是0.75， 它平衡了时间和空间复杂度。 负载因子越大会降低空间使用率，但提高了查询性能（表现在哈希表的大多数操作是读取和查询）</span><br></span></p><p><span style="font-size:18px;">The expected number of entries in the map and its load factor should be taken into account when setting its initial capacity, so as to minimize the number of rehash operations. If the initial capacity is greater than the maximum number of entries divided by the load factor, no rehash operations will ever occur.<br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#009900;"> 考虑哈希表的性能问题， 要设置合适的初始容量，&nbsp;&nbsp; 从而减少rehash的次数。 当哈希表中entry的总数少于负载因子和初始容量乘积时， 就不会发生rehash动作。</span><br></span></p><p><span style="font-size:18px;">If many mappings are to be stored in a <tt>HashMap</tt> instance, creating it with a sufficiently large capacity will allow the mappings to be stored more efficiently than letting it perform automatic rehashing as needed to grow the table. Note that using many keys with the same <code>hashCode()</code> is a sure way to slow down performance of any hash table. To ameliorate impact, when keys are<code><code><a href="http://www.grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/8u40-b25/java/lang/Comparable.java#Comparable" rel="noopener" title="java.lang.Comparable" data-token="0d683665adbeba8c0a8f54b7a6a9bec6" target="_blank">java.lang.Comparable</a></code></code>, this class may use comparison order among keys to help break ties. <br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#009900;"> 如果有很多值要存储到HashMap实例中， 在创建HashMap实例时要设置足够大的初始容量， 避免自动扩容时rehash。 如果很多关键字的哈希值相同， 会降低哈希表的性能。 为了降低这个影响， 当关键字支持<code><code><a href="http://www.grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/8u40-b25/java/lang/Comparable.java#Comparable" rel="noopener" title="java.lang.Comparable" data-token="0d683665adbeba8c0a8f54b7a6a9bec6" target="_blank">java.lang.Comparable</a></code></code>时， 可以对关键字做次排序以降低影响。</span><br></span></p><p><span style="font-size:18px;"><strong>Note that this implementation is not synchronized.</strong> If multiple threads access a hash map concurrently, and at<br></span></p><p><span style="font-size:18px;">least one of the threads modifies the map structurally, it<em>must</em> be synchronized externally. (A structural modification<br></span></p><p><span style="font-size:18px;">&nbsp;<span style="color:#009900;">&nbsp; 哈希表是非线程安全的， 如果多线程同时访问哈希表， 且至少一个线程修改了哈希表的结构， 那么必须在访问hashmap前设置同步锁。（修改结构是指添加或者删除一个或多个entry， 修改键值不算是修改结构。）</span><br></span></p><p><span style="font-size:18px;">is any operation that adds or deletes one or more mappings; merely changing the value associated with a key that an instance already contains is not a structural modification.) This is typically accomplished by synchronizing on some object that naturally encapsulates the map. <br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#009900;"> 一般在多线程操作哈希表时，&nbsp; 要使用同步对象封装map。</span><br></span></p><p><span style="font-size:18px;">If no such object exists, the map should be "wrapped" using the<code>Collections.synchronizedMap</code> method. This is best done at creation time, to prevent accidental unsynchronized access to the map:</span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#009900;">如果不封装Hashmap， 可以使用<code>Collections.synchronizedMap</code>&nbsp; 方法调用HashMap实例。&nbsp; 在创建HashMap实例时避免其他线程操作该实例， 即保证了线程安全。</span><br></span></p><pre><span style="font-size:18px;">   Map m = Collections.synchronizedMap(new HashMap(...));</span></pre><span style="font-size:18px;"><br></span><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:18px;">&nbsp;&nbsp; JDK1.8对哈希碰撞后的拉链算法进行了优化， 当拉链上entry数量太多（超过8个）时，将链表重构为<span style="color:#FF0000;">红黑树</span>。&nbsp; 下面是源码相关的注释：<br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp; * This map usually acts as a binned (bucketed) hash table, but<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * when bins get <span style="color:#FF0000;">too large</span>, they are <span style="color:#FF0000;">transformed </span>into bins of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * <span style="color:#FF0000;">TreeNodes</span>, each structured similarly to those in<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * java.util.TreeMap. Most methods try to use normal bins, but<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * relay to TreeNode methods when applicable (simply by checking<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * instanceof a node).&nbsp; Bins of TreeNodes may be traversed and<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * used like any others, but additionally support faster lookup<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * when overpopulated. However, since the vast majority of bins in<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * normal use are not overpopulated, checking for existence of<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * tree bins may be delayed in the course of table methods.</span></p><p><br></p><p><span style="font-size:18px;"><span style="color:#33CC00;"><span style="color:#000000;">看看HashMap的几个重要成员变量：</span><br></span></span></p><p><span style="font-size:18px;"><span style="color:#33CC00;">&nbsp;//The default initial capacity - MUST be a power of two.</span><br></span></p><p><span style="font-size:18px;">static final int DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;<span style="color:#33CC00;"> //为毛不写成16？？？ 大师是想用这种写法告诉你只能是2的幂</span><br></span></p><p><span style="font-size:18px;">&nbsp;HashMap的初始容量是16个， 而且容量只能是2的幂。&nbsp; 每次扩容时都是变成原来的2倍。</span></p><p><span style="font-size:18px;"><br></span></p><p><span style="font-size:18px;">static final float DEFAULT_LOAD_FACTOR = 0.75f;<br></span></p><p><span style="font-size:18px;">默认的负载因子是0.75f， 16*0.75=12。即默认的HashMap实例在插入第13个数据时，会扩容为32。</span></p><p><span style="font-size:18px;color:#009900;"><br></span></p><p><span style="font-size:18px;"><span style="color:#009900;"><span>The bin count threshold for using a tree rather than list for a bin. Bins are converted to trees when adding an element to a bin with at least this many nodes. The value must be greater than 2 and should be at least 8 to mesh with assumptions in tree removal about conversion back to plain bins upon shrinkage.</span></span><br>static final int TREEIFY_THRESHOLD = 8;</span></p><p><span style="font-size:18px;"><strong><span style="color:#FF0000;">注意：这是JDK1.8对HashMap的优化， 哈希碰撞后的链表上达到8个节点时要将链表重构为红黑树，&nbsp; 查询的时间复杂度变为O(logN)。</span></strong></span></p><p><span style="font-size:18px;"><span style="color:#FF0000;"><br></span></span></p><p><span style="font-size:18px;"><span style="color:#FF0000;"><span style="color:#009900;">The table, initialized on first use, and resized as necessary. When allocated, length is always a power of two. (We also tolerate length zero in some operations to allow bootstrapping mechanics that are currently not needed.) </span><br><span style="color:#000000;">transient Node&lt;K,V&gt;[] table;&nbsp; <span style="color:#009900;">//HashMap的桶， 如果没有哈希碰撞， HashMap就是个数组，我说的是如果</span>。<span style="color:#009900;">&nbsp; 数组的查询时间复杂度是O(1)，所以HashMap理想时间复杂度是O(1)；如果所有数据都在同一个下标位置， 即N个数据组成链表，时间复杂度为O(n)， 所以HashMap的最差时间复杂度为O(n)。如果链表达到8个元素时重构为红黑树，而红黑树的查询时间复杂度为O(logN), 所以这时HashMap的时间复杂度为O(logN)。</span></span></span><strong><span style="color:#FF0000;"><br></span></strong><span style="color:#FF0000;"><span style="color:#000000;"><br><span style="color:#009900;">Holds cached entrySet(). Note that AbstractMap fields are used for keySet() and values().</span><br>transient Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet; <span style="color:#009900;">//HashMap所有的值，因为用了Set， 所以HashMap不会有key、value都相同的数据。</span></span></span></span><span style="font-size:18px;"><strong><span style="color:#FF0000;"><br></span></strong></span></p><p><span style="font-size:18px;"><strong><span style="color:#FF0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://img-blog.csdn.net/20160914094110132?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt><br></span></strong></span></p><p><span style="font-size:18px;"><strong><span style="color:#FF0000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></strong><span style="color:#FF0000;"><span style="color:#000000;">哈希表的结构</span></span><strong><span style="color:#FF0000;"><br></span></strong></span></p><p><span style="font-size:18px;">1、 哈希碰撞的原因和解决方法：</span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp; 哈希碰撞是不同的key值找到相同的下标，&nbsp; 对应HashMap里hashcode和容量的模相同。</span></p><p><span style="font-size:18px;">源码629行 &nbsp;&nbsp; if ((p = tab[i =<span style="color:#FF0000;"> (n - 1) &amp; hash</span>]) == null) ， 其中n是容量值，&nbsp;&nbsp;&nbsp; 即用哈希值和容量相与得到要保存的位置。 如果<span style="font-size:18px;"><span style="color:#FF0000;"><span style="color:#000000;">不同Key的</span>(n - 1) &amp; hash<span style="color:#000000;">相同， 那么要存储到同一个数组下标位置， 这个现象就叫哈希碰撞。</span></span></span></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="color:#FF0000;"><span style="color:#000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; final V putVal(int hash, K key, V value, boolean onlyIfAbsent,boolean evict) {</span></span></span></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="color:#FF0000;"><span style="color:#000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ....<br></span></span></span></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="color:#FF0000;"><span style="color:#000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((p = tab[i = (n - 1) &amp; hash]) == null)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#33CC00;">//如果该下标没值，则存储到该下标位置</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tab[i] = newNode(hash, key, value, null);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Node&lt;K,V&gt; e; K k;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p.hash == hash &amp;&amp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ((k = p.key) == key || (key != null &amp;&amp; key.equals(k))))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e = p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#33CC00;">//如果哈希值相同而且key相同， 则更新键值</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (p instanceof TreeNode)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e = ((TreeNode&lt;K,V&gt;)p).putTreeVal(this, tab, hash, key, value);&nbsp;&nbsp;<span style="color:#33CC00;">//如果下标数据是TreeNode类型，则将新数据添加到红黑树中。</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int binCount = 0; ; ++binCount) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((e = p.next) == null) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p.next = newNode(hash, key, value, null);&nbsp;&nbsp; //将新Node添加到链表末尾<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (binCount &gt;= TREEIFY_THRESHOLD - 1) // -1 for 1st<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; treeifyBin(tab, hash);&nbsp;&nbsp;&nbsp; <span style="color:#33CC00;">//如果链表个数达到8个时，将链表修改为红黑树结构</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp;&nbsp; <br></span></span></span></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="color:#FF0000;"><span style="color:#000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .....</span></span></span></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="color:#FF0000;"><span style="color:#000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br></span></span></span></span></p><p><span style="font-size:18px;"><br></span></p><p><span style="font-size:18px;">2、JDK1.8对HashMap最大的优化是resize函数，&nbsp; 在扩容时不再需要rehash了， 下面就看看大师是怎么实现的。</span></p><p><span style="font-size:18px;"><span style="color:#009900;">Initializes or doubles table size. If null, allocates in accord with initial capacity target held in field threshold. Otherwise, because we are using power-of-two expansion, the elements from each bin must either stay at same index, or move with a power of two offset in the new table.</span></span></p><p><span style="font-size:18px;">初始化数组或者扩容为2倍，&nbsp;&nbsp; 初值为空时，则根据初始容量开辟空间来创建数组。否则， 因为我们使用2的幂定义数组大小，<span style="color:#CC0000;">数据要么待在原来的下标， 或者移动到新数组的高位下标</span>。 （举例： 初始数组是16个，假如有2个数据存储在下标为1的位置， 扩容后这2个数据可以存在下标为1或者16+1的位置）<br></span></p><p><span style="font-size:18px;">Returns:<br>&nbsp;&nbsp;&nbsp; the table<br>final Node&lt;K,V&gt;[] resize() {</span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ....</span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;newThr = oldThr &lt;&lt; 1;<span style="color:#009900;"> // double threshold,&nbsp;&nbsp; 大小扩大为2倍，出于性能考虑和者告诉使用者它是2的幂， 这里用的是位移， 而不是*2，<br></span></span></p><p><span style="font-size:18px;"><span style="color:#009900;"><br></span></span></p><p><span style="font-size:18px;">&nbsp;&nbsp; if (e.next == null)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newTab[e.hash &amp; (newCap - 1)] = e;&nbsp;<span style="color:#009900;"> //如果该下标只有一个数据，则散列到当前位置或者高位对应位置（以第一次resize为例，原来在第4个位置，resize后会存储到第4个或者第4+16个位置）</span><br>&nbsp; else if (e instanceof TreeNode)<br>&nbsp;&nbsp;&nbsp;&nbsp; ((TreeNode&lt;K,V&gt;)e).split(this, newTab, j, oldCap);&nbsp;<span style="color:#009900;"> //红黑树重构</span><br></span></p><p><span style="font-size:18px;"><span style="color:#009900;"><span style="color:#000000;">&nbsp;&nbsp; else {</span></span><br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp; do {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next = e.next;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (<span style="color:#FF0000;">(e.hash &amp; oldCap) == 0</span>) {&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (loTail == null)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loHead = e;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loTail.next = e;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loTail = e;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (hiTail == null)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hiHead = e;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hiTail.next = e;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hiTail = e;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } while ((e = next) != null);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (loTail != null) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loTail.next = null;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newTab[<span style="color:#FF0000;">j</span>] = loHead;&nbsp;&nbsp;<span style="color:#33CC00;"> //下标不变</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (hiTail != null) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hiTail.next = null;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newTab[<span style="color:#FF0000;">j + oldCap</span>] = hiHead;<span style="color:#009900;"> //下标位置移动原来容量大小</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p><p><span style="font-size:18px;">&nbsp;&nbsp; <span style="font-size:18px;"><span style="color:#FF0000;">(e.hash &amp; oldCap) == 0</span></span>写的很赞！！！ 它将原来的链表数据散列到2个下标位置，&nbsp; 概率是当前位置50%，高位位置50%。&nbsp;&nbsp;&nbsp;&nbsp; 你可能有点懵比， 下面举例说明。&nbsp; 上边图中第0个下标有496和896，&nbsp; 假设它俩的hashcode(int型，占4个字节)是</span></p><p><span style="font-size:18px;">resize前：<br></span></p><p><span style="font-size:18px;">496的hashcode: 00000000&nbsp; 00000000&nbsp; 00000000&nbsp; 00<span style="color:#FF0000;">0</span>00000</span></p><p><span style="font-size:18px;">896的hashcode: 01010000&nbsp; 01100000&nbsp; 10000000&nbsp; 00<span style="color:#CC0000;">1</span>00000</span></p><p><span style="font-size:18px;">oldCap是16:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00000000&nbsp; 00000000&nbsp; 00000000&nbsp; 00010000<br></span></p><p><span style="font-size:18px;">&nbsp;&nbsp;&nbsp; <span style="font-size:18px;"><span style="font-size:18px;"><span style="color:#FF0000;"><span style="color:#000000;">496和896对应的</span>e.hash &amp; oldCap</span></span></span>的值为0， 即下标都是第0个。</span></p><p><span style="font-size:18px;"><br></span></p><p><span style="font-size:18px;">resize后：</span></p><p><span style="font-size:18px;"></span></p><p><span style="font-size:18px;">496的hashcode: 00000000&nbsp; 00000000&nbsp; 00000000&nbsp; 00<span style="color:#FF0000;">0</span>00000</span></p><p><span style="font-size:18px;">896的hashcode: 01010000&nbsp; 01100000&nbsp; 10000000&nbsp; 00<span style="color:#CC0000;">1</span>00000</span></p><span style="font-size:18px;">oldCap是32:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00000000&nbsp; 00000000&nbsp; 00000000&nbsp; 00100000</span><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;<span style="font-size:18px;"><span style="font-size:18px;"><span style="color:#FF0000;"><span style="color:#000000;">496和896对应的</span>e.hash &amp; oldCap</span></span></span>的值为0和1， 即下标都是第0个和第16个。</span></span></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="font-size:18px;">&nbsp;&nbsp; 看明白了吗？&nbsp;&nbsp; 因为hashcode的第n位是0/1的概率相同， 理论上链表的数据会均匀分布到当前下标或高位数组对应下标。</span></span></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 回顾JDK1.7的HashMap，在扩容时会rehash即每个entry的位置都要再计算一遍，&nbsp; 性能不好呀， 所以JDK1.8做了这个优化。<br></span></span></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 再回到文章最开始的问题， HashMap为什么用&amp;得到下标，而不是%？&nbsp;&nbsp; 如果使用了取模%， 那么在容量变为2倍时， 需要rehash确定每个链表元素的位置。<br></span></span></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp; 很佩服HashMap的作者呀，&nbsp; 大师在运算符的使用上都是这么考究！！！</span></span><br></span></p><p><span style="font-size:18px;"><span style="font-size:18px;"><span style="font-size:18px;"><br></span></span></span></p><p><span style="font-size:18px;">PS: <span style="color:#ff0000;"><strong>顺便说一下ArrayList， 初始容量是10个， 每次扩容是原来的1.5倍。</strong></span></span></p><br>                                    </div>********
+<p>&nbsp;&nbsp; git add XX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 把xx文件添加到暂存区去。</p>
+
+<p>&nbsp;&nbsp; git commit –m “XX”&nbsp; 提交文件 –m 后面的是注释。</p>
+
+<p>&nbsp;&nbsp; git status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看仓库状态</p>
+
+<p>&nbsp;&nbsp; git diff&nbsp; XX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看XX文件修改了那些内容</p>
+
+<p>&nbsp;&nbsp; git log&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看历史记录</p>
+
+<p>&nbsp;&nbsp; git reset&nbsp; –hard HEAD^ 或者 git reset&nbsp; –hard HEAD~ 回退到上一个版本</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (如果想回退到100个版本，使用git reset –hard HEAD~100 )</p>
+
+<p>&nbsp;&nbsp; cat XX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看XX文件内容</p>
+
+<p>&nbsp;&nbsp; git reflog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 查看历史记录的版本号id</p>
+
+<p>&nbsp;&nbsp; git checkout — XX&nbsp; 把XX文件在工作区的修改全部撤销。</p>
+
+<p>&nbsp;&nbsp; git rm XX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 删除XX文件</p>
+
+<p>&nbsp;&nbsp; git remote add origin&nbsp;<a href="https://github.com/ev-power/XiaoYong" rel="noopener" data-token="0953ea3b88640558f4d7fa1d99992485" target="_blank">https://github.com/AYJCSGM/-.git</a>&nbsp;关联一个远程库</p>
+
+<p>&nbsp;&nbsp; git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库</p>
+
+<p>&nbsp; &nbsp;git clone&nbsp;<a href="https://github.com/ev-power/XiaoYong" rel="noopener" data-token="0953ea3b88640558f4d7fa1d99992485" target="_blank">https://github.com/AYJCSGM/-.git</a>&nbsp; 从远程库中克隆</p>
+
+<p>&nbsp; &nbsp;git checkout –b dev&nbsp; 创建dev分支 并切换到dev分支上</p>
+
+<p>&nbsp; &nbsp;git branch&nbsp; 查看当前所有的分支</p>
+
+<p>&nbsp; &nbsp;git checkout master 切换回master分支</p>
+
+<p>&nbsp; &nbsp;git merge dev&nbsp; &nbsp;&nbsp;在当前的分支上合并dev分支</p>
+
+<p>&nbsp; &nbsp;git branch –d dev 删除dev分支</p>
+
+<p>&nbsp; &nbsp;git branch name&nbsp; 创建分支</p>
+
+<p>&nbsp; &nbsp;git stash 把当前的工作隐藏起来 等以后恢复现场后继续工作</p>
+
+<p>&nbsp; &nbsp;git stash list 查看所有被隐藏的文件列表</p>
+
+<p>&nbsp; &nbsp;git stash apply 恢复被隐藏的文件，但是内容不删除</p>
+
+<p>&nbsp; &nbsp;git stash drop 删除文件</p>
+
+<p>&nbsp; &nbsp;git stash pop 恢复文件的同时 也删除文件</p>
+
+<p>&nbsp; &nbsp;git remote 查看远程库的信息</p>
+
+<p>&nbsp; &nbsp;git remote –v 查看远程库的详细信息</p>
+
+<p>&nbsp; &nbsp;git push origin master&nbsp; Git会把master分支推送到远程库对应的远程分支上 &nbsp; &nbsp;&nbsp;</p>
+
+
+<blockquote>
+<p>参考<a href="http://www.cnblogs.com/tugenhua0707/p/4050072.html" target="_blank" rel="noopener">http://www.cnblogs.com/tugenhua0707/p/4050072.html</a></p>
+</blockquote>
+</ol></li></ol></ul></div></div>
     
 
     
@@ -360,7 +1061,7 @@ Key的hash值通过hash值来确定存放的地址。</code></pre><figure class=
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="ayjcsgm.github.io/2019/10/03/HashMap源码分析-JDK1-8/" title="HashMap源码分析(JDK1.8)" target="_blank">ayjcsgm.github.io/2019/10/03/HashMap源码分析-JDK1-8/</a>
+          <a href="ayjcsgm.github.io/2019/10/18/Git教程/" title="Git教程" target="_blank">ayjcsgm.github.io/2019/10/18/Git教程/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -379,7 +1080,7 @@ Key的hash值通过hash值来确定存放的地址。</code></pre><figure class=
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
@@ -435,7 +1136,7 @@ Key的hash值通过hash值来确定存放的地址。</code></pre><figure class=
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http:ayjcsgm.github.io/2019/10/03/HashMap源码分析-JDK1-8/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http:ayjcsgm.github.io/2019/10/18/Git教程/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -450,18 +1151,9 @@ Key的hash值通过hash值来确定存放的地址。</code></pre><figure class=
 
 <nav id="article-nav">
   
-    <a href="/2019/10/04/操作系统面试问题集锦/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          操作系统面试问题集锦
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/02/LinkedList类/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LinkedList类</div>
+    <a href="/2019/10/18/面试总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面试总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -502,9 +1194,9 @@ Key的hash值通过hash值来确定存放的地址。</code></pre><figure class=
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "HashMap源码分析(JDK1.8)" -->
+    <!-- id: "Git教程" -->
     var gitment = new Gitment({
-      id: "20191003155529",
+      id: "20191018162105",
       owner: 'AYJCSGM',
       repo: 'AYJCSGM.github.io',
       oauth: {
