@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20180411154851675">
 <meta property="og:image" content="http://static.zybuluo.com/Rico123/oib9kuqar0gw6v6gna1tdw44/Mysql%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">
 <meta property="og:image" content="http://static.zybuluo.com/Rico123/8z3mtyozm1bh1gluttrahdri/%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0.png">
-<meta property="og:updated_time" content="2019-10-23T09:37:07.730Z">
+<meta property="og:updated_time" content="2019-10-23T09:43:26.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库面试问题集锦">
 <meta name="twitter:description" content="1、数据库范式   第一范式：数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项。eg:【联系人】（姓名，性别，电话），一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF；">
@@ -406,14 +406,13 @@ B+树的结构：
 <li>在组合索引中不能有列的值为NULL，如果有，那么这一列对组合索引就是无效的。</li>
 <li>在一个SELECT语句中，索引只能使用一次，如果在WHERE中使用了，那么在ORDER BY中就不要用了。</li>
 <li>LIKE操作中，'%aaa%'不会使用索引，也就是索引会失效，但是‘aaa%’可以使用索引。
-</li><li>在索引的列上使用表达式或者函数会使索引失效，例如：select * from users where YEAR(adddate)<2007，将在每个行上进行运算，这将导致索引失效而进行全表扫描，因此我们可以改成：select * from users where adddate<’2007-01-01′。其它通配符同样，也就是说，<font color="red">在查询条件中使用正则表达式时，只有在搜索模板的第一个字符不是通配符的情况下才能使用索引。
-<li>在查询条件中使用不等于，包括<符号、>符号和！=会导致索引失效。特别的是如果对主键索引使用！=则不会使索引失效，如果对主键索引或者整数类型的索引使用<符号或者>符号不会使索引失效。
+</li><li>在索引的列上使用表达式或者函数会使索引失效，例如：select * from users where YEAR(adddate)<2007，将在每个行上进行运算，这将导致索引失效而进行全表扫描，因此我们可以改成：select * from users where adddate<’2007-01-01′。其它通配符同样，也就是说，在查询条件中使用正则表达式时，只有在搜索模板的第一个字符不是通配符的情况下才能使用索引。 <li>在查询条件中使用不等于，包括<符号、>符号和！=会导致索引失效。特别的是如果对主键索引使用！=则不会使索引失效，如果对主键索引或者整数类型的索引使用<符号或者>符号不会使索引失效。
 <li>在查询条件中使用IS NULL或者IS NOT NULL会导致索引失效。
 </li><li>字符串不加单引号会导致索引失效。更准确的说是类型不一致会导致失效，比如字段email是字符串类型的，使用WHERE email=99999 则会导致失败，应该改为WHERE email='99999'。
 </li><li>在查询条件中使用OR连接多个条件会导致索引失效，除非OR链接的每个条件都加上索引，这时应该改为两次查询，然后用UNION ALL连接起来。
 </li><li>如果排序的字段使用了索引，那么select的字段也要是索引字段，否则索引失效。特别的是如果排序的是主键索引则select * 也不会导致索引失效。
 </li><li>尽量不要包括多列排序，如果一定要，最好为这队列构建组合索引；
-</li></符号或者></符号、></li></2007，将在每个行上进行运算，这将导致索引失效而进行全表扫描，因此我们可以改成：select></li></ul>
+</li></符号或者></符号、></2007，将在每个行上进行运算，这将导致索引失效而进行全表扫描，因此我们可以改成：select></li></ul>
 
 
 
