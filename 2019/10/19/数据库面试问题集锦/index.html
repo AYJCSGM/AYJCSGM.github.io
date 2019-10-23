@@ -10,13 +10,13 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="1、数据库范式   第一范式：数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项。eg:【联系人】（姓名，性别，电话），一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF； 第二范式：有主键，保证完全依赖。通俗解释：任意一个字段都只依赖表中的同一个字段">
+  <meta name="description" content="1、数据库范式   第一范式：数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项。eg:【联系人】（姓名，性别，电话），一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF；">
 <meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库面试问题集锦">
 <meta property="og:url" content="ayjcsgm.github.io/2019/10/19/数据库面试问题集锦/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="1、数据库范式   第一范式：数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项。eg:【联系人】（姓名，性别，电话），一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF； 第二范式：有主键，保证完全依赖。通俗解释：任意一个字段都只依赖表中的同一个字段">
+<meta property="og:description" content="1、数据库范式   第一范式：数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项。eg:【联系人】（姓名，性别，电话），一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF；">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://picsum.photos/800/210">
 <meta property="og:image" content="http://static.zybuluo.com/Rico123/z13w648etta3tb90di3btu5b/%E7%B4%A2%E5%BC%95.png">
@@ -27,10 +27,10 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20180411154851675">
 <meta property="og:image" content="http://static.zybuluo.com/Rico123/oib9kuqar0gw6v6gna1tdw44/Mysql%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">
 <meta property="og:image" content="http://static.zybuluo.com/Rico123/8z3mtyozm1bh1gluttrahdri/%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0.png">
-<meta property="og:updated_time" content="2019-10-19T15:50:50.213Z">
+<meta property="og:updated_time" content="2019-10-23T09:31:51.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库面试问题集锦">
-<meta name="twitter:description" content="1、数据库范式   第一范式：数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项。eg:【联系人】（姓名，性别，电话），一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF； 第二范式：有主键，保证完全依赖。通俗解释：任意一个字段都只依赖表中的同一个字段">
+<meta name="twitter:description" content="1、数据库范式   第一范式：数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项。eg:【联系人】（姓名，性别，电话），一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF；">
 <meta name="twitter:image" content="https://picsum.photos/800/210">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
@@ -287,8 +287,8 @@
 
 <ul>
 <li><p>第一范式：数据库表的每一列都是<font color="red"><b>不可分割的原子数据项<b></b></b></font>，而不能是集合，数组，记录等非原子数据项。eg:【联系人】（姓名，性别，电话），一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF；</p></li>
-<li><p>第二范式：<font color="red"><b>有主键，保证完全依赖</b></font>。通俗解释：任意一个字段都只依赖表中的同一个字段 
 <a id="more"></a>
+<li><p>第二范式：<font color="red"><b>有主键，保证完全依赖</b></font>。通俗解释：任意一个字段都只依赖表中的同一个字段 
 。eg:订单明细表【OrderDetail】（OrderID，ProductID，UnitPrice，Discount，Quantity，ProductName），Discount（折扣），Quantity（数量）完全依赖（取决）于主键（OderID，ProductID），而 UnitPrice，ProductName 只依赖于 ProductID，不符合2NF；</p></li>
 <li><p>第三范式：<font color="red"><b>无传递依赖</b></font>(传递依赖：非主键列 A 依赖于非主键列 B，非主键列 B 依赖于主键的情况)，通俗理解：一张表最多只存2层同类型信息 。eg:订单表【Order】（OrderID，OrderDate，CustomerID，CustomerName，CustomerAddr，CustomerCity）主键是（OrderID），CustomerName，CustomerAddr，CustomerCity 直接依赖的是 CustomerID（非主键列），而不是直接依赖于主键，它是通过传递才依赖于主键，所以不符合 3NF。<br>user用户表，字段id,username,password
 <br>role角色表，字段id,name
@@ -298,7 +298,7 @@
 扩展：
 <font color="red"><b>反范式指的是通过增加冗余或重复的数据来提高数据库的读性能。
 例如：在上例中的user_role用户-角色中间表增加字段role_name。
-反范式化可以减少关联查询时，join表的次数。
+反范式化可以减少关联查询时，join表的次数。</b></font>
 
 <hr>
 
@@ -866,7 +866,7 @@ B+树的结构：
   <a href="http://www.cnblogs.com/kerrycode/p/5593204.html" rel="nofollow" target="_blank" data-token="caedd79ca56a9e491dfc7025e94ea13b">MySQL慢查询日志总结</a> <br>
   <a href="http://blog.csdn.net/neosmith/article/details/46811089/" rel="nofollow" target="_blank" data-token="a3fa6cdfcf16bf5e01656a9972982d9b">Spring AOP + Redis缓存数据库查询</a> <br>
   <a href="http://www.cnblogs.com/zhiqian-ali/p/6200874.html" rel="nofollow" target="_blank" data-token="49fa95dd16cbb7de0ad66ac0951b63bd">【MySQL】悲观锁&amp;乐观锁</a> </p>
-  <a href="https://blog.csdn.net/justloveyou_/article/details/78308460#comments" rel="nofollow" target="_blank" data-token="49fa95dd16cbb7de0ad66ac0951b63bd">数据库面试</a> <p></p></blockquote></font></li></b></font>
+  <a href="https://blog.csdn.net/justloveyou_/article/details/78308460#comments" rel="nofollow" target="_blank" data-token="49fa95dd16cbb7de0ad66ac0951b63bd">数据库面试</a> <p></p></blockquote></font></li>
     
 
     
