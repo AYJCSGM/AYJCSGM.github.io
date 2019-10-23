@@ -6,20 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="ayjcsgm.github.io">
-  <title>Tag: SQL | HQP的个人博客</title>
+  <title>Nginx的安装 | HQP的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Living Programming Thinking">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HQP的个人博客">
-<meta property="og:url" content="ayjcsgm.github.io/tags/SQL/index.html">
+  <meta name="description" content="1、准备工作（1）打开虚拟机，使用远程连接工具连接 linux 操作系统（2）到 nginx 官网下载软件 http://nginx.org/ （nginx-1.12.2.tar.gz） 2、开始进行 nginx 安装">
+<meta name="keywords" content="Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx的安装">
+<meta property="og:url" content="ayjcsgm.github.io/2019/10/23/Nginx的安装/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="Living Programming Thinking">
+<meta property="og:description" content="1、准备工作（1）打开虚拟机，使用远程连接工具连接 linux 操作系统（2）到 nginx 官网下载软件 http://nginx.org/ （nginx-1.12.2.tar.gz） 2、开始进行 nginx 安装">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://picsum.photos/800/211">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191023164738708.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-10-23T08:59:34.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HQP的个人博客">
-<meta name="twitter:description" content="Living Programming Thinking">
+<meta name="twitter:title" content="Nginx的安装">
+<meta name="twitter:description" content="1、准备工作（1）打开虚拟机，使用远程连接工具连接 linux 操作系统（2）到 nginx 官网下载软件 http://nginx.org/ （nginx-1.12.2.tar.gz） 2、开始进行 nginx 安装">
+<meta name="twitter:image" content="https://picsum.photos/800/211">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -217,108 +222,297 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Nginx的安装" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/10/15/SQL优化/" class="archive-article-date">
-        <time datetime="2019-10-15T08:29:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/10/15/SQL优化/" target="_blank">SQL优化</a>
   
+    <h1 class="article-title" itemprop="name">
+      Nginx的安装
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/10/23/Nginx的安装/" class="archive-article-date">
+        <time datetime="2019-10-23T08:58:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">644字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><img src="https://picsum.photos/800/211" alt></p>
+<h3 id="1、准备工作"><a href="#1、准备工作" class="headerlink" title="1、准备工作"></a>1、准备工作</h3><p>（1）打开虚拟机，使用远程连接工具连接 linux 操作系统<br>（2）到 nginx 官网下载软件 <a href="http://nginx.org/" target="_blank" rel="noopener">http://nginx.org/</a> （nginx-1.12.2.tar.gz）</p>
+<h3 id="2、开始进行-nginx-安装"><a href="#2、开始进行-nginx-安装" class="headerlink" title="2、开始进行 nginx 安装"></a>2、开始进行 nginx 安装</h3> <a id="more"></a>
+<p>（1）安装 pcre 依赖 第一步 先<code>cd /usr/src</code>然后联网下载 pcre 压缩文件依赖 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p> 第二步 解压压缩文件 使用命令 tar –xvf pcre-8.37.tar.gz </p>
+<p>第三步./configure 完成后，回到 pcre 目录下执行 make，最后执行 make install </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">如果报错make: *** No targets specified and no makefile”</span><br><span class="line">错误不在make，在于上一步./configure。并未完全配置好对应的make所需要的文件。</span><br><span class="line"></span><br><span class="line">请尝试先安装依赖:</span><br><span class="line"></span><br><span class="line">yum -y install gcc gcc-c++ autoconf automake</span><br><span class="line"></span><br><span class="line">yum -y install zlib zlib-devel openssl openssl-devel pcre pcre-devel （安装依赖zlib、openssl和pcre）</span><br><span class="line"></span><br><span class="line">在执行./configure命令。</span><br><span class="line"></span><br><span class="line">问题成功解决，可以继续执行make 和 make install命令了。</span><br></pre></td></tr></table></figure>
+
+<p>（2）安装 nginx </p>
+<ul>
+<li>使用命令解压  </li>
+<li>./configure </li>
+<li>make &amp;&amp; make install </li>
+</ul>
+<p>进入目录 /usr/local/nginx/sbin/nginx 启动服务 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">启动nginx提示：</span><br><span class="line">error <span class="keyword">while</span> loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory</span><br><span class="line">意思是找不到libpcre.so.1这个模块，而导致启动失败。</span><br><span class="line">经过搜索资料，发现部分linux系统存有的通病。要解决这个方法非常容易</span><br><span class="line"></span><br><span class="line">如果是32位系统</span><br><span class="line"></span><br><span class="line">[root@lee ~]<span class="comment">#  ln -s /usr/local/lib/libpcre.so.1 /lib</span></span><br><span class="line"></span><br><span class="line">如果是64位系统</span><br><span class="line"></span><br><span class="line">[root@lee ~]<span class="comment">#  ln -s /usr/local/lib/libpcre.so.1 /lib64</span></span><br><span class="line"></span><br><span class="line">然后在启动nginx就OK了</span><br></pre></td></tr></table></figure>
+
+<p>（3）在Windows浏览器中输入自己本机ip，如果能看见这项下面这张图片。<img src="https://img-blog.csdnimg.cn/20191023164738708.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在 windows 系统中访问 linux 中 nginx，默认不能访问的，因为防火墙问题 （1）关闭防火墙 （2）开放访问的端口号，80 端口 </span><br><span class="line"> </span><br><span class="line">查看开放的端口号 firewall-cmd --list-all </span><br><span class="line"> </span><br><span class="line">设置开放的端口号 firewall-cmd --add-service=http –permanent firewall-cmd --add-port=80/tcp --permanent </span><br><span class="line"> </span><br><span class="line">重启防火墙 firewall-cmd –reload</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、Nginx-的常用的命令"><a href="#3、Nginx-的常用的命令" class="headerlink" title="3、Nginx 的常用的命令"></a>3、Nginx 的常用的命令</h3><ul>
+<li><p>进入 nginx 目录中 cd  /usr/local/nginx/sbin </p>
+</li>
+<li><p>查看 nginx 版本号  ./nginx -v </p>
+</li>
+</ul>
+<ul>
+<li><p>启动 nginx  ./nginx </p>
+</li>
+<li><p>停止 nginx  ./nginx  -s  stop </p>
+</li>
+<li><p>重新加载 nginx  ./nginx -s reload </p>
+<h3 id="4、Nginx-的配置文件"><a href="#4、Nginx-的配置文件" class="headerlink" title="4、Nginx 的配置文件"></a>4、Nginx 的配置文件</h3><p>1、nginx 配置文件位置 </p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>2、配置文件中的内容 包含三部分内容 </p>
+<p>（1）全局块：配置服务器整体运行的配置指令 比如 worker_processes  1;处理并发数的配置 </p>
+<p>（2）events 块：影响 Nginx 服务器与用户的网络连接 比如 worker_connections  1024; 支持的最大连接数为 1024 </p>
+<p>（3）http 块 还包含两部分： http 全局块 server 块 </p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/wechat.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Huangqiuping
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="ayjcsgm.github.io/2019/10/23/Nginx的安装/" title="Nginx的安装" target="_blank">ayjcsgm.github.io/2019/10/23/Nginx的安装/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http:ayjcsgm.github.io/2019/10/23/Nginx的安装/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/10/01/SQL语句测试题带答案/" class="archive-article-date">
-        <time datetime="2019-10-01T07:15:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/19/数据库面试问题集锦/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库面试问题集锦</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/10/01/SQL语句测试题带答案/" target="_blank">SQL语句测试题带答案</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
+
+
+
+
   
+  <div id="gitment-ctn"></div>
   
-    </div></section>
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
+  
+  <script>
+    <!-- id: "Nginx的安装" -->
+    var gitment = new Gitment({
+      id: "20191023165819",
+      owner: 'AYJCSGM',
+      repo: 'AYJCSGM.github.io',
+      oauth: {
+        client_id: '0ccdc54978d553a913a2',
+        client_secret: 'c66d2d1f59d2ebd73204bfd8bd5c5ee3053a2748',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
+
+
   
 
-    
 
 
           </div>
@@ -359,9 +553,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
