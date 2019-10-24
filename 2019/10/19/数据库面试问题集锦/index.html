@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20180411154851675">
 <meta property="og:image" content="http://static.zybuluo.com/Rico123/oib9kuqar0gw6v6gna1tdw44/Mysql%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96">
 <meta property="og:image" content="http://static.zybuluo.com/Rico123/8z3mtyozm1bh1gluttrahdri/%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0.png">
-<meta property="og:updated_time" content="2019-10-23T09:43:26.750Z">
+<meta property="og:updated_time" content="2019-10-24T06:22:50.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库面试问题集锦">
 <meta name="twitter:description" content="1、数据库范式   第一范式：数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项。eg:【联系人】（姓名，性别，电话），一个联系人有家庭电话和公司电话，那么这种表结构设计就没有达到 1NF；">
@@ -493,7 +493,7 @@ B+树的结构：
 
 <br>
 <br>
-<font color="red">*使用主索引的时候，更适合使用聚簇索引，因为聚簇索引只需要查找一次，而非聚簇索引在查到数据的地址后，还要进行一次I/O查找数据。
+<font color="red">*使用主索引的时候，更适合使用聚簇索引，因为聚簇索引只需要查找一次，而非聚簇索引在查到数据的地址后，还要进行一次I/O查找数据。</font>
 
 <p><font color="red">*因为聚簇辅助索引存储的是主键的键值，因此可以在数据行移动或者页分裂的时候降低成本，因为这时不用维护辅助索引。但是由于主索引存储的是数据本身，因此聚簇索引会占用更多的空间。</font></p>
 <p><font color="red">*聚簇索引在插入新数据的时候比非聚簇索引慢很多，因为插入新数据时需要检测主键是否重复，这需要遍历主索引的所有叶节点，而非聚簇索引的叶节点保存的是数据地址，占用空间少，因此分布集中，查询的时候I/O更少，但聚簇索引的主索引中存储的是数据本身，数据占用空间大，分布范围更大，可能占用好多的扇区，因此需要更多次I/O才能遍历完毕。</font></p>
@@ -865,7 +865,7 @@ B+树的结构：
   <a href="http://www.cnblogs.com/kerrycode/p/5593204.html" rel="nofollow" target="_blank" data-token="caedd79ca56a9e491dfc7025e94ea13b">MySQL慢查询日志总结</a> <br>
   <a href="http://blog.csdn.net/neosmith/article/details/46811089/" rel="nofollow" target="_blank" data-token="a3fa6cdfcf16bf5e01656a9972982d9b">Spring AOP + Redis缓存数据库查询</a> <br>
   <a href="http://www.cnblogs.com/zhiqian-ali/p/6200874.html" rel="nofollow" target="_blank" data-token="49fa95dd16cbb7de0ad66ac0951b63bd">【MySQL】悲观锁&amp;乐观锁</a> </p>
-  <a href="https://blog.csdn.net/justloveyou_/article/details/78308460#comments" rel="nofollow" target="_blank" data-token="49fa95dd16cbb7de0ad66ac0951b63bd">数据库面试</a> <p></p></blockquote></font></li>
+  <a href="https://blog.csdn.net/justloveyou_/article/details/78308460#comments" rel="nofollow" target="_blank" data-token="49fa95dd16cbb7de0ad66ac0951b63bd">数据库面试</a> <p></p></blockquote></li>
     
 
     
