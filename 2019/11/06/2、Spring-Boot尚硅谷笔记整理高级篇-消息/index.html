@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="ayjcsgm.github.io">
-  <title>2、Spring Boot尚硅谷笔记整理高级篇-消息 | HQP的个人博客</title>
+  <title>2、Spring Boot笔记整理高级篇-消息 | HQP的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="二、Spring Boot与消息JMS、AMQP、RabbitMQ">
+  <meta name="description" content="二、Spring Boot与消息JMS、AMQP、RabbitMQ 一、概述">
 <meta name="keywords" content="Spring Boot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2、Spring Boot尚硅谷笔记整理高级篇-消息">
+<meta property="og:title" content="2、Spring Boot笔记整理高级篇-消息">
 <meta property="og:url" content="ayjcsgm.github.io/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="二、Spring Boot与消息JMS、AMQP、RabbitMQ">
+<meta property="og:description" content="二、Spring Boot与消息JMS、AMQP、RabbitMQ 一、概述">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://picsum.photos/800/224">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191106170731577.png">
@@ -32,10 +32,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191106171826452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191106171847634.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191106172126261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-06T09:27:38.157Z">
+<meta property="og:updated_time" content="2019-11-08T10:43:43.037Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2、Spring Boot尚硅谷笔记整理高级篇-消息">
-<meta name="twitter:description" content="二、Spring Boot与消息JMS、AMQP、RabbitMQ">
+<meta name="twitter:title" content="2、Spring Boot笔记整理高级篇-消息">
+<meta name="twitter:description" content="二、Spring Boot与消息JMS、AMQP、RabbitMQ 一、概述">
 <meta name="twitter:image" content="https://picsum.photos/800/224">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
@@ -241,7 +241,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      2、Spring Boot尚硅谷笔记整理高级篇-消息
+      2、Spring Boot笔记整理高级篇-消息
     </h1>
   
 
@@ -289,8 +289,8 @@
     
     <p><img src="https://picsum.photos/800/224" alt></p>
 <h1 id="二、Spring-Boot与消息"><a href="#二、Spring-Boot与消息" class="headerlink" title="二、Spring Boot与消息"></a>二、Spring Boot与消息</h1><p><strong>JMS、AMQP、RabbitMQ</strong></p>
-<a id="more"></a>
-<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><ol>
+<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><a id="more"></a>
+<ol>
 <li>大多应用中，可通过消息服务中间件来提升系统异步通信、扩展解耦能力 </li>
 <li>消息服务中两个重要概念： 消息代理（message broker）和目的地（destination） 当消息发送者发送消息以后，将由消息代理接管，消息代理保证消息传递到指定目 的地。 </li>
 <li>消息队列主要有两种形式的目的地<ol>
@@ -388,7 +388,7 @@ topic 交换器通过模式匹配分配消息的路由键属 性，将路由键�
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="ayjcsgm.github.io/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/" title="2、Spring Boot尚硅谷笔记整理高级篇-消息" target="_blank">ayjcsgm.github.io/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/</a>
+          <a href="ayjcsgm.github.io/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/" title="2、Spring Boot笔记整理高级篇-消息" target="_blank">ayjcsgm.github.io/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -478,9 +478,18 @@ topic 交换器通过模式匹配分配消息的路由键属 性，将路由键�
 
 <nav id="article-nav">
   
+    <a href="/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          3、Spring Boot笔记整理高级篇-检索
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">1、Spring Boot尚硅谷笔记整理高级篇-缓存</div>
+      <div class="article-nav-title">1、Spring Boot笔记整理高级篇-缓存</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -521,7 +530,7 @@ topic 交换器通过模式匹配分配消息的路由键属 性，将路由键�
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "2、Spring Boot尚硅谷笔记整理高级篇-消息" -->
+    <!-- id: "2、Spring Boot笔记整理高级篇-消息" -->
     var gitment = new Gitment({
       id: "20191106172615",
       owner: 'AYJCSGM',
