@@ -6,23 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="ayjcsgm.github.io">
-  <title>HQP的个人博客</title>
+  <title>简单明了的介绍下TreeMap | HQP的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="Living Programming Thinking">
-  
-  <meta name="description" content="Living Programming Thinking">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HQP的个人博客">
-<meta property="og:url" content="ayjcsgm.github.io/page/2/index.html">
+  <meta name="description" content="TreeMap简介在Map集合框架中，除了HashMap以外，TreeMap也是常用到的集合对象之一。与HashMap相比，TreeMap是一个能比较元素大小的Map集合，会对传入的key进行了大小排序。其中，可以使用元素的自然顺序，也可以使用集合中自定义的比较器来进行排序；不同于HashMap的哈希映射，TreeMap实现了红黑树的结构，形成了一颗二叉树。">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单明了的介绍下TreeMap">
+<meta property="og:url" content="ayjcsgm.github.io/2019/12/11/简单明了的介绍下TreeMap/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="Living Programming Thinking">
+<meta property="og:description" content="TreeMap简介在Map集合框架中，除了HashMap以外，TreeMap也是常用到的集合对象之一。与HashMap相比，TreeMap是一个能比较元素大小的Map集合，会对传入的key进行了大小排序。其中，可以使用元素的自然顺序，也可以使用集合中自定义的比较器来进行排序；不同于HashMap的哈希映射，TreeMap实现了红黑树的结构，形成了一颗二叉树。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://picsum.photos/800/192">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191211103308557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-12-11T12:34:38.277Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HQP的个人博客">
-<meta name="twitter:description" content="Living Programming Thinking">
+<meta name="twitter:title" content="简单明了的介绍下TreeMap">
+<meta name="twitter:description" content="TreeMap简介在Map集合框架中，除了HashMap以外，TreeMap也是常用到的集合对象之一。与HashMap相比，TreeMap是一个能比较元素大小的Map集合，会对传入的key进行了大小排序。其中，可以使用元素的自然顺序，也可以使用集合中自定义的比较器来进行排序；不同于HashMap的哈希映射，TreeMap实现了红黑树的结构，形成了一颗二叉树。">
+<meta name="twitter:image" content="https://picsum.photos/800/192">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -220,47 +222,132 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-学习ArrayList看这篇就够了" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-简单明了的介绍下TreeMap" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/09/学习ArrayList看这篇就够了/" target="_blank">学习ArrayList看这篇就够了</a>
-  
+    <h1 class="article-title" itemprop="name">
+      简单明了的介绍下TreeMap
     </h1>
   
 
 
   
   
-<a href="/2019/12/09/学习ArrayList看这篇就够了/" class="archive-article-date">
-        <time datetime="2019-12-09T12:58:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-09</time>
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/12/11/简单明了的介绍下TreeMap/" class="archive-article-date">
+        <time datetime="2019-12-11T12:29:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-11</time>
 </a>
 
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">7分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/199" alt></p>
-<h1 id="ArrayList简介"><a href="#ArrayList简介" class="headerlink" title="ArrayList简介"></a>ArrayList简介</h1><p>1、ArrayList是一个数组队列，相当于动态数组。与Java中的数组相比，它的容量能动态增长。它继承于AbstractList，实现了List，RandomAccess，Cloneable，java.io.Serializable这些接口。<br>2、ArrayList与Collection的关系如下图，实现代表继承，虚线代表实现接口：</p>
-    
-    <a class="article-more-a" href="/2019/12/09/学习ArrayList看这篇就够了/#more">more >></a>
-    
-    
+    <p><img src="https://picsum.photos/800/192" alt></p>
+<h1 id="TreeMap简介"><a href="#TreeMap简介" class="headerlink" title="TreeMap简介"></a>TreeMap简介</h1><p>在Map集合框架中，除了HashMap以外，TreeMap也是常用到的集合对象之一。<br>与HashMap相比，TreeMap是一个能比较元素大小的Map集合，会对传入的key进行了大小排序。其中，可以使用元素的自然顺序，也可以使用集合中自定义的比较器来进行排序；<br>不同于HashMap的哈希映射，TreeMap实现了红黑树的结构，形成了一颗二叉树。</p>
+<a id="more"></a> 
+
+<p><img src="https://img-blog.csdnimg.cn/20191211103308557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>TreeMap继承于AbstractMap，实现了Map, Cloneable, NavigableMap, Serializable接口。<br>(1)TreeMap 继承于AbstractMap，而AbstractMap实现了Map接口，并实现了Map接口中定义的方法，减少了其子类继承的复杂度；<br>(2)TreeMap 实现了Map接口，成为Map框架中的一员，可以包含着key-value形式的元素；<br>(3)TreeMap 实现了NavigableMap接口，意味着拥有了更强的元素搜索能力；<br>(4)TreeMap 实现了Cloneable接口，实现了clone()方法，可以被克隆；<br>(5)TreeMap 实现了Java.io.Serializable接口，支持序列化操作；<br>TreeMap具有如下特点：</p>
+<ul>
+<li>不允许出现重复的key；</li>
+<li>可以插入null键，null值；</li>
+<li>可以对元素进行排序；</li>
+<li>无序集合（插入和遍历顺序不一致）；</li>
+</ul>
+<h1 id="TreeMap基本操作"><a href="#TreeMap基本操作" class="headerlink" title="TreeMap基本操作"></a>TreeMap基本操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">public class TreeMapTest &#123;</span><br><span class="line">    public static void main(String[] agrs)&#123;</span><br><span class="line">        //创建TreeMap对象：</span><br><span class="line">        TreeMap&lt;String,Integer&gt; treeMap = new TreeMap&lt;String,Integer&gt;();</span><br><span class="line">        System.out.println(&quot;初始化后,TreeMap元素个数为：&quot; + treeMap.size());</span><br><span class="line"></span><br><span class="line">        //新增元素:</span><br><span class="line">        treeMap.put(&quot;hello&quot;,1);</span><br><span class="line">        treeMap.put(&quot;world&quot;,2);</span><br><span class="line">        treeMap.put(&quot;my&quot;,3);</span><br><span class="line">        treeMap.put(&quot;name&quot;,4);</span><br><span class="line">        treeMap.put(&quot;is&quot;,5);</span><br><span class="line">        treeMap.put(&quot;huangqiuping&quot;,6);</span><br><span class="line">        treeMap.put(&quot;i&quot;,6);</span><br><span class="line">        treeMap.put(&quot;am&quot;,6);</span><br><span class="line">        treeMap.put(&quot;a&quot;,6);</span><br><span class="line">        treeMap.put(&quot;developer&quot;,6);</span><br><span class="line">        System.out.println(&quot;添加元素后,TreeMap元素个数为：&quot; + treeMap.size());</span><br><span class="line"></span><br><span class="line">        //遍历元素：</span><br><span class="line">        Set&lt;Map.Entry&lt;String,Integer&gt;&gt; entrySet = treeMap.entrySet();</span><br><span class="line">        for(Map.Entry&lt;String,Integer&gt; entry : entrySet)&#123;</span><br><span class="line">            String key = entry.getKey();</span><br><span class="line">            Integer value = entry.getValue();</span><br><span class="line">            System.out.println(&quot;TreeMap元素的key:&quot;+key+&quot;,value:&quot;+value);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //获取所有的key：</span><br><span class="line">        Set&lt;String&gt; keySet = treeMap.keySet();</span><br><span class="line">        for(String strKey:keySet)&#123;</span><br><span class="line">            System.out.println(&quot;TreeMap集合中的key:&quot;+strKey);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //获取所有的value:</span><br><span class="line">        Collection&lt;Integer&gt; valueList = treeMap.values();</span><br><span class="line">        for(Integer intValue:valueList)&#123;</span><br><span class="line">            System.out.println(&quot;TreeMap集合中的value:&quot; + intValue);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //获取元素：</span><br><span class="line">        //获取集合内元素key为&quot;huangqiuping&quot;的值</span><br><span class="line">        Integer getValue = treeMap.get(&quot;huangqiuping&quot;);</span><br><span class="line">        //获取集合内第一个元素</span><br><span class="line">        String firstKey = treeMap.firstKey();</span><br><span class="line">        //获取集合内最后一个元素</span><br><span class="line">        String lastKey =treeMap.lastKey();</span><br><span class="line">        //获取集合内的key小于&quot;huangqiuping&quot;的key</span><br><span class="line">        String lowerKey =treeMap.lowerKey(&quot;huangqiuping&quot;);</span><br><span class="line">        //获取集合内的key大于等于&quot;huangqiuping&quot;的key</span><br><span class="line">        String ceilingKey =treeMap.ceilingKey(&quot;huangqiuping&quot;);</span><br><span class="line">        //获取集合的key从&quot;a&quot;到&quot;huangqiuping&quot;的元素</span><br><span class="line">        SortedMap&lt;String,Integer&gt; sortedMap =treeMap.subMap(&quot;a&quot;,&quot;my&quot;);</span><br><span class="line"></span><br><span class="line">        //删除元素：</span><br><span class="line">        //删除集合中key为&quot;huangqiuping&quot;的元素</span><br><span class="line">        Integer removeValue = treeMap.remove(&quot;huangqiuping&quot;);</span><br><span class="line">        //清空集合元素：</span><br><span class="line">        treeMap.clear(); </span><br><span class="line"></span><br><span class="line">        //判断方法：</span><br><span class="line">        //判断集合是否为空</span><br><span class="line">        boolean isEmpty = treeMap.isEmpty();</span><br><span class="line">        //判断集合的key中是否包含&quot;huangqiuping&quot;</span><br><span class="line">        boolean isContain = treeMap.containsKey(&quot;huangqiuping&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="TreeMap排序"><a href="#TreeMap排序" class="headerlink" title="TreeMap排序"></a>TreeMap排序</h1><p>（1）使用元素自然排序<br>在使用自然顺序排序时候，需要区分两种情况：一种是Jdk定义的对象，一种是自己定义的对象；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">public class SortedTest implements Comparable&lt;SortedTest&gt; &#123;</span><br><span class="line">    private int age;</span><br><span class="line">    public SortedTest(int age)&#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    //自定义对象，实现compareTo(T o)方法：</span><br><span class="line">    public int compareTo(SortedTest sortedTest) &#123;</span><br><span class="line">        int num = this.age - sortedTest.getAge();</span><br><span class="line">        //为0时候，两者相同：</span><br><span class="line">        if(num==0)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        //大于0时，传入的参数小：</span><br><span class="line">        &#125;else if(num&gt;0)&#123;</span><br><span class="line">            return 1;</span><br><span class="line">        //小于0时，传入的参数大：</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class TreeMapTest &#123;</span><br><span class="line">    public static void main(String[] agrs)&#123;</span><br><span class="line">        //自然顺序比较</span><br><span class="line">        naturalSort();</span><br><span class="line">    &#125;</span><br><span class="line">     //自然排序顺序：</span><br><span class="line">    public static void naturalSort()&#123;</span><br><span class="line">        //第一种情况：Integer对象</span><br><span class="line">        TreeMap&lt;Integer,String&gt; treeMapFirst = new TreeMap&lt;Integer, String&gt;();</span><br><span class="line">        treeMapFirst.put(1,&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapFirst.put(6,&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapFirst.put(3,&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapFirst.put(10,&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapFirst.put(7,&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapFirst.put(13,&quot;huangqiuping&quot;);</span><br><span class="line">        System.out.println(treeMapFirst.toString());</span><br><span class="line"></span><br><span class="line">        //第二种情况:SortedTest对象</span><br><span class="line">        TreeMap&lt;SortedTest,String&gt; treeMapSecond = new TreeMap&lt;SortedTest, String&gt;();</span><br><span class="line">        treeMapSecond.put(new SortedTest(10),&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapSecond.put(new SortedTest(1),&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapSecond.put(new SortedTest(13),&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapSecond.put(new SortedTest(4),&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapSecond.put(new SortedTest(0),&quot;huangqiuping&quot;);</span><br><span class="line">        treeMapSecond.put(new SortedTest(9),&quot;huangqiuping&quot;);</span><br><span class="line">        System.out.println(treeMapSecond.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在自然顺序比较中，需要让被比较的元素实现Comparable接口，否则在向集合里添加元素时报：”java.lang.ClassCastException: com.huangqiuping.collection.map.SortedTest cannot be cast to java.lang.Comparable”异常；<br>这是因为在调用put()方法时，会将传入的元素转化成Comparable类型对象，所以当你传入的元素没有实现Comparable接口时，就无法转换，遍会报错；<br>（2）使用自定义比较器排序<br>使用自定义比较器排序，需要在创建TreeMap对象时，将自定义比较器对象传入到TreeMap构造方法中；<br>自定义比较器对象，需要实现Comparator接口，并实现比较方法compare(To1,To2)；<br>使用自定义比较器排序的话，被比较的对象无需再实现Comparable接口了；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public class SortedTest &#123;</span><br><span class="line">    private int age;</span><br><span class="line">    public SortedTest(int age)&#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class SortedTestComparator implements Comparator&lt;SortedTest&gt; &#123;</span><br><span class="line">    //自定义比较器：实现compare(To1,To2)方法：</span><br><span class="line">    public int compare(SortedTest sortedTest1, SortedTest sortedTest2) &#123;</span><br><span class="line">        int num = sortedTest1.getAge() - sortedTest2.getAge();</span><br><span class="line">        if(num==0)&#123;//为0时候，两者相同：</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;else if(num&gt;0)&#123;//大于0时，后面的参数小：</span><br><span class="line">            return 1;</span><br><span class="line">        &#125;else&#123;//小于0时，前面的参数小：</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class TreeMapTest &#123;</span><br><span class="line">    public static void main(String[] agrs)&#123;</span><br><span class="line">        //自定义顺序比较</span><br><span class="line">        customSort();</span><br><span class="line">    &#125;</span><br><span class="line">    //自定义排序顺序:</span><br><span class="line">    public static void customSort()&#123;</span><br><span class="line">        TreeMap&lt;SortedTest,String&gt; treeMap = new TreeMap&lt;SortedTest, String&gt;(new SortedTestComparator());</span><br><span class="line">        treeMap.put(new SortedTest(10),&quot;hello&quot;);</span><br><span class="line">        treeMap.put(new SortedTest(21),&quot;my&quot;);</span><br><span class="line">        treeMap.put(new SortedTest(15),&quot;name&quot;);</span><br><span class="line">        treeMap.put(new SortedTest(2),&quot;is&quot;);</span><br><span class="line">        treeMap.put(new SortedTest(1),&quot;huangqiuping&quot;);</span><br><span class="line">        treeMap.put(new SortedTest(7),&quot;world&quot;);</span><br><span class="line">        System.out.println(treeMap.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     
 
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/wechat.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Huangqiuping
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="ayjcsgm.github.io/2019/12/11/简单明了的介绍下TreeMap/" title="简单明了的介绍下TreeMap" target="_blank">ayjcsgm.github.io/2019/12/11/简单明了的介绍下TreeMap/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
     
 
   </div>
@@ -281,16 +368,85 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/09/学习ArrayList看这篇就够了/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http:ayjcsgm.github.io/2019/12/11/简单明了的介绍下TreeMap/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/12/11/简述HashSet的元素唯一机制/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          简述HashSet的元素唯一机制
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/11/解析JDK8中Arrays-sort底层原理及其排序算法的选择/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">解析JDK8中Arrays.sort底层原理及其排序算法的选择</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -311,818 +467,37 @@
 
 
 
-  
-    <article id="post-Java-8-新特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/15/Java-8-新特性/" target="_blank">Java 8 新特性</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/15/Java-8-新特性/" class="archive-article-date">
-        <time datetime="2019-11-15T12:09:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/231" alt><br>Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于 2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。</p>
-    
-    <a class="article-more-a" href="/2019/11/15/Java-8-新特性/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/15/Java-8-新特性/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-8、Spring-Boot笔记整理高级篇-监控" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/8、Spring-Boot笔记整理高级篇-监控/" target="_blank">8、Spring Boot笔记整理高级篇-监控</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/8、Spring-Boot笔记整理高级篇-监控/" class="archive-article-date">
-        <time datetime="2019-11-08T10:39:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/230" alt></p>
-<h1 id="八、Spring-Boot与监控管理"><a href="#八、Spring-Boot与监控管理" class="headerlink" title="八、Spring Boot与监控管理"></a>八、Spring Boot与监控管理</h1><h2 id="一、监控管理"><a href="#一、监控管理" class="headerlink" title="一、监控管理"></a>一、监控管理</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/8、Spring-Boot笔记整理高级篇-监控/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/8、Spring-Boot笔记整理高级篇-监控/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-7、Spring-Boot笔记整理高级篇-热部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/7、Spring-Boot笔记整理高级篇-热部署/" target="_blank">7、Spring Boot笔记整理高级篇-热部署</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/7、Spring-Boot笔记整理高级篇-热部署/" class="archive-article-date">
-        <time datetime="2019-11-08T10:39:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/229" alt></p>
-<h1 id="七、Spring-Boot与开发热部署"><a href="#七、Spring-Boot与开发热部署" class="headerlink" title="七、Spring Boot与开发热部署"></a>七、Spring Boot与开发热部署</h1><p><strong>热部署</strong></p>
-<h2 id="一、热部署"><a href="#一、热部署" class="headerlink" title="一、热部署"></a>一、热部署</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/7、Spring-Boot笔记整理高级篇-热部署/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/7、Spring-Boot笔记整理高级篇-热部署/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-6、Spring-Boot笔记整理高级篇-分布式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/6、Spring-Boot笔记整理高级篇-分布式/" target="_blank">6、Spring Boot笔记整理高级篇-分布式</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/6、Spring-Boot笔记整理高级篇-分布式/" class="archive-article-date">
-        <time datetime="2019-11-08T10:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/228" alt></p>
-<h1 id="六、Spring-Boot与分布式"><a href="#六、Spring-Boot与分布式" class="headerlink" title="六、Spring Boot与分布式"></a>六、Spring Boot与分布式</h1><p><strong>分步式、Dubbo/Zookeeper、Spring Boot/Cloud</strong></p>
-<h2 id="一、分布式应用"><a href="#一、分布式应用" class="headerlink" title="一、分布式应用"></a>一、分布式应用</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/6、Spring-Boot笔记整理高级篇-分布式/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/6、Spring-Boot笔记整理高级篇-分布式/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-5、Spring-Boot笔记整理高级篇-安全" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/5、Spring-Boot笔记整理高级篇-安全/" target="_blank">5、Spring Boot笔记整理高级篇-安全</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/5、Spring-Boot笔记整理高级篇-安全/" class="archive-article-date">
-        <time datetime="2019-11-08T10:38:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/227" alt></p>
-<h1 id="五、Spring-Boot与安全"><a href="#五、Spring-Boot与安全" class="headerlink" title="五、Spring Boot与安全"></a>五、Spring Boot与安全</h1><p><strong>安全、Spring Security</strong></p>
-<h2 id="一、安全"><a href="#一、安全" class="headerlink" title="一、安全"></a>一、安全</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/5、Spring-Boot笔记整理高级篇-安全/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/5、Spring-Boot笔记整理高级篇-安全/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-4、Spring-Boot尚硅谷笔记整理高级篇-任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/4、Spring-Boot尚硅谷笔记整理高级篇-任务/" target="_blank">4、Spring Boot笔记整理高级篇-任务</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/4、Spring-Boot尚硅谷笔记整理高级篇-任务/" class="archive-article-date">
-        <time datetime="2019-11-08T10:37:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/226" alt></p>
-<h1 id="四、Spring-Boot与任务"><a href="#四、Spring-Boot与任务" class="headerlink" title="四、Spring Boot与任务"></a>四、Spring Boot与任务</h1><p><strong>异步任务、定时任务、邮件任务</strong></p>
-<h2 id="一、异步任务"><a href="#一、异步任务" class="headerlink" title="一、异步任务"></a>一、异步任务</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/4、Spring-Boot尚硅谷笔记整理高级篇-任务/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/4、Spring-Boot尚硅谷笔记整理高级篇-任务/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-3、Spring-Boot笔记整理高级篇-检索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/" target="_blank">3、Spring Boot笔记整理高级篇-检索</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/" class="archive-article-date">
-        <time datetime="2019-11-08T10:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/225" alt></p>
-<h1 id="三、Spring-Boot与检索"><a href="#三、Spring-Boot与检索" class="headerlink" title="三、Spring Boot与检索"></a>三、Spring Boot与检索</h1><p><strong>ElasticSearch</strong></p>
-<h2 id="一、检索"><a href="#一、检索" class="headerlink" title="一、检索"></a>一、检索</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2、Spring-Boot尚硅谷笔记整理高级篇-消息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/" target="_blank">2、Spring Boot笔记整理高级篇-消息</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/" class="archive-article-date">
-        <time datetime="2019-11-06T09:26:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/224" alt></p>
-<h1 id="二、Spring-Boot与消息"><a href="#二、Spring-Boot与消息" class="headerlink" title="二、Spring Boot与消息"></a>二、Spring Boot与消息</h1><p><strong>JMS、AMQP、RabbitMQ</strong></p>
-<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2>
-    
-    <a class="article-more-a" href="/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/#more">more >></a>
-    
-    
-
-    
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-    
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/">展开全文 >></a>
-    </p>
-    
 
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
-
-
-
-  
-    <article id="post-1、Spring-Boot尚硅谷笔记整理高级篇-缓存" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
   
+  <div id="gitment-ctn"></div>
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/" target="_blank">1、Spring Boot笔记整理高级篇-缓存</a>
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
   
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/" class="archive-article-date">
-        <time datetime="2019-11-05T14:01:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
-</a>
+  <script>
+    <!-- id: "简单明了的介绍下TreeMap" -->
+    var gitment = new Gitment({
+      id: "20191211202902",
+      owner: 'AYJCSGM',
+      repo: 'AYJCSGM.github.io',
+      oauth: {
+        client_id: '0ccdc54978d553a913a2',
+        client_secret: 'c66d2d1f59d2ebd73204bfd8bd5c5ee3053a2748',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
 
-  
-  
-    
 
   
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/223" alt></p>
-<h1 id="1、Spring-Boot与缓存"><a href="#1、Spring-Boot与缓存" class="headerlink" title="1、Spring Boot与缓存"></a>1、Spring Boot与缓存</h1><pre><code>**JSR-107、Spring缓存抽象、整合Redis**</code></pre><h2 id="一、JSR107"><a href="#一、JSR107" class="headerlink" title="一、JSR107"></a>一、JSR107</h2>
-    
-    <a class="article-more-a" href="/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1162,8 +537,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

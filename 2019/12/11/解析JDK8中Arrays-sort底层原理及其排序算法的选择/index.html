@@ -6,23 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="ayjcsgm.github.io">
-  <title>HQP的个人博客</title>
+  <title>解析JDK8中Arrays.sort底层原理及其排序算法的选择 | HQP的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-    
-    <meta name="keywords" content="Living Programming Thinking">
-  
-  <meta name="description" content="Living Programming Thinking">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HQP的个人博客">
-<meta property="og:url" content="ayjcsgm.github.io/page/2/index.html">
+  <meta name="description" content="暂时网上看过很多JDK8中Arrays.sort的底层原理，有些说是插入排序，有些说是归并排序，也有说大于域值用计数排序法，否则就使用插入排序。。。其实不全对。让我们对着源码分析个究竟：">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解析JDK8中Arrays.sort底层原理及其排序算法的选择">
+<meta property="og:url" content="ayjcsgm.github.io/2019/12/11/解析JDK8中Arrays-sort底层原理及其排序算法的选择/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="Living Programming Thinking">
+<meta property="og:description" content="暂时网上看过很多JDK8中Arrays.sort的底层原理，有些说是插入排序，有些说是归并排序，也有说大于域值用计数排序法，否则就使用插入排序。。。其实不全对。让我们对着源码分析个究竟：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://picsum.photos/800/193">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2dpZi9mRXNXa1ZyU2s1NHB6ZTRjUWRYd002aWJmR3p5cGRwR2hEZmQ3TjZwSlJpY1R6ZmljTlZMSHJUTDJoNjdRNmgyQjk4R2ljMWZyOTZ5Nm50R2liYkRrajMza2lhQS82NDA?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2dpZi9mRXNXa1ZyU2s1NHB6ZTRjUWRYd002aWJmR3p5cGRwR2hwMnNubkZiR0pIZEJvUTJYTEdyTVE5cFZTanZPUE1jOWliQUgxWmh6VXhUZWtjQ0J1U2hOdUR3LzY0MA?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2dpZi9mRXNXa1ZyU2s1NHB6ZTRjUWRYd002aWJmR3p5cGRwR2h4WUtndlFEcVhMbFVTdmZQbE5CQW1saWJkOVRPUkZkY0hhbmRSQ2RYWWF5aWFKeWliYUpBMldybXcvNjQw?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyLm11a2V3YW5nLmNvbS81ZDVkZmMwYTAwMDEwNDcyMDUwMDA1OTMucG5n?x-oss-process=image/format,png">
+<meta property="og:updated_time" content="2019-12-11T12:34:35.001Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HQP的个人博客">
-<meta name="twitter:description" content="Living Programming Thinking">
+<meta name="twitter:title" content="解析JDK8中Arrays.sort底层原理及其排序算法的选择">
+<meta name="twitter:description" content="暂时网上看过很多JDK8中Arrays.sort的底层原理，有些说是插入排序，有些说是归并排序，也有说大于域值用计数排序法，否则就使用插入排序。。。其实不全对。让我们对着源码分析个究竟：">
+<meta name="twitter:image" content="https://picsum.photos/800/193">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -220,47 +225,149 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-
-  
-    <article id="post-学习ArrayList看这篇就够了" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-解析JDK8中Arrays-sort底层原理及其排序算法的选择" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/12/09/学习ArrayList看这篇就够了/" target="_blank">学习ArrayList看这篇就够了</a>
-  
+    <h1 class="article-title" itemprop="name">
+      解析JDK8中Arrays.sort底层原理及其排序算法的选择
     </h1>
   
 
 
   
   
-<a href="/2019/12/09/学习ArrayList看这篇就够了/" class="archive-article-date">
-        <time datetime="2019-12-09T12:58:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-09</time>
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/12/11/解析JDK8中Arrays-sort底层原理及其排序算法的选择/" class="archive-article-date">
+        <time datetime="2019-12-11T12:26:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-11</time>
 </a>
 
   
   
     
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.5k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
+
 
   
   </header>
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/199" alt></p>
-<h1 id="ArrayList简介"><a href="#ArrayList简介" class="headerlink" title="ArrayList简介"></a>ArrayList简介</h1><p>1、ArrayList是一个数组队列，相当于动态数组。与Java中的数组相比，它的容量能动态增长。它继承于AbstractList，实现了List，RandomAccess，Cloneable，java.io.Serializable这些接口。<br>2、ArrayList与Collection的关系如下图，实现代表继承，虚线代表实现接口：</p>
-    
-    <a class="article-more-a" href="/2019/12/09/学习ArrayList看这篇就够了/#more">more >></a>
-    
-    
+    <p><img src="https://picsum.photos/800/193" alt><br>暂时网上看过很多JDK8中Arrays.sort的底层原理，有些说是插入排序，有些说是归并排序，也有说大于域值用计数排序法，否则就使用插入排序。。。其实不全对。让我们对着源码分析个究竟：</p>
+<a id="more"></a> 
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> // Use Quicksort on small arrays</span><br><span class="line"> if (right - left &lt; QUICKSORT_THRESHOLD) &#123;//QUICKSORT_THRESHOLD = 286</span><br><span class="line">    sort(a, left, right, true);</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>数组一进来，会碰到第一个阀值QUICKSORT_THRESHOLD（286），注解上说，小过这个阀值的进入Quicksort （快速排序），其实并不全是，点进去sort(a, left, right, true);方法能看见：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// Use insertion sort on tiny arrays</span><br><span class="line">       if (length &lt; INSERTION_SORT_THRESHOLD) &#123;//INSERTION_SORT_THRESHOLD=47</span><br><span class="line">           if (leftmost) ……</span><br></pre></td></tr></table></figure>
+
+<p>我们看到第二个阀值INSERTION_SORT_THRESHOLD（47），如果元素少于47这个阀值，就用插入排序，往下看确实如此：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">            * Traditional (without sentinel) insertion sort,</span><br><span class="line">            * optimized for server VM, is used in case of</span><br><span class="line">            * the leftmost part.</span><br><span class="line">            */</span><br><span class="line">           for (int i = left, j = i; i &lt; right; j = ++i) &#123;</span><br><span class="line">               int ai = a[i + 1];</span><br><span class="line">               while (ai &lt; a[j]) &#123;</span><br><span class="line">                   a[j + 1] = a[j];</span><br><span class="line">                   if (j-- == left) &#123;</span><br><span class="line">                       break;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">               a[j + 1] = ai;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+
+<p>插入排序动图演示：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2dpZi9mRXNXa1ZyU2s1NHB6ZTRjUWRYd002aWJmR3p5cGRwR2hEZmQ3TjZwSlJpY1R6ZmljTlZMSHJUTDJoNjdRNmgyQjk4R2ljMWZyOTZ5Nm50R2liYkRrajMza2lhQS82NDA?x-oss-process=image/format,png" alt="在这里插入图片描述"><br>元素少于47用插入排序</p>
+<p>至于大过INSERTION_SORT_THRESHOLD（47）的，用一种快速排序的方法：<br>1.从数列中挑出五个元素，称为 “基准”（pivot）；<br>2.重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；<br>3.递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。</p>
+<p>快速排序动图演示：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2dpZi9mRXNXa1ZyU2s1NHB6ZTRjUWRYd002aWJmR3p5cGRwR2hwMnNubkZiR0pIZEJvUTJYTEdyTVE5cFZTanZPUE1jOWliQUgxWmh6VXhUZWtjQ0J1U2hOdUR3LzY0MA?x-oss-process=image/format,png" alt="在这里插入图片描述"></p>
+<p>这是少于阀值QUICKSORT_THRESHOLD（286）的两种情况，至于大于286的，它会进入归并排序（Merge Sort），但在此之前，它有个小动作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// Check if the array is nearly sorted</span><br><span class="line">for (int k = left; k &lt; right; run[count] = k) &#123;</span><br><span class="line">    if (a[k] &lt; a[k + 1]) &#123; // ascending</span><br><span class="line">        while (++k &lt;= right &amp;&amp; a[k - 1] &lt;= a[k]);</span><br><span class="line">    &#125; else if (a[k] &gt; a[k + 1]) &#123; // descending</span><br><span class="line">        while (++k &lt;= right &amp;&amp; a[k - 1] &gt;= a[k]);</span><br><span class="line">        for (int lo = run[count] - 1, hi = k; ++lo &lt; --hi; ) &#123;</span><br><span class="line">            int t = a[lo]; a[lo] = a[hi]; a[hi] = t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123; // equal</span><br><span class="line">        for (int m = MAX_RUN_LENGTH; ++k &lt;= right &amp;&amp; a[k - 1] == a[k]; ) &#123;</span><br><span class="line">            if (--m == 0) &#123;</span><br><span class="line">                sort(a, left, right, true);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * The array is not highly structured,</span><br><span class="line">     * use Quicksort instead of merge sort.</span><br><span class="line">     */</span><br><span class="line">    if (++count == MAX_RUN_COUNT) &#123;</span><br><span class="line">        sort(a, left, right, true);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里主要作用是看他数组具不具备结构：实际逻辑是分组排序，每降序为一个组，像1,9,8,7,6,8。9到6是降序，为一个组，然后把降序的一组排成升序：1,6,7,8,9,8。然后最后的8后面继续往后面找。。。</p>
+<p>每遇到这样一个降序组，++count，当count大于MAX_RUN_COUNT（67），被判断为这个数组不具备结构（也就是这数据时而升时而降），然后送给之前的sort(里面的快速排序)的方法（The array is not highly structured,use Quicksort instead of merge sort.）。</p>
+<p>如果count少于MAX_RUN_COUNT（67）的，说明这个数组还有点结构，就继续往下走下面的归并排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// Determine alternation base for merge</span><br><span class="line">byte odd = 0;    </span><br><span class="line">for (int n = 1; (n &lt;&lt;= 1) &lt; count;odd ^= 1);</span><br></pre></td></tr></table></figure>
+
+<p>从这里开始，正式进入归并排序（Merge Sort）！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// Merging</span><br><span class="line">for (int last; count &gt; 1; count = last) &#123;</span><br><span class="line">    for (int k = (last = 0) + 2; k &lt;= count; k += 2) &#123;</span><br><span class="line">        int hi = run[k], mi = run[k - 1];</span><br><span class="line">        for (int i = run[k - 2], p = i, q = mi; i &lt; hi; ++i) &#123;</span><br><span class="line">            if (q &gt;= hi || p &lt; mi &amp;&amp; a[p + ao] &lt;= a[q + ao]) &#123;</span><br><span class="line">                b[i + bo] = a[p++ + ao];</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                b[i + bo] = a[q++ + ao];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        run[++last] = hi;</span><br><span class="line">    &#125;</span><br><span class="line">    if ((count &amp; 1) != 0) &#123;</span><br><span class="line">        for (int i = right, lo = run[count - 1]; --i &gt;= lo;</span><br><span class="line">            b[i + bo] = a[i + ao]</span><br><span class="line">        );</span><br><span class="line">        run[++last] = right;</span><br><span class="line">    &#125;</span><br><span class="line">    int[] t = a; a = b; b = t;</span><br><span class="line">    int o = ao; ao = bo; bo = o;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>归并排序动图演示：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X2dpZi9mRXNXa1ZyU2s1NHB6ZTRjUWRYd002aWJmR3p5cGRwR2h4WUtndlFEcVhMbFVTdmZQbE5CQW1saWJkOVRPUkZkY0hhbmRSQ2RYWWF5aWFKeWliYUpBMldybXcvNjQw?x-oss-process=image/format,png" alt="在这里插入图片描述"><br>总结：<br>从上面分析，Arrays.sort并不是单一的排序，而是插入排序，快速排序，归并排序三种排序的组合，为此我画了个流程图：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyLm11a2V3YW5nLmNvbS81ZDVkZmMwYTAwMDEwNDcyMDUwMDA1OTMucG5n?x-oss-process=image/format,png" alt="在这里插入图片描述"></p>
+<p>算法的选择：</p>
+<p>PS：关于排序算法的文章，推荐这两篇，个人觉得写得挺好，容易入门：<br><a href="https://mp.weixin.qq.com/s/t0dsJeN397wO41pwBWPeTg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/t0dsJeN397wO41pwBWPeTg</a><br><a href="https://www.cnblogs.com/huangbw/p/7398418.html" target="_blank" rel="noopener">https://www.cnblogs.com/huangbw/p/7398418.html</a></p>
+<p>稳定：如果a原本在b前面，而a=b，排序之后a仍然在b的前面；</p>
+<p>不稳定：如果a原本在b的前面，而a=b，排序之后a可能会出现在b的后面；</p>
+<p>时间复杂度按n越大算法越复杂来排的话：常数阶O(1)、对数阶O(logn)、线性阶O(n)、线性对数阶O(nlogn)、平方阶O(n²)、立方阶O(n³)、……k次方阶O(n的k次方)、指数阶O(2的n次方)。</p>
+<p>O(nlogn)只代表增长量级，同一个量级前面的常数也可以不一样，不同数量下面的实际运算时间也可以不一样。数量非常小的情况下（就像上面说到的，少于47的），插入排序等可能会比快速排序更快。<br>所以数组少于47的会进入插入排序。</p>
+<p>快排数据越无序越快（加入随机化后基本不会退化），平均常数最小，不需要额外空间，不稳定排序。<br>归排速度稳定，常数比快排略大，需要额外空间，稳定排序。<br>所以大于或等于47或少于286会进入快排，而在大于或等于286后，会有个小动作：“// Check if the array is nearly sorted”。<br>这里第一个作用是先梳理一下数据方便后续的归并排序，第二个作用就是即便大于286，但在降序组太多的时候（被判断为没有结构的数据，The array is not highly structured,use Quicksort instead of merge sort.），要转回快速排序。</p>
+<hr>
+这就是jdk8中Arrays.sort的底层原理，自己在研究和分析中学到很多，希望能给各位工作中或面试中一些启发和帮助！Thanks for watching！
+
 
     
 
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/wechat.jpg">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Huangqiuping
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="ayjcsgm.github.io/2019/12/11/解析JDK8中Arrays-sort底层原理及其排序算法的选择/" title="解析JDK8中Arrays.sort底层原理及其排序算法的选择" target="_blank">ayjcsgm.github.io/2019/12/11/解析JDK8中Arrays-sort底层原理及其排序算法的选择/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
     
 
   </div>
@@ -281,16 +388,85 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/12/09/学习ArrayList看这篇就够了/">展开全文 >></a>
-    </p>
+
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http:ayjcsgm.github.io/2019/12/11/解析JDK8中Arrays-sort底层原理及其排序算法的选择/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/12/11/简单明了的介绍下TreeMap/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          简单明了的介绍下TreeMap
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/11/为什么-String-的-hashCode-选择-31-作为乘子/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">为什么 String 的 hashCode 选择 31 作为乘子</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -311,818 +487,37 @@
 
 
 
-  
-    <article id="post-Java-8-新特性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/15/Java-8-新特性/" target="_blank">Java 8 新特性</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/15/Java-8-新特性/" class="archive-article-date">
-        <time datetime="2019-11-15T12:09:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/231" alt><br>Java 8 (又称为 jdk 1.8) 是 Java 语言开发的一个主要版本。 Oracle 公司于 2014 年 3 月 18 日发布 Java 8 ，它支持函数式编程，新的 JavaScript 引擎，新的日期 API，新的Stream API 等。</p>
-    
-    <a class="article-more-a" href="/2019/11/15/Java-8-新特性/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/15/Java-8-新特性/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-8、Spring-Boot笔记整理高级篇-监控" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/8、Spring-Boot笔记整理高级篇-监控/" target="_blank">8、Spring Boot笔记整理高级篇-监控</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/8、Spring-Boot笔记整理高级篇-监控/" class="archive-article-date">
-        <time datetime="2019-11-08T10:39:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/230" alt></p>
-<h1 id="八、Spring-Boot与监控管理"><a href="#八、Spring-Boot与监控管理" class="headerlink" title="八、Spring Boot与监控管理"></a>八、Spring Boot与监控管理</h1><h2 id="一、监控管理"><a href="#一、监控管理" class="headerlink" title="一、监控管理"></a>一、监控管理</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/8、Spring-Boot笔记整理高级篇-监控/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/8、Spring-Boot笔记整理高级篇-监控/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-7、Spring-Boot笔记整理高级篇-热部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/7、Spring-Boot笔记整理高级篇-热部署/" target="_blank">7、Spring Boot笔记整理高级篇-热部署</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/7、Spring-Boot笔记整理高级篇-热部署/" class="archive-article-date">
-        <time datetime="2019-11-08T10:39:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/229" alt></p>
-<h1 id="七、Spring-Boot与开发热部署"><a href="#七、Spring-Boot与开发热部署" class="headerlink" title="七、Spring Boot与开发热部署"></a>七、Spring Boot与开发热部署</h1><p><strong>热部署</strong></p>
-<h2 id="一、热部署"><a href="#一、热部署" class="headerlink" title="一、热部署"></a>一、热部署</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/7、Spring-Boot笔记整理高级篇-热部署/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/7、Spring-Boot笔记整理高级篇-热部署/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-6、Spring-Boot笔记整理高级篇-分布式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/6、Spring-Boot笔记整理高级篇-分布式/" target="_blank">6、Spring Boot笔记整理高级篇-分布式</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/6、Spring-Boot笔记整理高级篇-分布式/" class="archive-article-date">
-        <time datetime="2019-11-08T10:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/228" alt></p>
-<h1 id="六、Spring-Boot与分布式"><a href="#六、Spring-Boot与分布式" class="headerlink" title="六、Spring Boot与分布式"></a>六、Spring Boot与分布式</h1><p><strong>分步式、Dubbo/Zookeeper、Spring Boot/Cloud</strong></p>
-<h2 id="一、分布式应用"><a href="#一、分布式应用" class="headerlink" title="一、分布式应用"></a>一、分布式应用</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/6、Spring-Boot笔记整理高级篇-分布式/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/6、Spring-Boot笔记整理高级篇-分布式/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-5、Spring-Boot笔记整理高级篇-安全" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/5、Spring-Boot笔记整理高级篇-安全/" target="_blank">5、Spring Boot笔记整理高级篇-安全</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/5、Spring-Boot笔记整理高级篇-安全/" class="archive-article-date">
-        <time datetime="2019-11-08T10:38:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/227" alt></p>
-<h1 id="五、Spring-Boot与安全"><a href="#五、Spring-Boot与安全" class="headerlink" title="五、Spring Boot与安全"></a>五、Spring Boot与安全</h1><p><strong>安全、Spring Security</strong></p>
-<h2 id="一、安全"><a href="#一、安全" class="headerlink" title="一、安全"></a>一、安全</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/5、Spring-Boot笔记整理高级篇-安全/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/5、Spring-Boot笔记整理高级篇-安全/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-4、Spring-Boot尚硅谷笔记整理高级篇-任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/4、Spring-Boot尚硅谷笔记整理高级篇-任务/" target="_blank">4、Spring Boot笔记整理高级篇-任务</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/4、Spring-Boot尚硅谷笔记整理高级篇-任务/" class="archive-article-date">
-        <time datetime="2019-11-08T10:37:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/226" alt></p>
-<h1 id="四、Spring-Boot与任务"><a href="#四、Spring-Boot与任务" class="headerlink" title="四、Spring Boot与任务"></a>四、Spring Boot与任务</h1><p><strong>异步任务、定时任务、邮件任务</strong></p>
-<h2 id="一、异步任务"><a href="#一、异步任务" class="headerlink" title="一、异步任务"></a>一、异步任务</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/4、Spring-Boot尚硅谷笔记整理高级篇-任务/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/4、Spring-Boot尚硅谷笔记整理高级篇-任务/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-3、Spring-Boot笔记整理高级篇-检索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/" target="_blank">3、Spring Boot笔记整理高级篇-检索</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/" class="archive-article-date">
-        <time datetime="2019-11-08T10:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/225" alt></p>
-<h1 id="三、Spring-Boot与检索"><a href="#三、Spring-Boot与检索" class="headerlink" title="三、Spring Boot与检索"></a>三、Spring Boot与检索</h1><p><strong>ElasticSearch</strong></p>
-<h2 id="一、检索"><a href="#一、检索" class="headerlink" title="一、检索"></a>一、检索</h2>
-    
-    <a class="article-more-a" href="/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2、Spring-Boot尚硅谷笔记整理高级篇-消息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/" target="_blank">2、Spring Boot笔记整理高级篇-消息</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/" class="archive-article-date">
-        <time datetime="2019-11-06T09:26:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-06</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/224" alt></p>
-<h1 id="二、Spring-Boot与消息"><a href="#二、Spring-Boot与消息" class="headerlink" title="二、Spring Boot与消息"></a>二、Spring Boot与消息</h1><p><strong>JMS、AMQP、RabbitMQ</strong></p>
-<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2>
-    
-    <a class="article-more-a" href="/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/#more">more >></a>
-    
-    
-
-    
 
-    
 
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-    
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/06/2、Spring-Boot尚硅谷笔记整理高级篇-消息/">展开全文 >></a>
-    </p>
-    
 
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
-
-
-
-  
-    <article id="post-1、Spring-Boot尚硅谷笔记整理高级篇-缓存" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
   
+  <div id="gitment-ctn"></div>
   
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/" target="_blank">1、Spring Boot笔记整理高级篇-缓存</a>
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
   
-    </h1>
-  
-
-
-  
-  
-<a href="/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/" class="archive-article-date">
-        <time datetime="2019-11-05T14:01:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
-</a>
+  <script>
+    <!-- id: "解析JDK8中Arrays.sort底层原理及其排序算法的选择" -->
+    var gitment = new Gitment({
+      id: "20191211202613",
+      owner: 'AYJCSGM',
+      repo: 'AYJCSGM.github.io',
+      oauth: {
+        client_id: '0ccdc54978d553a913a2',
+        client_secret: 'c66d2d1f59d2ebd73204bfd8bd5c5ee3053a2748',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
 
-  
-  
-    
 
   
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p><img src="https://picsum.photos/800/223" alt></p>
-<h1 id="1、Spring-Boot与缓存"><a href="#1、Spring-Boot与缓存" class="headerlink" title="1、Spring Boot与缓存"></a>1、Spring Boot与缓存</h1><pre><code>**JSR-107、Spring缓存抽象、整合Redis**</code></pre><h2 id="一、JSR107"><a href="#一、JSR107" class="headerlink" title="一、JSR107"></a>一、JSR107</h2>
-    
-    <a class="article-more-a" href="/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -1162,8 +557,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
