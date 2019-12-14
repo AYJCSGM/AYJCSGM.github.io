@@ -10,21 +10,20 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="八、Spring Boot与监控管理一、监控管理">
+  <meta name="description" content="八、Spring Boot与监控管理一、监控管理通过引入spring-boot-starter-actuator，可以使用Spring Boot为我们提供的准 生产环境下的应用监控和管理功能。我们可以通过HTTP，JMX，SSH协议来进 行操作，自动得到审计、健康及指标信息等">
 <meta name="keywords" content="Spring Boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8、Spring Boot笔记整理高级篇-监控">
 <meta property="og:url" content="ayjcsgm.github.io/2019/11/08/8、Spring-Boot笔记整理高级篇-监控/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="八、Spring Boot与监控管理一、监控管理">
+<meta property="og:description" content="八、Spring Boot与监控管理一、监控管理通过引入spring-boot-starter-actuator，可以使用Spring Boot为我们提供的准 生产环境下的应用监控和管理功能。我们可以通过HTTP，JMX，SSH协议来进 行操作，自动得到审计、健康及指标信息等">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/230">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191108182131681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-08T10:48:23.206Z">
+<meta property="og:updated_time" content="2019-12-14T11:29:22.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8、Spring Boot笔记整理高级篇-监控">
-<meta name="twitter:description" content="八、Spring Boot与监控管理一、监控管理">
-<meta name="twitter:image" content="https://picsum.photos/800/230">
+<meta name="twitter:description" content="八、Spring Boot与监控管理一、监控管理通过引入spring-boot-starter-actuator，可以使用Spring Boot为我们提供的准 生产环境下的应用监控和管理功能。我们可以通过HTTP，JMX，SSH协议来进 行操作，自动得到审计、健康及指标信息等">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191108182131681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -292,9 +291,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/230" alt></p>
-<h1 id="八、Spring-Boot与监控管理"><a href="#八、Spring-Boot与监控管理" class="headerlink" title="八、Spring Boot与监控管理"></a>八、Spring Boot与监控管理</h1><h2 id="一、监控管理"><a href="#一、监控管理" class="headerlink" title="一、监控管理"></a>一、监控管理</h2><a id="more"></a>
-<p>通过引入spring-boot-starter-actuator，可以使用Spring Boot为我们提供的准 生产环境下的应用监控和管理功能。我们可以通过HTTP，JMX，SSH协议来进 行操作，自动得到审计、健康及指标信息等</p>
+    <h1 id="八、Spring-Boot与监控管理"><a href="#八、Spring-Boot与监控管理" class="headerlink" title="八、Spring Boot与监控管理"></a>八、Spring Boot与监控管理</h1><h2 id="一、监控管理"><a href="#一、监控管理" class="headerlink" title="一、监控管理"></a>一、监控管理</h2><p>通过引入spring-boot-starter-actuator，可以使用Spring Boot为我们提供的准 生产环境下的应用监控和管理功能。我们可以通过HTTP，JMX，SSH协议来进 行操作，自动得到审计、健康及指标信息等</p>
+<a id="more"></a>
 <ul>
 <li>步骤：<br>– 引入spring-boot-starter-actuator<br>– 通过http方式访问监控端点<br> – 可进行shutdown（POST 提交，此端点默认关闭）<ul>
 <li>监控和管理端点<br><img src="https://img-blog.csdnimg.cn/20191108182131681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><h2 id="二、定制端点信息"><a href="#二、定制端点信息" class="headerlink" title="二、定制端点信息"></a>二、定制端点信息</h2>– 定制端点一般通过endpoints+端点名+属性名来设置。<br>– 修改端点id（endpoints.beans.id=mybeans）<br>– 开启远程应用关闭功能（endpoints.shutdown.enabled=true）<br>– 关闭端点（endpoints.beans.enabled=false）<br>– 开启所需端点 </li>
@@ -689,11 +687,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,11 +699,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

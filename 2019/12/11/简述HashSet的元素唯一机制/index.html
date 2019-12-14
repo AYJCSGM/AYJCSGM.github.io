@@ -10,20 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="HashSet简介HashSet实现Set接口，底层由HashMap来实现，为哈希表结构，新增元素相当于HashMap的key，value默认为一个固定的Object。当有元素插入的时候，会计算元素的hashCode值，将元素插入到哈希表对应的位置中来；它继承于AbstractSet，实现了Set, Cloneable, Serializable接口。(1)HashSet继承AbstractSe">
+  <meta name="description" content="HashSet简介HashSet实现Set接口，底层由HashMap来实现，为哈希表结构，新增元素相当于HashMap的key，value默认为一个固定的Object。当有元素插入的时候，会计算元素的hashCode值，将元素插入到哈希表对应的位置中来；它继承于AbstractSet，实现了Set, Cloneable, Serializable接口。(1)HashSet继承AbstractSet">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简述HashSet的元素唯一机制">
 <meta property="og:url" content="ayjcsgm.github.io/2019/12/11/简述HashSet的元素唯一机制/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="HashSet简介HashSet实现Set接口，底层由HashMap来实现，为哈希表结构，新增元素相当于HashMap的key，value默认为一个固定的Object。当有元素插入的时候，会计算元素的hashCode值，将元素插入到哈希表对应的位置中来；它继承于AbstractSet，实现了Set, Cloneable, Serializable接口。(1)HashSet继承AbstractSe">
+<meta property="og:description" content="HashSet简介HashSet实现Set接口，底层由HashMap来实现，为哈希表结构，新增元素相当于HashMap的key，value默认为一个固定的Object。当有元素插入的时候，会计算元素的hashCode值，将元素插入到哈希表对应的位置中来；它继承于AbstractSet，实现了Set, Cloneable, Serializable接口。(1)HashSet继承AbstractSet">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/191">
-<meta property="og:updated_time" content="2019-12-11T12:36:15.609Z">
+<meta property="og:updated_time" content="2019-12-14T11:33:49.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简述HashSet的元素唯一机制">
-<meta name="twitter:description" content="HashSet简介HashSet实现Set接口，底层由HashMap来实现，为哈希表结构，新增元素相当于HashMap的key，value默认为一个固定的Object。当有元素插入的时候，会计算元素的hashCode值，将元素插入到哈希表对应的位置中来；它继承于AbstractSet，实现了Set, Cloneable, Serializable接口。(1)HashSet继承AbstractSe">
-<meta name="twitter:image" content="https://picsum.photos/800/191">
+<meta name="twitter:description" content="HashSet简介HashSet实现Set接口，底层由HashMap来实现，为哈希表结构，新增元素相当于HashMap的key，value默认为一个固定的Object。当有元素插入的时候，会计算元素的hashCode值，将元素插入到哈希表对应的位置中来；它继承于AbstractSet，实现了Set, Cloneable, Serializable接口。(1)HashSet继承AbstractSet">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -291,8 +289,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/191" alt></p>
-<h1 id="HashSet简介"><a href="#HashSet简介" class="headerlink" title="HashSet简介"></a>HashSet简介</h1><p>HashSet实现Set接口，底层由HashMap来实现，为哈希表结构，新增元素相当于HashMap的key，value默认为一个固定的Object。<br>当有元素插入的时候，会计算元素的hashCode值，将元素插入到哈希表对应的位置中来；<br>它继承于AbstractSet，实现了Set, Cloneable, Serializable接口。<br>(1)HashSet继承AbstractSet类，获得了Set接口大部分的实现，减少了实现此接口所需的工作，实际上是又继承了AbstractCollection类；<br>(2)HashSet实现了Set接口，获取Set接口的方法，可以自定义具体实现，也可以继承AbstractSet类中的实现；</p>
+    <h1 id="HashSet简介"><a href="#HashSet简介" class="headerlink" title="HashSet简介"></a>HashSet简介</h1><p>HashSet实现Set接口，底层由HashMap来实现，为哈希表结构，新增元素相当于HashMap的key，value默认为一个固定的Object。<br>当有元素插入的时候，会计算元素的hashCode值，将元素插入到哈希表对应的位置中来；<br>它继承于AbstractSet，实现了Set, Cloneable, Serializable接口。<br>(1)HashSet继承AbstractSet类，获得了Set接口大部分的实现，减少了实现此接口所需的工作，实际上是又继承了AbstractCollection类；<br>(2)HashSet实现了Set接口，获取Set接口的方法，可以自定义具体实现，也可以继承AbstractSet类中的实现；</p>
 <a id="more"></a> 
 <p>(3)HashSet实现Cloneable，得到了clone()方法，可以实现克隆功能；<br>(4)HashSet实现Serializable，表示可以被序列化。<br>具有如下特点：  </p>
 <ul>
@@ -680,11 +677,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -692,11 +689,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

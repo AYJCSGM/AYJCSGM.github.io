@@ -18,13 +18,12 @@
 <meta property="og:site_name" content="HQP的个人博客">
 <meta property="og:description" content="ArrayList简介1、ArrayList是一个数组队列，相当于动态数组。与Java中的数组相比，它的容量能动态增长。它继承于AbstractList，实现了List，RandomAccess，Cloneable，java.io.Serializable这些接口。2、ArrayList与Collection的关系如下图，实现代表继承，虚线代表实现接口：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/199">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191209203735109.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-12-09T13:00:39.216Z">
+<meta property="og:updated_time" content="2019-12-14T11:34:56.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习ArrayList看这篇就够了">
 <meta name="twitter:description" content="ArrayList简介1、ArrayList是一个数组队列，相当于动态数组。与Java中的数组相比，它的容量能动态增长。它继承于AbstractList，实现了List，RandomAccess，Cloneable，java.io.Serializable这些接口。2、ArrayList与Collection的关系如下图，实现代表继承，虚线代表实现接口：">
-<meta name="twitter:image" content="https://picsum.photos/800/199">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191209203735109.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -292,8 +291,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/199" alt></p>
-<h1 id="ArrayList简介"><a href="#ArrayList简介" class="headerlink" title="ArrayList简介"></a>ArrayList简介</h1><p>1、ArrayList是一个数组队列，相当于动态数组。与Java中的数组相比，它的容量能动态增长。它继承于AbstractList，实现了List，RandomAccess，Cloneable，java.io.Serializable这些接口。<br>2、ArrayList与Collection的关系如下图，实现代表继承，虚线代表实现接口：</p>
+    <h1 id="ArrayList简介"><a href="#ArrayList简介" class="headerlink" title="ArrayList简介"></a>ArrayList简介</h1><p>1、ArrayList是一个数组队列，相当于动态数组。与Java中的数组相比，它的容量能动态增长。它继承于AbstractList，实现了List，RandomAccess，Cloneable，java.io.Serializable这些接口。<br>2、ArrayList与Collection的关系如下图，实现代表继承，虚线代表实现接口：</p>
 <a id="more"></a> 　
 <p><img src="https://img-blog.csdnimg.cn/20191209203735109.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3、ArrayList实现了RandmoAccess接口，即提供了随机访问的功能。RandmoAccess是java中用来被List实现，为List提供快速访问功能的。在ArrayList中，我们即可以通过元素的序号快速获取元素对象；这就是快速随机访问。<br>4、ArrayList实现了Cloneable接口，即覆盖了函数clone()，能被克隆。<br>5、ArrayList实现了java.io.Serializable接口，这意味着ArrayList支持序列化，能通过序列化去传输。<br>6、ArrayList中的操作不是线程安全的，可以选择CopyOnWriteArrayList或者使用Collections中的synchronizedList方法将其包装成一个线程安全的List。</p>
 <h1 id="ArrayList的API"><a href="#ArrayList的API" class="headerlink" title="ArrayList的API"></a>ArrayList的API</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">// Collection中定义的API</span><br><span class="line">boolean             add(E object)</span><br><span class="line">boolean             addAll(Collection&lt;? extends E&gt; collection)</span><br><span class="line">void                clear()</span><br><span class="line">boolean             contains(Object object)</span><br><span class="line">boolean             containsAll(Collection&lt;?&gt; collection)</span><br><span class="line">boolean             equals(Object object)</span><br><span class="line">int                 hashCode()</span><br><span class="line">boolean             isEmpty()</span><br><span class="line">Iterator&lt;E&gt;         iterator()</span><br><span class="line">boolean             remove(Object object)</span><br><span class="line">boolean             removeAll(Collection&lt;?&gt; collection)</span><br><span class="line">boolean             retainAll(Collection&lt;?&gt; collection)</span><br><span class="line">int                 size()</span><br><span class="line">&lt;T&gt; T[]             toArray(T[] array)</span><br><span class="line">Object[]            toArray()</span><br><span class="line">// AbstractCollection中定义的API</span><br><span class="line">void                add(int location, E object)</span><br><span class="line">boolean             addAll(int location, Collection&lt;? extends E&gt; collection)</span><br><span class="line">E                   get(int location)</span><br><span class="line">int                 indexOf(Object object)</span><br><span class="line">int                 lastIndexOf(Object object)</span><br><span class="line">ListIterator&lt;E&gt;     listIterator(int location)</span><br><span class="line">ListIterator&lt;E&gt;     listIterator()</span><br><span class="line">E                   remove(int location)</span><br><span class="line">E                   set(int location, E object)</span><br><span class="line">List&lt;E&gt;             subList(int start, int end)</span><br><span class="line">// ArrayList新增的API</span><br><span class="line">Object               clone()</span><br><span class="line">void                 ensureCapacity(int minimumCapacity)//增加容量</span><br><span class="line">void                 trimToSize()//修改容量是列表当前大小</span><br><span class="line">void                 removeRange(int fromIndex, int toIndex)//删除所有索引在 fromIndex （含）和 toIndex之间的元素</span><br></pre></td></tr></table></figure>
@@ -782,11 +780,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -794,11 +792,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

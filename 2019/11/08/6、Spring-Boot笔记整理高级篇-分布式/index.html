@@ -10,23 +10,22 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="六、Spring Boot与分布式分步式、Dubbo/Zookeeper、Spring Boot/Cloud 一、分布式应用">
+  <meta name="description" content="六、Spring Boot与分布式分步式、Dubbo/Zookeeper、Spring Boot/Cloud 一、分布式应用在分布式系统中，国内常用zookeeper+dubbo组合，而Spring Boot推荐使用 全栈的Spring，Spring Boot+Spring Cloud。 分布式系统：">
 <meta name="keywords" content="Spring Boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="6、Spring Boot笔记整理高级篇-分布式">
 <meta property="og:url" content="ayjcsgm.github.io/2019/11/08/6、Spring-Boot笔记整理高级篇-分布式/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="六、Spring Boot与分布式分步式、Dubbo/Zookeeper、Spring Boot/Cloud 一、分布式应用">
+<meta property="og:description" content="六、Spring Boot与分布式分步式、Dubbo/Zookeeper、Spring Boot/Cloud 一、分布式应用在分布式系统中，国内常用zookeeper+dubbo组合，而Spring Boot推荐使用 全栈的Spring，Spring Boot+Spring Cloud。 分布式系统：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/228">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191108175505773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191108175655839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191108180120914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-08T10:47:16.772Z">
+<meta property="og:updated_time" content="2019-12-14T11:29:56.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6、Spring Boot笔记整理高级篇-分布式">
-<meta name="twitter:description" content="六、Spring Boot与分布式分步式、Dubbo/Zookeeper、Spring Boot/Cloud 一、分布式应用">
-<meta name="twitter:image" content="https://picsum.photos/800/228">
+<meta name="twitter:description" content="六、Spring Boot与分布式分步式、Dubbo/Zookeeper、Spring Boot/Cloud 一、分布式应用在分布式系统中，国内常用zookeeper+dubbo组合，而Spring Boot推荐使用 全栈的Spring，Spring Boot+Spring Cloud。 分布式系统：">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191108175505773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -294,11 +293,9 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/228" alt></p>
-<h1 id="六、Spring-Boot与分布式"><a href="#六、Spring-Boot与分布式" class="headerlink" title="六、Spring Boot与分布式"></a>六、Spring Boot与分布式</h1><p><strong>分步式、Dubbo/Zookeeper、Spring Boot/Cloud</strong></p>
-<h2 id="一、分布式应用"><a href="#一、分布式应用" class="headerlink" title="一、分布式应用"></a>一、分布式应用</h2><a id="more"></a>
-<p>在分布式系统中，国内常用zookeeper+dubbo组合，而Spring Boot推荐使用 全栈的Spring，Spring Boot+Spring Cloud。</p>
-<p>分布式系统：<br><img src="https://img-blog.csdnimg.cn/20191108175505773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+    <h1 id="六、Spring-Boot与分布式"><a href="#六、Spring-Boot与分布式" class="headerlink" title="六、Spring Boot与分布式"></a>六、Spring Boot与分布式</h1><p><strong>分步式、Dubbo/Zookeeper、Spring Boot/Cloud</strong></p>
+<h2 id="一、分布式应用"><a href="#一、分布式应用" class="headerlink" title="一、分布式应用"></a>一、分布式应用</h2><p>在分布式系统中，国内常用zookeeper+dubbo组合，而Spring Boot推荐使用 全栈的Spring，Spring Boot+Spring Cloud。</p>
+<p>分布式系统：<a id="more"></a><br><img src="https://img-blog.csdnimg.cn/20191108175505773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <ul>
 <li><p>单一应用架构 当网站流量很小时，只需一个应用，将所有功能都部署在一起，以减少部署节点和成 本。此时，用于简化增删改查工作量的数据访问框架(ORM)是关键。 </p>
 </li>
@@ -744,11 +741,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -756,11 +753,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

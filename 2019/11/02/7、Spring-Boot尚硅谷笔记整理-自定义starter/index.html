@@ -10,20 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="七、自定义starterstarter：">
+  <meta name="description" content="七、自定义starterstarter： ​    1、这个场景需要使用到的依赖是什么？ ​    2、如何编写自动配置">
 <meta name="keywords" content="Spring Boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="7、Spring Boot笔记整理-自定义starter">
 <meta property="og:url" content="ayjcsgm.github.io/2019/11/02/7、Spring-Boot尚硅谷笔记整理-自定义starter/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="七、自定义starterstarter：">
+<meta property="og:description" content="七、自定义starterstarter： ​    1、这个场景需要使用到的依赖是什么？ ​    2、如何编写自动配置">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/222">
-<meta property="og:updated_time" content="2019-11-08T10:50:30.052Z">
+<meta property="og:updated_time" content="2019-12-14T11:28:09.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="7、Spring Boot笔记整理-自定义starter">
-<meta name="twitter:description" content="七、自定义starterstarter：">
-<meta name="twitter:image" content="https://picsum.photos/800/222">
+<meta name="twitter:description" content="七、自定义starterstarter： ​    1、这个场景需要使用到的依赖是什么？ ​    2、如何编写自动配置">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -291,11 +289,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/222" alt></p>
-<h1 id="七、自定义starter"><a href="#七、自定义starter" class="headerlink" title="七、自定义starter"></a>七、自定义starter</h1><p>starter：</p>
-<a id="more"></a>
+    <h1 id="七、自定义starter"><a href="#七、自定义starter" class="headerlink" title="七、自定义starter"></a>七、自定义starter</h1><p>starter：</p>
 <p>​    1、这个场景需要使用到的依赖是什么？</p>
 <p>​    2、如何编写自动配置</p>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span>  <span class="comment">//指定这个类是一个配置类</span></span><br><span class="line"><span class="meta">@ConditionalOnXXX</span>  <span class="comment">//在指定条件成立的情况下自动配置类生效</span></span><br><span class="line"><span class="meta">@AutoConfigureAfter</span>  <span class="comment">//指定自动配置类的顺序</span></span><br><span class="line"><span class="meta">@Bean</span>  <span class="comment">//给容器中添加组件</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ConfigurationPropertie</span>结合相关xxxProperties类来绑定相关的配置</span><br><span class="line"><span class="meta">@EnableConfigurationProperties</span> <span class="comment">//让xxxProperties生效加入到容器中</span></span><br><span class="line"></span><br><span class="line">自动配置类要能加载</span><br><span class="line">将需要启动就加载的自动配置类，配置在META-INF/spring.factories</span><br><span class="line">org.springframework.boot.autoconfigure.EnableAutoConfiguration=\</span><br><span class="line">org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration,\</span><br><span class="line">org.springframework.boot.autoconfigure.aop.AopAutoConfiguration,\</span><br></pre></td></tr></table></figure>
 
 <p>​    3、模式：</p>
@@ -686,11 +683,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,11 +695,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

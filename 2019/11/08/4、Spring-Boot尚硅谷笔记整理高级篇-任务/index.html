@@ -10,23 +10,22 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="四、Spring Boot与任务异步任务、定时任务、邮件任务 一、异步任务">
+  <meta name="description" content="四、Spring Boot与任务异步任务、定时任务、邮件任务 一、异步任务在Java应用中，绝大多数情况下都是通过同步的方式来实现交互处理的；但是在 处理与第三方系统交互的时候，容易造成响应迟缓的情况，之前大部分都是使用 多线程来完成此类任务，其实，在Spring 3.x之后，就已经内置了@Async来完 美解决这个问题。 两个注解：@EnableAysnc、@Aysnc">
 <meta name="keywords" content="Spring Boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="4、Spring Boot笔记整理高级篇-任务">
 <meta property="og:url" content="ayjcsgm.github.io/2019/11/08/4、Spring-Boot尚硅谷笔记整理高级篇-任务/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="四、Spring Boot与任务异步任务、定时任务、邮件任务 一、异步任务">
+<meta property="og:description" content="四、Spring Boot与任务异步任务、定时任务、邮件任务 一、异步任务在Java应用中，绝大多数情况下都是通过同步的方式来实现交互处理的；但是在 处理与第三方系统交互的时候，容易造成响应迟缓的情况，之前大部分都是使用 多线程来完成此类任务，其实，在Spring 3.x之后，就已经内置了@Async来完 美解决这个问题。 两个注解：@EnableAysnc、@Aysnc">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/226">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191108173833856.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191108173858502.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191108174001575.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-08T10:45:05.418Z">
+<meta property="og:updated_time" content="2019-12-14T11:31:05.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="4、Spring Boot笔记整理高级篇-任务">
-<meta name="twitter:description" content="四、Spring Boot与任务异步任务、定时任务、邮件任务 一、异步任务">
-<meta name="twitter:image" content="https://picsum.photos/800/226">
+<meta name="twitter:description" content="四、Spring Boot与任务异步任务、定时任务、邮件任务 一、异步任务在Java应用中，绝大多数情况下都是通过同步的方式来实现交互处理的；但是在 处理与第三方系统交互的时候，容易造成响应迟缓的情况，之前大部分都是使用 多线程来完成此类任务，其实，在Spring 3.x之后，就已经内置了@Async来完 美解决这个问题。 两个注解：@EnableAysnc、@Aysnc">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191108173833856.png">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -294,11 +293,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/226" alt></p>
-<h1 id="四、Spring-Boot与任务"><a href="#四、Spring-Boot与任务" class="headerlink" title="四、Spring Boot与任务"></a>四、Spring Boot与任务</h1><p><strong>异步任务、定时任务、邮件任务</strong></p>
-<h2 id="一、异步任务"><a href="#一、异步任务" class="headerlink" title="一、异步任务"></a>一、异步任务</h2><a id="more"></a>
-<p>在Java应用中，绝大多数情况下都是通过同步的方式来实现交互处理的；但是在 处理与第三方系统交互的时候，容易造成响应迟缓的情况，之前大部分都是使用 多线程来完成此类任务，其实，在Spring 3.x之后，就已经内置了@Async来完 美解决这个问题。</p>
+    <h1 id="四、Spring-Boot与任务"><a href="#四、Spring-Boot与任务" class="headerlink" title="四、Spring Boot与任务"></a>四、Spring Boot与任务</h1><p><strong>异步任务、定时任务、邮件任务</strong></p>
+<h2 id="一、异步任务"><a href="#一、异步任务" class="headerlink" title="一、异步任务"></a>一、异步任务</h2><p>在Java应用中，绝大多数情况下都是通过同步的方式来实现交互处理的；但是在 处理与第三方系统交互的时候，容易造成响应迟缓的情况，之前大部分都是使用 多线程来完成此类任务，其实，在Spring 3.x之后，就已经内置了@Async来完 美解决这个问题。</p>
 <p>两个注解：<br>@EnableAysnc、@Aysnc</p>
+<a id="more"></a>
 <h2 id="二、定时任务"><a href="#二、定时任务" class="headerlink" title="二、定时任务"></a>二、定时任务</h2><p>项目开发中经常需要执行一些定时任务，比如需要在每天凌晨时候，分析一次前 一天的日志信息。Spring为我们提供了异步执行任务调度的方式，提供 TaskExecutor 、TaskScheduler 接口。</p>
 <p>两个注解：<br>@EnableScheduling、@Scheduled</p>
 <p><img src="https://img-blog.csdnimg.cn/20191108173833856.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191108173858502.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
@@ -697,11 +695,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,11 +707,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

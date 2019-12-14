@@ -18,16 +18,15 @@
 <meta property="og:site_name" content="HQP的个人博客">
 <meta property="og:description" content="HashMap简介：HashMap在底层数据结构上采用了数组＋链表＋红黑树，通过散列映射来存储键值对数据因为在查询上使用散列码（通过键生成一个数字作为数组下标， 这个数字就是hashcode）所以在查询上的访问速度比较快，HashMap最多允许一对键值对的Key为Null，允许多对键值对的value为Null。 它是非线程安全的。在排序上面是无序的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/205">
 <meta property="og:image" content="https://img-blog.csdn.net/20180529155827859">
 <meta property="og:image" content="https://img-blog.csdn.net/20180529164049237">
 <meta property="og:image" content="https://img-blog.csdn.net/20180529165142867">
 <meta property="og:image" content="https://img-blog.csdn.net/20160914094110132?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2019-10-03T08:42:54.818Z">
+<meta property="og:updated_time" content="2019-12-14T11:32:55.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashMap源码分析(JDK1.8)">
 <meta name="twitter:description" content="HashMap简介：HashMap在底层数据结构上采用了数组＋链表＋红黑树，通过散列映射来存储键值对数据因为在查询上使用散列码（通过键生成一个数字作为数组下标， 这个数字就是hashcode）所以在查询上的访问速度比较快，HashMap最多允许一对键值对的Key为Null，允许多对键值对的value为Null。 它是非线程安全的。在排序上面是无序的。">
-<meta name="twitter:image" content="https://picsum.photos/800/205">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180529155827859">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -295,8 +294,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/205" alt></p>
-<h1 id="HashMap简介："><a href="#HashMap简介：" class="headerlink" title="HashMap简介："></a><strong>HashMap简介</strong>：</h1><pre><code>HashMap在底层数据结构上采用了数组＋链表＋红黑树，通过散列映射来存储键值对数据因为在查询上使用散列码（通过键生成一个数字作为数组下标，
+    <h1 id="HashMap简介："><a href="#HashMap简介：" class="headerlink" title="HashMap简介："></a><strong>HashMap简介</strong>：</h1><pre><code>HashMap在底层数据结构上采用了数组＋链表＋红黑树，通过散列映射来存储键值对数据因为在查询上使用散列码（通过键生成一个数字作为数组下标，
 这个数字就是hashcode）所以在查询上的访问速度比较快，HashMap最多允许一对键值对的Key为Null，允许多对键值对的value为Null。
 它是非线程安全的。在排序上面是无序的。</code></pre><a id="more"></a>
 
@@ -700,11 +698,11 @@ Key的hash值通过hash值来确定存放的地址。</code></pre><figure class=
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,11 +710,11 @@ Key的hash值通过hash值来确定存放的地址。</code></pre><figure class=
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -10,25 +10,24 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="1、Spring Boot与缓存**JSR-107、Spring缓存抽象、整合Redis**一、JSR107">
+  <meta name="description" content="1、Spring Boot与缓存**JSR-107、Spring缓存抽象、整合Redis**一、JSR107Java Caching定义了5个核心接口，分别是CachingProvider, CacheManager, Cache, Entry 和 Expiry。">
 <meta name="keywords" content="Spring Boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1、Spring Boot笔记整理高级篇-缓存">
 <meta property="og:url" content="ayjcsgm.github.io/2019/11/05/1、Spring-Boot尚硅谷笔记整理高级篇-缓存/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="1、Spring Boot与缓存**JSR-107、Spring缓存抽象、整合Redis**一、JSR107">
+<meta property="og:description" content="1、Spring Boot与缓存**JSR-107、Spring缓存抽象、整合Redis**一、JSR107Java Caching定义了5个核心接口，分别是CachingProvider, CacheManager, Cache, Entry 和 Expiry。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/223">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191105213706919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191105213937117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191105214022956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191105214042524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191105214221121.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-08T10:49:36.204Z">
+<meta property="og:updated_time" content="2019-12-14T11:27:37.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1、Spring Boot笔记整理高级篇-缓存">
-<meta name="twitter:description" content="1、Spring Boot与缓存**JSR-107、Spring缓存抽象、整合Redis**一、JSR107">
-<meta name="twitter:image" content="https://picsum.photos/800/223">
+<meta name="twitter:description" content="1、Spring Boot与缓存**JSR-107、Spring缓存抽象、整合Redis**一、JSR107Java Caching定义了5个核心接口，分别是CachingProvider, CacheManager, Cache, Entry 和 Expiry。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191105213706919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -276,7 +275,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.2k字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -296,9 +295,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/223" alt></p>
-<h1 id="1、Spring-Boot与缓存"><a href="#1、Spring-Boot与缓存" class="headerlink" title="1、Spring Boot与缓存"></a>1、Spring Boot与缓存</h1><pre><code>**JSR-107、Spring缓存抽象、整合Redis**</code></pre><h2 id="一、JSR107"><a href="#一、JSR107" class="headerlink" title="一、JSR107"></a>一、JSR107</h2><a id="more"></a>
-<p>Java Caching定义了5个核心接口，分别是CachingProvider, CacheManager, Cache, Entry 和 Expiry。 </p>
+    <h1 id="1、Spring-Boot与缓存"><a href="#1、Spring-Boot与缓存" class="headerlink" title="1、Spring Boot与缓存"></a>1、Spring Boot与缓存</h1><pre><code>**JSR-107、Spring缓存抽象、整合Redis**</code></pre><h2 id="一、JSR107"><a href="#一、JSR107" class="headerlink" title="一、JSR107"></a>一、JSR107</h2><p>Java Caching定义了5个核心接口，分别是CachingProvider, CacheManager, Cache, Entry 和 Expiry。 <a id="more"></a></p>
 <ul>
 <li><p>CachingProvider定义了创建、配置、获取、管理和控制多个CacheManager。一个应用可 以在运行期访问多个CachingProvider。</p>
 </li>
@@ -721,11 +718,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,11 +730,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

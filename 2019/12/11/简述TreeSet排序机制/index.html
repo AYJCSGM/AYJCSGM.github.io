@@ -10,20 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="TreeSet简介此集合的实现和树结构有关。与HashSet集合类似，TreeSet也是基于Map来实现，具体实现TreeMap，其底层结构为红黑树（特殊的二叉查找树）；与HashSet不同的是，TreeSet具有排序功能，分为自然排序(123456)和自定义排序两类，默认是自然排序；在程序中，我们可以按照任意顺序将元素插入到集合中，等到遍历时TreeSet会按照一定顺序输出（倒序/升序）；它继">
+  <meta name="description" content="TreeSet简介此集合的实现和树结构有关。与HashSet集合类似，TreeSet也是基于Map来实现，具体实现TreeMap，其底层结构为红黑树（特殊的二叉查找树）；与HashSet不同的是，TreeSet具有排序功能，分为自然排序(123456)和自定义排序两类，默认是自然排序；在程序中，我们可以按照任意顺序将元素插入到集合中，等到遍历时TreeSet会按照一定顺序输出（倒序/升序）；它继承">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简述TreeSet排序机制">
 <meta property="og:url" content="ayjcsgm.github.io/2019/12/11/简述TreeSet排序机制/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="TreeSet简介此集合的实现和树结构有关。与HashSet集合类似，TreeSet也是基于Map来实现，具体实现TreeMap，其底层结构为红黑树（特殊的二叉查找树）；与HashSet不同的是，TreeSet具有排序功能，分为自然排序(123456)和自定义排序两类，默认是自然排序；在程序中，我们可以按照任意顺序将元素插入到集合中，等到遍历时TreeSet会按照一定顺序输出（倒序/升序）；它继">
+<meta property="og:description" content="TreeSet简介此集合的实现和树结构有关。与HashSet集合类似，TreeSet也是基于Map来实现，具体实现TreeMap，其底层结构为红黑树（特殊的二叉查找树）；与HashSet不同的是，TreeSet具有排序功能，分为自然排序(123456)和自定义排序两类，默认是自然排序；在程序中，我们可以按照任意顺序将元素插入到集合中，等到遍历时TreeSet会按照一定顺序输出（倒序/升序）；它继承">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/190">
-<meta property="og:updated_time" content="2019-12-11T12:37:14.175Z">
+<meta property="og:updated_time" content="2019-12-14T11:34:18.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简述TreeSet排序机制">
-<meta name="twitter:description" content="TreeSet简介此集合的实现和树结构有关。与HashSet集合类似，TreeSet也是基于Map来实现，具体实现TreeMap，其底层结构为红黑树（特殊的二叉查找树）；与HashSet不同的是，TreeSet具有排序功能，分为自然排序(123456)和自定义排序两类，默认是自然排序；在程序中，我们可以按照任意顺序将元素插入到集合中，等到遍历时TreeSet会按照一定顺序输出（倒序/升序）；它继">
-<meta name="twitter:image" content="https://picsum.photos/800/190">
+<meta name="twitter:description" content="TreeSet简介此集合的实现和树结构有关。与HashSet集合类似，TreeSet也是基于Map来实现，具体实现TreeMap，其底层结构为红黑树（特殊的二叉查找树）；与HashSet不同的是，TreeSet具有排序功能，分为自然排序(123456)和自定义排序两类，默认是自然排序；在程序中，我们可以按照任意顺序将元素插入到集合中，等到遍历时TreeSet会按照一定顺序输出（倒序/升序）；它继承">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -291,8 +289,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/190" alt></p>
-<h1 id="TreeSet简介"><a href="#TreeSet简介" class="headerlink" title="TreeSet简介"></a>TreeSet简介</h1><p>此集合的实现和树结构有关。与HashSet集合类似，TreeSet也是基于Map来实现，具体实现TreeMap，其底层结构为红黑树（特殊的二叉查找树）；<br>与HashSet不同的是，TreeSet具有排序功能，分为自然排序(123456)和自定义排序两类，默认是自然排序；在程序中，我们可以按照任意顺序将元素插入到集合中，等到遍历时TreeSet会按照一定顺序输出（倒序/升序）；<br>它继承AbstractSet，实现NavigableSet, Cloneable, Serializable接口。<br>（1）与HashSet同理，TreeSet继承AbstractSet类，获得了Set集合基础实现操作；</p>
+    <h1 id="TreeSet简介"><a href="#TreeSet简介" class="headerlink" title="TreeSet简介"></a>TreeSet简介</h1><p>此集合的实现和树结构有关。与HashSet集合类似，TreeSet也是基于Map来实现，具体实现TreeMap，其底层结构为红黑树（特殊的二叉查找树）；<br>与HashSet不同的是，TreeSet具有排序功能，分为自然排序(123456)和自定义排序两类，默认是自然排序；在程序中，我们可以按照任意顺序将元素插入到集合中，等到遍历时TreeSet会按照一定顺序输出（倒序/升序）；<br>它继承AbstractSet，实现NavigableSet, Cloneable, Serializable接口。<br>（1）与HashSet同理，TreeSet继承AbstractSet类，获得了Set集合基础实现操作；</p>
 <a id="more"></a> 
 <p>（2）TreeSet实现NavigableSet接口，而NavigableSet又扩展了SortedSet接口。实现NavigableSet接口使得TreeSet具备了元素搜索功能；<br>（3）TreeSet实现Cloneable接口，可以被克隆；<br>（4）TreeSet实现了Serializable接口，可以被序列化；<br>具有如下特点：</p>
 <ul>
@@ -684,11 +681,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,11 +693,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -10,21 +10,20 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="三、Spring Boot与检索ElasticSearch 一、检索">
+  <meta name="description" content="三、Spring Boot与检索ElasticSearch 一、检索我们的应用经常需要添加检索功能，开源的 ElasticSearch 是目前全文搜索引擎的 首选。他可以快速的存储、搜索和分析海量数据。Spring Boot通过整合Spring Data ElasticSearch为我们提供了非常便捷的检索功能支持；Elasticsearch是一个分布式搜索服务，提供Restful API，底层基">
 <meta name="keywords" content="Spring Boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3、Spring Boot笔记整理高级篇-检索">
 <meta property="og:url" content="ayjcsgm.github.io/2019/11/08/3、Spring-Boot笔记整理高级篇-检索/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="三、Spring Boot与检索ElasticSearch 一、检索">
+<meta property="og:description" content="三、Spring Boot与检索ElasticSearch 一、检索我们的应用经常需要添加检索功能，开源的 ElasticSearch 是目前全文搜索引擎的 首选。他可以快速的存储、搜索和分析海量数据。Spring Boot通过整合Spring Data ElasticSearch为我们提供了非常便捷的检索功能支持；Elasticsearch是一个分布式搜索服务，提供Restful API，底层基">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://picsum.photos/800/225">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191108172917980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-08T10:43:48.346Z">
+<meta property="og:updated_time" content="2019-12-14T11:30:13.907Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3、Spring Boot笔记整理高级篇-检索">
-<meta name="twitter:description" content="三、Spring Boot与检索ElasticSearch 一、检索">
-<meta name="twitter:image" content="https://picsum.photos/800/225">
+<meta name="twitter:description" content="三、Spring Boot与检索ElasticSearch 一、检索我们的应用经常需要添加检索功能，开源的 ElasticSearch 是目前全文搜索引擎的 首选。他可以快速的存储、搜索和分析海量数据。Spring Boot通过整合Spring Data ElasticSearch为我们提供了非常便捷的检索功能支持；Elasticsearch是一个分布式搜索服务，提供Restful API，底层基">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191108172917980.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -292,10 +291,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="https://picsum.photos/800/225" alt></p>
-<h1 id="三、Spring-Boot与检索"><a href="#三、Spring-Boot与检索" class="headerlink" title="三、Spring Boot与检索"></a>三、Spring Boot与检索</h1><p><strong>ElasticSearch</strong></p>
-<h2 id="一、检索"><a href="#一、检索" class="headerlink" title="一、检索"></a>一、检索</h2><a id="more"></a>
-<p>我们的应用经常需要添加检索功能，开源的 ElasticSearch 是目前全文搜索引擎的 首选。他可以快速的存储、搜索和分析海量数据。Spring Boot通过整合Spring Data ElasticSearch为我们提供了非常便捷的检索功能支持；<br>Elasticsearch是一个分布式搜索服务，提供Restful API，底层基于Lucene，采用 多shard（分片）的方式保证数据安全，并且提供自动resharding的功能，github 等大型的站点也是采用了ElasticSearch作为其搜索服务，</p>
+    <h1 id="三、Spring-Boot与检索"><a href="#三、Spring-Boot与检索" class="headerlink" title="三、Spring Boot与检索"></a>三、Spring Boot与检索</h1><p><strong>ElasticSearch</strong></p>
+<h2 id="一、检索"><a href="#一、检索" class="headerlink" title="一、检索"></a>一、检索</h2><p>我们的应用经常需要添加检索功能，开源的 ElasticSearch 是目前全文搜索引擎的 首选。他可以快速的存储、搜索和分析海量数据。Spring Boot通过整合Spring Data ElasticSearch为我们提供了非常便捷的检索功能支持；<br>Elasticsearch是一个分布式搜索服务，提供Restful API，底层基于Lucene，采用 多shard（分片）的方式保证数据安全，并且提供自动resharding的功能，github 等大型的站点也是采用了ElasticSearch作为其搜索服务，<a id="more"></a></p>
 <h2 id="二、概念"><a href="#二、概念" class="headerlink" title="二、概念"></a>二、概念</h2><ul>
 <li>以员工文档 的形式存储为例：一个文档代表一个员工数据。存储数据到 ElasticSearch 的行为叫做 索引 ，但在索引一个文档之前，需要确定将文档存 储在哪里。 </li>
 <li>一个 ElasticSearch 集群可以 包含多个 索引 ，相应的每个索引可以包含多 个 类型 。 这些不同的类型存储着多个 文档 ，每个文档又有 多个 属性 。 </li>
@@ -691,11 +688,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,11 +700,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
