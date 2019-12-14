@@ -6,21 +6,48 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="ayjcsgm.github.io">
-  <title>Hello World | HQP的个人博客</title>
+  <title>用GitHub + Hexo搭建属于自己的个人博客 | HQP的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="我听说，有一种猫叫做雨猫。天气温暖时，它就变得蓬松毛绒绒的，像白云一样上浮，你可以拴着它，像放风筝一样走，它会变透明，阳光透得过它的身体。天气晦暗时它会变黑，坠在地上，满地乱跑，毛变得硬硬的，像刚刮过的胡茬一样。你得抱着它，等天气晴朗时，再把它放出去，就像风筝末梢放着一团棉花糖。 　　我听说，有种青蛙，透明洁白，只吃茶叶。吃多之后，吐气如兰。冬天它便僵卧，张着大嘴，眠去一个季节。你往它肚里倒热">
+  <meta name="description" content="我的博客地址：[https://ayjcsgm.github.io/] 文章目录● 前言● 入门● 安装 Node.js">
+<meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="ayjcsgm.github.io/2019/09/23/hello-world/index.html">
+<meta property="og:title" content="用GitHub + Hexo搭建属于自己的个人博客">
+<meta property="og:url" content="ayjcsgm.github.io/2019/12/14/用GitHub-Hexo搭建属于自己的个人博客/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="我听说，有一种猫叫做雨猫。天气温暖时，它就变得蓬松毛绒绒的，像白云一样上浮，你可以拴着它，像放风筝一样走，它会变透明，阳光透得过它的身体。天气晦暗时它会变黑，坠在地上，满地乱跑，毛变得硬硬的，像刚刮过的胡茬一样。你得抱着它，等天气晴朗时，再把它放出去，就像风筝末梢放着一团棉花糖。 　　我听说，有种青蛙，透明洁白，只吃茶叶。吃多之后，吐气如兰。冬天它便僵卧，张着大嘴，眠去一个季节。你往它肚里倒热">
+<meta property="og:description" content="我的博客地址：[https://ayjcsgm.github.io/] 文章目录● 前言● 入门● 安装 Node.js">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-14T11:40:48.528Z">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY0ODFkMzc0MC5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY0Yzk5ZjcwOC5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY0ZWU4YTc5NC5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1MGVjMjA5Mi5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1M2Q0YjAxOS5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1NjZiNGI2Yi5wbmc">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019121418584966.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1YjdjNzRkMi5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1ZTA5MzBjMi5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2MDZlNzU1OC5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2MjJiNDU4OC5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2M2ViMWFiMi5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2YmMxZmM4Ny5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2ZTNiNDgwMy5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3MDJjNDZkNi5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3MjBjY2FlMC5wbmc">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190816220246218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3NmNiM2RhNC5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3OGI4YmEzZS5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3ZTExZWVkNy5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4MDI1YzM3Yy5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4MjNmMTI3NS5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4NDE0Y2VjNi5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4NWRiZGYyMy5wbmc">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4N2MwYTdlOS5wbmc">
+<meta property="og:updated_time" content="2019-12-14T12:36:42.177Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="我听说，有一种猫叫做雨猫。天气温暖时，它就变得蓬松毛绒绒的，像白云一样上浮，你可以拴着它，像放风筝一样走，它会变透明，阳光透得过它的身体。天气晦暗时它会变黑，坠在地上，满地乱跑，毛变得硬硬的，像刚刮过的胡茬一样。你得抱着它，等天气晴朗时，再把它放出去，就像风筝末梢放着一团棉花糖。 　　我听说，有种青蛙，透明洁白，只吃茶叶。吃多之后，吐气如兰。冬天它便僵卧，张着大嘴，眠去一个季节。你往它肚里倒热">
+<meta name="twitter:title" content="用GitHub + Hexo搭建属于自己的个人博客">
+<meta name="twitter:description" content="我的博客地址：[https://ayjcsgm.github.io/] 文章目录● 前言● 入门● 安装 Node.js">
+<meta name="twitter:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY0ODFkMzc0MC5wbmc">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -235,14 +262,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-用GitHub-Hexo搭建属于自己的个人博客" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      用GitHub + Hexo搭建属于自己的个人博客
     </h1>
   
 
@@ -254,8 +281,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/09/23/hello-world/" class="archive-article-date">
-        <time datetime="2019-09-23T06:06:49.578Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-23</time>
+<a href="/2019/12/14/用GitHub-Hexo搭建属于自己的个人博客/" class="archive-article-date">
+        <time datetime="2019-12-14T12:32:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
 </a>
 
   
@@ -268,7 +295,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.6k字</span>
+      <span class="post-count">3.2k字</span>
     </span>
   </span>
 
@@ -277,7 +304,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">5分</span>
+      <span class="post-count">12分</span>
     </span>
   </span>
 </div>
@@ -288,9 +315,225 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p></p><p>　　我听说，有一种猫叫做雨猫。天气温暖时，它就变得蓬松毛绒绒的，像白云一样上浮，你可以拴着它，像放风筝一样走，它会变透明，阳光透得过它的身体。天气晦暗时它会变黑，坠在地上，满地乱跑，毛变得硬硬的，像刚刮过的胡茬一样。你得抱着它，等天气晴朗时，再把它放出去，就像风筝末梢放着一团棉花糖。</p><hr><p> 　　我听说，有种青蛙，透明洁白，只吃茶叶。吃多之后，吐气如兰。冬天它便僵卧，张着大嘴，眠去一个季节。你往它肚里倒热水，水便成茶，馥郁芳香，可以倒在杯子里喝，香沁肺腑。有个女孩子，手头没有杯子，于是捧起青蛙，嘴对着嘴，把青蛙嘴当茶杯口。结果青蛙醒了，变成一白衣少年：“哪个公主吻了我？”</p>
+    <h2 id="我的博客地址：-https-ayjcsgm-github-io"><a href="#我的博客地址：-https-ayjcsgm-github-io" class="headerlink" title="我的博客地址：[https://ayjcsgm.github.io/]"></a><font color="#FF000">我的博客地址：<a href="https://ayjcsgm.github.io/">[https://ayjcsgm.github.io/]</a></font></h2><hr>
+<p></p><div class="toc"><h3><a name="t0"></a><a name="t0"></a>文章目录</h3><ul><li><a href="#font_colorFF000_font_12" rel="nofollow" target="_self"><font color="#FF000">● 前言</font></a></li><li><a href="#font_colorFF000_font_20" rel="nofollow" target="_self"><font color="#FF000">● 入门</font></a></li><li><a href="#font_colorFF000__Nodejsfont_31" rel="nofollow" target="_self"><font color="#FF000">● 安装 Node.js</font></a></li>
 <a id="more"></a>
-<hr>　在需要阶段的地方插入该代码语句我听说，有一种驯鹿，很爱长颈鹿的斑纹和气味，但是太矮，又碍于长颈鹿是哑巴，所以没法谈恋爱。于是它们就长起了杉树一样直拔云天的角，然后到处找一个人，在角的顶端造一个房子住着。每天，那个人负责在高树摘果子，送给长颈鹿吃，以促成驯鹿和长颈鹿的爱情——虽然见不到面，但灵魂相通的爱情。<p></p><hr><p>　　我听说，北方有一种松鼠，特别大，毛茸茸的，睡觉时喜欢摊开四肢，露出软绵绵的肚皮。你抓住一只，混熟了，就可以把它当床，睡在它的肚子上，用它的尾巴做被子。但它喜欢梦游，到处爬，所以你睡着前眼睛明明看见天花板的花纹，醒来时就可能看见松树枝、杉树枝、云、麻雀和松毛虫。</p><hr><p>　　我听说，有一种猫，特别怕冷，一遇到冷环境就全身长起蓬松松软绵绵的长毛，并且开始冬眠，怎么叫都不醒。冬天你把它挂在脖子上出门，就好像穿了件毛大衣。到了温暖的室内，它暖醒了，就喵一声跳下来，自己到炉子旁边去接着睡了。因为冬天很长，它在冬天基本是裘状，所以叫冬裘夏猫。</p><hr><p>　　我听说，有种野猪，睡一觉就长一层脂肪，起来跑一跑就练出一层肌肉，所以他身上肥瘦肥瘦，像夹心饼干。他爱去南方的海边泡澡，泡一身大粒子盐味，吹风，然后哼唧哼唧去温泉，一边蒸自己一边吃树叶子。你埋伏在温泉边，射倒它，能吃到现成的蒸火腿。你最好带蜂蜜，敷一遍再蒸，更好吃。</p><hr><p>　　我听说，以前有人喜欢在海蚌上写故事写诗。你走在海边，海蚌会跟你说：我身上有字，可以给你看噢，但有个条件，我不识字，你得念给我听。你答应了，海蚌就张开壳来，让你给它念故事。如果你看入神忘了继续念，或者企图摘抄剽窃，海蚌就会夹你一下；如果你念得好，海蚌就送你颗珍珠。</p><hr><p>　　我听说，南方有一种鸟，身材纤瘦，尾羽很长，善吟诗，平时看上去盈盈一握，却筋骨健壮。如果你和它混熟了，它就会把身体绷直，你可以握着它的腰，用它的嘴蘸墨、写字，画梅花、打印章时，还可以用它印个浅爪痕。可是它挑剔得很，墨质差，纸脏，字写得难看，或者句子毫无文采，它就会破口大骂：“居然用老娘写这么烂的文章！”</p><hr><p>我听说有种雪狐，极妩媚，皮毛柔滑。善学声音，爱恶作剧，喜在窗外学男主人女同学、女同事等声音，引女主人疑心吵架，引以为乐。被抓住后会要求：给你雪狐裘，放我走吧。若男主人不允，她便媚笑：原来是你舍不得我走啊嗯……女主人遂朝男主人双目圆睁：你留她干嘛，还不放走？心思又活络了嗯？！</p><hr><p>　　我听说，有种熊叫做云熊，其白如雪，其大若垂天之云。春天开始浮游，夏天吸取阳光。冬天，它随风在天空飘荡，到一个寒冷的地方，就开始下一团团的熊绒毛。熊绒可做大衣，闻得到夏天阳光的味道。熊绒落完，它也就飘下地来。你闻以蜂蜜，冬眠。到春天它长起了毛，就又变成云浮起来了。</p><hr><p>　　我听说有种蜗牛，寿命很长，以八千岁为春，以八千岁为秋。丈夫对妻子说，我要吻你一下，然后出门去买报纸。妻子就闭上眼，等了八天，吻到了，于是丈夫出门了。等他回来，妻子抱怨说：你这一走就是六百年，我好担心。丈夫说：哎呀，我是怕又过时了，站在那里花二百年把新闻看了嘛。</p><hr><p>　　我听说有种章鱼，善于下厨。你坐柜台后面，问它要三明治寿司刺身铁板烧咖啡茶涮锅烤串回锅肉，它舞起手臂们，切剔炒烹翻炸调撒料颠勺，又快又好，还能剩出三只手，一只负责收钱，两只和你打扑克解闷。但它开不起玩笑，偶尔它不小心手臂被铁板烫到，你可不能说“那我要这条章鱼烧！” 不然它就会舞起锅铲，任你是三头六臂也挡不住它四面八方朝你扔鱼丸。</p><hr><p>　　我听说有种虎鲸，很温柔，喜欢光，不潜游，但又怕晒。你在它背上铺沙子，张阳伞，它便喜欢你，任你在它背上住下，钓鱼、睡午觉、接吻、喝果汁。每天它张嘴吞许多小鱼，自己吃些，剩下的喷水送给你，于是你天天有新鲜刺身吃。偶然它也馋，愿意吃熟的，就会张嘴，要你抛给吃章鱼烧。</p>
+<li><a href="#font_colorFF000__Gitfont_38" rel="nofollow" target="_self"><font color="#FF000">● 安装 Git</font></a></li><ul><li><a href="#font_colorFF000__Gitfont_44" rel="nofollow" target="_self"><font color="#FF000"> • 检验Git是否安装成功</font></a></li></ul><li><a href="#font_colorFF000_Hexo_font_54" rel="nofollow" target="_self"><font color="#FF000">● 安装Hexo </font></a></li><ul><li><a href="#font_colorFF000_Hexo_font_62" rel="nofollow" target="_self"><font color="#FF000">• Hexo 初始化配置</font></a></li></ul><li><a href="#font_colorFF000_font_71" rel="nofollow" target="_self"><font color="#FF000">● 本地查看效果</font></a></li><li><a href="#font_colorFF000__Github_Pages_font_84" rel="nofollow" target="_self"><font color="#FF000">● 将博客部署到 Github Pages 上</font></a></li><ul><li><a href="#font_colorFF000___Github_font_87" rel="nofollow" target="_self"><font color="#FF000">•  注册 Github 账户</font></a></li><li><a href="#font_colorFF000_font_90" rel="nofollow" target="_self"><font color="#FF000">• 创建项目代码库</font></a></li><li><a href="#font_colorFF000__SSH_font_94" rel="nofollow" target="_self"><font color="#FF000">• 配置 SSH 密钥</font></a></li><li><a href="#font_colorFF000__GitHub_font_125" rel="nofollow" target="_self"><font color="#FF000">• 在 GitHub 账户中添加你的公钥</font></a></li><li><a href="#font_colorFF000__font_138" rel="nofollow" target="_self"><font color="#FF000">• 测试 </font></a></li><li><a href="#font_colorFF000__Git__font_151" rel="nofollow" target="_self"><font color="#FF000">• 配置 Git 个人信息 </font></a></li></ul><li><a href="#font_colorFF000__Hexo__Github_font_160" rel="nofollow" target="_self"><font color="#FF000">● 将本地的 Hexo 文件更新到 Github 的库中</font></a></li><li><a href="#font_colorFF000_font_199" rel="nofollow" target="_self"><font color="#FF000">● 在博客上发表文章</font></a></li><li><a href="#font_colorFF000_font_257" rel="nofollow" target="_self"><font color="#FF000">● 为博客更换自己喜欢的主题</font></a></li><li><a href="#font_colorFF000__Hexo_font_299" rel="nofollow" target="_self"><font color="#FF000"></font></a></li><li><a href="#font_colorFF000_font_325" rel="nofollow" target="_self"><font color="#FF000"></font></a></li><li><a href="#font_colorFF000_font_330" rel="nofollow" target="_self"><font color="#FF000"></font></a></li></ul></div><p></p>
+<hr>
+<h1><a name="t1"></a><a name="t1"></a><a id="font_colorFF000_font_12"></a><font color="#FF000">● 前言</font></h1>
+<p>这是一篇有关如何使用 <font color="#DC143C">Github</font> 和 <font color="#DC143C">Hexo</font> 搭建属于自己独立博客的详尽教程，刚开始搭建博客的时候自己也是网上各种百度，由于自己属于<font color="#DC143C">小白</font>那种，历经了千辛万苦才弄好，所以借这个机会写一篇小白真正能看懂的博客搭建教程，教你一步一步走向成功的彼岸！ </p>
+<p>推荐文章： <a href="http://www.cnblogs.com/jhzhu/p/3893297.html" rel="noopener" target="_blank">《我为什么写博客》</a> （By 知明所以）<br>
+　　　　 　<a href="http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/" rel="noopener" target="_blank">《为什么你应该（从现在开始就）写博客》</a>  (By 刘未鹏 | Mind Hacks)</p>
+<h1><a name="t2"></a><a name="t2"></a><a id="font_colorFF000_font_20"></a><font color="#FF000">● 入门</font></h1>
+<blockquote>
+<center>Github Pages</center>
+</blockquote>
+<p>Github Pages可以被认为是用户编写的、托管在github上的静态网页。使用Github Pages可以为你提供一个免费的服务器，免去了自己搭建服务器和写数据库的麻烦。此外还可以绑定自己的域名。</p>
+<blockquote>
+<center>Hexo</center>
+</blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h1><a name="t3"></a><a name="t3"></a><a id="font_colorFF000__Nodejsfont_31"></a><font color="#FF000">● 安装 Node.js</font></h1>
+<p><a href="https://nodejs.org/en/download/" rel="noopener" target="_blank">点击此处</a>访问官网，按需下载相应版本，默认安装可以了<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY0ODFkMzc0MC5wbmc" alt></p>
+<p>注：本人在安装过程中出现了Warning 1909,无法创建快捷方式，这种情况很少出现，如果在安装过程中也有这种情况请参考百度文库（win10系统实测可行）：<a href="https://wenku.baidu.com/view/4ad59110964bcf84b9d57ba5.html" rel="noopener" target="_blank">《Win7安装程序警告1909无法创建快捷方式》</a><br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY0Yzk5ZjcwOC5wbmc" alt></p>
+<h1><a name="t4"></a><a name="t4"></a><a id="font_colorFF000__Gitfont_38"></a><font color="#FF000">● 安装 Git</font></h1>
+<p><a href="https://git-scm.com/download/win" rel="noopener" target="_blank">点击此处</a>访问官网，按需下载相应版本，默认安装即可 <br>
+参考资料：<a href="https://www.cnblogs.com/jytx/p/5602927.html" rel="noopener" target="_blank">《如何在windows下安装GIT》</a> 　（By 俊雨廷休）<br>
+　　　　　<a href="http://git.oschina.net/progit/" rel="noopener" target="_blank">《Pro Git（中文版）》</a></p>
+<h2><a name="t5"></a><a name="t5"></a><a id="font_colorFF000__Gitfont_44"></a><font color="#FF000"> • 检验Git是否安装成功</font></h2>
+<p>同时按下 Win 键和 R 键打开运行窗口,输入 <font color="#DC143C">cmd</font> ，然后输入以下命令，有相应版本信息显示则安装成功，若不正确可以卸载软件重新安装，此外若安装成功，在桌面右键鼠标，可以看到菜单里多了 <font color="#DC143C">Git GUI Here</font> 和 <font color="#DC143C">Git Bash Here</font>两个选项，第一个是<font color="#DC143C">图形界面的Git操作</font>，另一个是<font color="#DC143C">命令行</font></p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git --version  </span><br><span class="line">$ node -v  </span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY0ZWU4YTc5NC5wbmc" alt><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1MGVjMjA5Mi5wbmc" alt></p>
+<h1><a name="t6"></a><a name="t6"></a><a id="font_colorFF000_Hexo_font_54"></a><font color="#FF000">● 安装Hexo </font></h1>
+<p>选择一个磁盘，新建一个文件夹，自己重命名文件夹（如：我的文件夹为：<font color="#DC143C">Ｅ\TRHX_Blog</font>），博客相关文件将储存在此文件夹下，在该文件夹下右键鼠标，点击 <font color="#DC143C">Git Bash Here</font>，输入以下 npm 命令即可安装，第一个命令表示安装 hexo，第二个命令表示安装 hexo 部署到 git page 的 deployer，如图所示即为安装成功</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g  </span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1M2Q0YjAxOS5wbmc" alt></p>
+<h2><a name="t7"></a><a name="t7"></a><a id="font_colorFF000_Hexo_font_62"></a><font color="#FF000">• Hexo 初始化配置</font></h2>
+<p>在刚才新建的文件夹里面再次新建一个 <font color="#DC143C">Hexo</font> 文件夹（如：我的文件夹为：<font color="#DC143C">E\TRHX_Blog\Hexo</font>）,进入该 <font color="#DC143C">Hexo</font> 文件夹右键鼠标，点击 <font color="#DC143C">Git Bash Here</font>，输入以下命令，如图所示则安装成功</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1NjZiNGI2Yi5wbmc" alt></p>
+<p>Hexo 安装完成后，将会在指定文件夹中新建所需要的文件，Hexo 文件夹下的目录如下：<br>
+
+</p><p><img src="https://img-blog.csdnimg.cn/2019121418584966.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1><a name="t8"></a><a name="t8"></a><a id="font_colorFF000_font_71"></a><font color="#FF000">● 本地查看效果</font></h1>
+<p>执行以下命令，执行完即可登录 <a href="http://localhost:4000/" rel="noopener" target="_blank">http://localhost:4000/</a> 查看效果</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate  </span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>显示以下信息说明操作成功：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+
+<p>登录 <a href="http://localhost:4000/" rel="noopener" target="_blank">http://localhost:4000/</a> 查看效果：<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1YjdjNzRkMi5wbmc" alt></p>
+<h1><a name="t9"></a><a name="t9"></a><a id="font_colorFF000__Github_Pages_font_84"></a><font color="#FF000">● 将博客部署到 Github Pages 上</font></h1>
+<p>到目前为止，我们的本地博客就成功搭建了，但是现在我们只能通过本地连接查看博客，我们要做的是让其他人也能够访问我们的博客，这就需要我们将博客部署到Github Pages上</p>
+<h2><a name="t10"></a><a name="t10"></a><a id="font_colorFF000___Github_font_87"></a><font color="#FF000">•  注册 Github 账户</font></h2>
+<p><a href="https://github.com" rel="noopener" target="_blank">点击此处</a>访问 Github 官网，点击 Sign Up 注册账户</p>
+<h2><a name="t11"></a><a name="t11"></a><a id="font_colorFF000_font_90"></a><font color="#FF000">• 创建项目代码库</font></h2>
+<p>点击 <font color="#DC143C">New repository</font> 开始创建，步骤及注意事项见下图：<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY1ZTA5MzBjMi5wbmc" alt></p>
+<h2><a name="t12"></a><a name="t12"></a><a id="font_colorFF000__SSH_font_94"></a><font color="#FF000">• 配置 SSH 密钥</font></h2>
+<p>只有配置好 <font color="#DC143C">SSH</font> 密钥后，我们才可以通过 git 操作实现本地代码库与 Github 代码库同步，在你第一次新建的文件夹里面（如：我的文件夹为：<font color="#DC143C">Ｅ\TRHX_Blog</font>） <font color="#DC143C">Git Bash Here</font> 输入以下命令：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;your email@example.com&quot; </span><br><span class="line">//引号里面填写你的邮箱地址，比如我的是1141341095@qq.com</span><br></pre></td></tr></table></figure>
+
+<p>之后会出现：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.  </span><br><span class="line">Enter file in which to save the key (/c/Users/you/.ssh/id_rsa):  </span><br><span class="line">//到这里可以直接回车将密钥按默认文件进行存储</span><br></pre></td></tr></table></figure>
+
+<p>然后会出现：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase):  </span><br><span class="line">//这里是要你输入密码，其实不需要输什么密码，直接回车就行 </span><br><span class="line">Enter same passphrase again:</span><br></pre></td></tr></table></figure>
+
+<p>接下来屏幕会显示：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in /c/Users/you/.ssh/id_rsa.  </span><br><span class="line">Your public key has been saved in /c/Users/you/.ssh/id_rsa.pub.  </span><br><span class="line">The key fingerprint is:  </span><br><span class="line">这里是各种字母数字组成的字符串，结尾是你的邮箱  </span><br><span class="line">The key&apos;s randomart image is:  </span><br><span class="line">这里也是各种字母数字符号组成的字符串</span><br></pre></td></tr></table></figure>
+
+<p>运行以下命令，将公钥的内容复制到系统粘贴板上</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p><font color="#FF000">• 在 GitHub 账户中添加你的公钥</font></p>
+<p>① 登陆 GitHub，进入 <font color="#DC143C">Settings</font>：<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2MDZlNzU1OC5wbmc" alt></p>
+<p>② 点击 <font color="#DC143C">SSH and GPG Keys</font>：<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2MjJiNDU4OC5wbmc" alt></p>
+<p>③ 选择 <font color="#DC143C">New SSH key</font>：<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2M2ViMWFiMi5wbmc" alt></p>
+<p>④ 粘贴密钥：<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2YmMxZmM4Ny5wbmc" alt></p>
+<h2><a name="t14"></a><a name="t14"></a><a id="font_colorFF000__font_138"></a><font color="#FF000">• 测试 </font></h2>
+<p>输入以下命令：<font color="#DC143C">注意：git@github.com不要做任何更改！</font></p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>之后会显示：<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY2ZTNiNDgwMy5wbmc" alt></p>
+<p>输入 <font color="#DC143C">yes</font> 后会显示：<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3MDJjNDZkNi5wbmc" alt></p>
+<p>此时表示设置正确</p>
+<h2><a name="t15"></a><a name="t15"></a><a id="font_colorFF000__Git__font_151"></a><font color="#FF000">• 配置 Git 个人信息 </font></h2>
+<p>Git 会根据用户的名字和邮箱来记录提交，GitHub 也是用这些信息来做权限的处理，输入以下命令进行个人信息的设置，把名称和邮箱替换成你自己的，名字可以不是 GitHub 的昵称，但为了方便记忆，建议与 GitHub  一致</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;此处填你的用户名&quot;  </span><br><span class="line">$ git config --global user.email  &quot;此处填你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>到此为止 SSH Key 配置成功，本机已成功连接到 Github</p>
+<h1><a name="t16"></a><a name="t16"></a><a id="font_colorFF000__Hexo__Github_font_160"></a><font color="#FF000">● 将本地的 Hexo 文件更新到 Github 的库中</font></h1>
+<p>① 登录 Github 打开自己的项目 <font color="#DC143C">your name.github.io</font><br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3MjBjY2FlMC5wbmc" alt></p>
+<p>② 鼠标移到 <font color="#DC143C">Clone or download</font> 按钮，选择 <font color="#DC143C">Use SSH</font><br>
+<img src="https://img-blog.csdnimg.cn/20190816220246218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2NzU5MjI0,size_16,color_FFFFFF,t_70" alt></p>
+<p>③ 一键复制地址<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3NmNiM2RhNC5wbmc" alt></p>
+<p>④ 打开你创建的 <font color="#DC143C">Hexo</font> 文件夹（如：<font color="#DC143C">E:\TRHX_Blog\Hexo</font>），右键用记事本（Notepad++或者VS code等都可以）打开该文件夹下的 <font color="#DC143C">_config.yml</font> 文件<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3OGI4YmEzZS5wbmc" alt></p>
+<p>⑤ 按下图修改 <font color="#DC143C">_config.yml</font> 文件并保存<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY3ZTExZWVkNy5wbmc" alt></p>
+<p>⑥ 在 <font color="#DC143C">Hexo</font> 文件夹下分别执行以下命令</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g  </span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>或者直接执行</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>执行完之后会让你输入你的 Github 的账号和密码，如果此时报以下错误，说明你的 deployer 没有安装成功</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
+
+<p>需要执行以下命令再安装一次：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>再执行 <font color="#DC143C"><code>hexo g -d</code></font>，你的博客就会部署到 Github 上了</p>
+<p>⑦ 访问博客</p>
+<p>你的博客地址：<font color="#DC143C">https://你的用户名.github.io</font>，比如我的是：<font color="#DC143C">https://ayjcsgm.github.io/</font> ,现在每个人都可以通过此链接访问你的博客了</p>
+<h1><a name="t17"></a><a name="t17"></a><a id="font_colorFF000_font_199"></a><font color="#FF000">● 在博客上发表文章</font></h1>
+<p>博客已经成功搭建了，但是我们该怎么写博客呢？</p>
+<p>① 新建一个空文章，输入以下命令，会在项目 <font color="#DC143C">\Hexo\source\_posts</font> 中生成 <font color="#DC143C">文章标题.md</font> 文件，文章标题根据需要命名</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;文章标题&quot;</span><br></pre></td></tr></table></figure>
+
+<p>也可以直接在 <font color="#DC143C">\Hexo\source\_posts</font> 目录下右键鼠标新建文本文档，改后缀为 <font color="#DC143C">.md</font> 即可，这种方法比较方便</p>
+<p>② 用编辑器编写文章</p>
+<p><font color="#DC143C">md</font> 全称 Markdown， Markdown 是 2004 年由 John Gruberis 设计和开发的纯文本格式的语法，非常的简单实用，常用的标记符号屈指可数，几分钟即可学会， <font color="#DC143C">.md</font> 文件可以使用支持 Markdown 语法的编辑器编辑，然后保存文件到 <font color="#DC143C">\Hexo\source\_posts</font> 文件夹下即可</p>
+<p>推荐 Windows 上使用 <font color="#DC143C">MarkdownPad2</font> 或者<font color="#DC143C">小书匠</font> 编辑器，macOS 上使用 <font color="#DC143C">Mou</font> 编辑器，Linux 上使用 <font color="#DC143C">Remarkable</font>编辑器，Web 端上使用<font color="#DC143C">CSDN</font> ，其他编辑器推荐可以参考我的另一篇文章：<a href="https://blog.csdn.net/qq_36759224/article/details/82229243" rel="noopener" target="_blank">《最新主流 Markdown 编辑器推荐》</a></p>
+<p>文章标题，标签，分类，封面图片，摘要等，可以在 Front-matter 里面配置（Front-matter 是文件最上方以 — 分隔的区域，用于指定个别文件的变量，官方文档：https://hexo.io/zh-cn/docs/front-matter ），举个例子：</p>
+<pre class="prettyprint"><code class="prism language-markdown has-numbering" onclick="mdcp.copyCode(event)" style="position: unset;">---
+layout: 页面布局（配合主题文档使用）
+title: 文章名称
+date: 文章日期
+comments: 文章是否开启评论
+photos: 文章封面图（仅部分主题支持）
+tags: 
+  - 文章标签一
+  - 文章标签二
+categories: 文章分类
+description: 文章描述，即要在首页显示的摘要（仅部分主题支持）
+---
+
+<p>这里是摘要</p>
+<p>&lt;!– more –&gt;</p>
+<p>这里是正文</p>
+<p>注意：description 和 &lt;!– more –&gt; 方式显示摘要二选一即可，部分主题不支持description，每个配置英文冒号后面要空一格，不同主题配置有所差异，具体要参考主题文档</p>
+<p>当我们用编辑器写好文章后，可以使用以下命令将其推送到服务器上</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g  </span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>或者将两个命令合二为一输入以下命令：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+
+<p>现在访问你的博客就可以看见写好的文章啦！</p>
+<p>参考资料：<a href="https://blog.csdn.net/jinhui157/article/details/73872795" rel="noopener" target="_blank">《10款流行的Markdown编辑器》</a> （By xiaoxiao_engineer）<br>
+　　　　　<a href="https://www.jianshu.com/p/q81RER/" rel="noopener" target="_blank">《献给写作者的 Markdown 新手指南》</a> （By 简书）<br>
+　　　　　<a href="https://sspai.com/post/25137" rel="noopener" target="_blank">《认识与入门 Markdown》</a> （By Te_Lee）<br>
+　　　　　<a href="http://ibruce.info/2013/11/26/markdown/" rel="noopener" target="_blank">《markdown简明语法》</a> （By 不如）<br>
+　　　　　<a href="https://www.jianshu.com/p/191d1e21f7ed" rel="noopener" target="_blank">《markdown基本语法》</a> （By 高鸿祥）<br>
+　　　　　<a href="http://www.liuhaihua.cn/archives/143443.html" rel="noopener" target="_blank">《Markdown 公式指导手册》</a> （By Harries）</p>
+<h1><a name="t18"></a><a name="t18"></a><a id="font_colorFF000_font_257"></a><font color="#FF000">● 为博客更换自己喜欢的主题</font></h1>
+<p>博客也搭建好了，文章也会写了，但是！！！默认的主题并不喜欢怎么办？现在，我们就来为自己的博客更换自己喜欢的主题</p>
+<p><a href="https://hexo.io/themes/" rel="noopener" target="_blank">点击此处</a>进入 Hexo 官网的主题专栏，我们可以看见有许多的主题供我们选择<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4MDI1YzM3Yy5wbmc" alt></p>
+<p>我们要做的就是把主题克隆过来，在此我们以主题 <font color="#DC143C">Aero-Dual</font> 为例，点进去我们就可以看见该主题作者的博客，鼠标滑到底，我们可以看见 <font color="#DC143C">Theme By Levblanc</font> 的字样（其他主题类似），点击作者 <font color="#DC143C">Levblanc</font> ，页面就会跳转到该主题所有的相关文件在 Github 上的地址，复制该地址<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4MjNmMTI3NS5wbmc" alt><br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4NDE0Y2VjNi5wbmc" alt><br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4NWRiZGYyMy5wbmc" alt></p>
+<p>再打开 <font color="#DC143C">Hexo</font> 文件夹下的 <font color="#DC143C">themes</font> 目录（如：<font color="#DC143C">E:\TRHX_Blog\Hexo\themes</font>），右键 <font color="#DC143C">Git Bash Here</font>，输入以下命令：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 此处填写你刚才复制的主题地址</span><br></pre></td></tr></table></figure>
+
+<p>比如要安装 <font color="#DC143C">Aero-Dual</font> 主题，则输入命令：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/levblanc/hexo-theme-aero-dual</span><br></pre></td></tr></table></figure>
+
+<p>等待下载完成后即可在 <font color="#DC143C">themes</font> 目录下生成 <font color="#DC143C">hexo-theme-aero-dual</font> 文件夹，然后打开 <font color="#DC143C">Hexo</font> 文件夹下的配置文件 <font color="#DC143C">_config.yml</font> ，找到关键字 <font color="#DC143C">theme</font>，修改参数为：<font color="#DC143C">theme：hexo-theme-aero-dual</font> （其他主题修改成相应名称即可），再次注意冒号后面有一个空格！<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMTkvMDMvMjUvNWM5OGY4N2MwYTdlOS5wbmc" alt></p>
+<p>返回 <font color="#DC143C">Hexo</font> 目录，右键 <font color="#DC143C">Git Bash Here</font> ，输入以下命令开始部署主题：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g   </span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>此时打开浏览器，访问 <a href="http://localhost:4000/" rel="noopener" target="_blank">http://localhost:4000/</a>  就可看见我们的主题已经更换了，如果感觉效果满意，我们就可以把它部署到Github上了</p>
+<p>打开 <font color="#DC143C">Hexo</font> 文件夹，右键 <font color="#DC143C">Git Bash Here</font> ，输入以下命令：</p>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean  </span><br><span class="line">//该命令的作用是清除缓存，若不输入此命令，服务器有可能更新不了主题</span><br><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>此时访问自己的博客即可看见更换后的主题，但我们仍然需要对主题的相关配置进行修改，比如网站标题，图标等等，Hexo 中有两份主要的配置文件，名称都是  <font color="#DC143C">_config.yml</font> ，它们均是用于站点配置使用的。其中，一份位于站点根目录下（比如我的：<font color="#DC143C">E:\TRHX_Blog\Hexo\_config.yml</font>），主要包含 Hexo 本身整站的配置；另一份位于主题目录下（比如我的：<font color="#DC143C">E:\TRHX_Blog\Hexo\themes\hexo-theme-aero-dual\_config.yml</font>），这份配置由主题作者提供，主要用于配置主题相关的选项，一般  <font color="#DC143C">_config.yml</font>  文件里都有相关注释，按需修改即可</p>
+
+<blockquote>
+<p>参考资料：</p>
+<p><a href="https://www.zhihu.com/question/24422335" rel="noopener" target="_blank">《有哪些好看的 Hexo 主题？》</a> （知乎）<br> <a href="https://hexo.io/zh-cn/docs/configuration.html" rel="noopener" target="_blank">《Hexo | 配置》</a> （Hexo官方文档）<br> <a href="https://segmentfault.com/a/1190000002632530" rel="noopener" target="_blank">《hexo常用命令笔记》</a> （By 小弟调调）</p>
+</blockquote>
+</code></pre>
     
 
     
@@ -336,7 +579,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="ayjcsgm.github.io/2019/09/23/hello-world/" title="Hello World" target="_blank">ayjcsgm.github.io/2019/09/23/hello-world/</a>
+          <a href="ayjcsgm.github.io/2019/12/14/用GitHub-Hexo搭建属于自己的个人博客/" title="用GitHub + Hexo搭建属于自己的个人博客" target="_blank">ayjcsgm.github.io/2019/12/14/用GitHub-Hexo搭建属于自己的个人博客/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -349,12 +592,18 @@
   </div>
   <div class="article-info article-info-index">
     
-    <div class="article-pop-out tagcloud">
-      <i class="icon-tuding"></i>
-      <a class="article-tag-list-link color3">置顶</a>
-    </div>
     
-    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -405,7 +654,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http:ayjcsgm.github.io/2019/09/23/hello-world/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http:ayjcsgm.github.io/2019/12/14/用GitHub-Hexo搭建属于自己的个人博客/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -420,15 +669,20 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/09/23/my-fisrt-post/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/14/在Hexo-个人博客上添加实用功能/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Spring Boot个人博客
+          在Hexo 个人博客上添加实用功能
         
       </div>
     </a>
   
+  
+    <a href="/2019/12/14/随机图片API接口/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">随机图片API接口</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -467,9 +721,9 @@
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "Hello World" -->
+    <!-- id: "用GitHub + Hexo搭建属于自己的个人博客" -->
     var gitment = new Gitment({
-      id: "20190923140649",
+      id: "20191214203203",
       owner: 'AYJCSGM',
       repo: 'AYJCSGM.github.io',
       oauth: {
