@@ -85,7 +85,7 @@
     })
     .then(function (data) {
       var hitokoto = document.getElementById('hitokoto');
-      hitokoto.innerText = "谚语："+data.hitokoto;
+      hitokoto.innerText = ""+data.hitokoto;
     })
     .catch(function (err) {
       console.error(err);
