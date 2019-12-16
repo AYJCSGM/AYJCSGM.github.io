@@ -2,5 +2,5 @@
 	
 .article{margin:30px;border:1px solid #ddd;border-top:1px solid #fff;border-b
 ottom:1px solid #fff;/* background:#fff; */background: rgba(255,255,255,.5);transition:all .2s ease-in}
-body{margin:0;font-size:14px;font-family:Helvetica Neue,Helvetica,STHeiTi,Arial,sans-serif;line-height:1.5;color:#333;/* background-color:#fff; */min-height:100%;background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('https://acg.toubiec.cn/random') no-repeat 0% 0%/ cover;cursor: url(https://images2015.cnblogs.com/blog/961272/201607/961272-20160719145928310-806072030.gif), default!important;}
+body{margin:0;font-size:14px;font-family:Helvetica Neue,Helvetica,STHeiTi,Arial,sans-serif;line-height:1.5;color:#333;/* background-color:#fff; */min-height:100%;background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('https://acg.toubiec.cn/random') no-repeat 0% 0%/ cover;cursor: url(https://images2015.cnblogs.com/blog/961272/201607/961272-20160719145928310-806072030.gif), default;}
 body{overflow-y:hidden;/* background:#eaeaea */}
