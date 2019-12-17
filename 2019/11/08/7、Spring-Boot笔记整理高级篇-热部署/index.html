@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="七、Spring Boot与开发热部署热部署 一、热部署在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。">
+  <meta name="description" content="七、Spring Boot与开发热部署热部署一、热部署在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。">
 <meta name="keywords" content="Spring Boot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="7、Spring Boot笔记整理高级篇-热部署">
 <meta property="og:url" content="ayjcsgm.github.io/2019/11/08/7、Spring-Boot笔记整理高级篇-热部署/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="七、Spring Boot与开发热部署热部署 一、热部署在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。">
+<meta property="og:description" content="七、Spring Boot与开发热部署热部署一、热部署在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-12-14T11:28:30.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="7、Spring Boot笔记整理高级篇-热部署">
-<meta name="twitter:description" content="七、Spring Boot与开发热部署热部署 一、热部署在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。">
+<meta name="twitter:description" content="七、Spring Boot与开发热部署热部署一、热部署在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -96,9 +96,9 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 	        
-				<li><a href="https://github.com/AYJCSGM" target="_blank">技术笔记</a></li>
+				<li><a href="https://blog.csdn.net/weixin_43664418" target="_blank">技术笔记</a></li>
 	        
-				<li><a href="https://github.com/AYJCSGM" target="_blank">随笔</a></li>
+				<li><a href="https://ayjcsgm.github.io/resume/resume" target="_blank">动态简历</a></li>
 	        
 			</ul>
 		</nav>
@@ -145,7 +145,7 @@
 			
 			
 			<div>
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1332647902&auto=1&height=66"></iframe>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1390897989&auto=1&height=66"></iframe>
 			</div>
 			
 				
@@ -221,9 +221,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="https://github.com/AYJCSGM">技术笔记</a></li>
+					<li style="width: 33.333333333333336%"><a href="https://blog.csdn.net/weixin_43664418">技术笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="https://github.com/AYJCSGM">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="https://ayjcsgm.github.io/resume/resume">动态简历</a></li>
 		        
 				</ul>
 			</nav>
@@ -272,7 +272,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">358字</span>
+      <span class="post-count">355字</span>
     </span>
   </span>
 
@@ -292,26 +292,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="七、Spring-Boot与开发热部署"><a href="#七、Spring-Boot与开发热部署" class="headerlink" title="七、Spring Boot与开发热部署"></a>七、Spring Boot与开发热部署</h1><p><strong>热部署</strong></p>
-<h2 id="一、热部署"><a href="#一、热部署" class="headerlink" title="一、热部署"></a>一、热部署</h2><p>在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。</p>
-<a id="more"></a>
-<ul>
-<li>1、模板引擎<br>– 在Spring Boot中开发情况下禁用模板引擎的cache<br>– 页面模板改变ctrl+F9可以重新编译当前页面并生效</li>
-<li>2、Spring Loaded<br>Spring官方提供的热部署程序，实现修改类文件的热部署<br>– 下载Spring Loaded（项目地址<a href="https://github.com/springprojects/spring-loaded）" target="_blank" rel="noopener">https://github.com/springprojects/spring-loaded）</a><br>– 添加运行时参数；<br>– javaagent:C:/springloaded-1.2.5.RELEASE.jar –noverify</li>
-<li>3、JRebel<br>– 收费的一个热部署软件<br>– 安装插件使用即可</li>
-<li>4、Spring Boot Devtools（推荐）<br>– 引入依赖</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;  </span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">&lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt; </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
-<p>– IDEA使用ctrl+F9<br>– 或做一些小调整 Intellij IEDA 和 Eclipse 不同， Eclipse 设置了自动编译之后，修改类它会自动编译 ，而 IDEA 在非 RUN 或 DEBUG 情况下 才会自动编译（前提是你已经设置了 Auto - Compile ）。 </p>
-<ul>
-<li>设置自动编译（settings-compiler-make project automatically） </li>
-<li>ctrl+shift+alt+/（maintenance） </li>
-<li>勾选compiler.automake.allow.when.app.running</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.deploy.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/abc"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+    <!-- build time:Tue Dec 17 2019 14:35:19 GMT+0800 (GMT+08:00) --><h1 id="七、Spring-Boot与开发热部署"><a href="#七、Spring-Boot与开发热部署" class="headerlink" title="七、Spring Boot与开发热部署"></a>七、Spring Boot与开发热部署</h1><p><strong>热部署</strong></p><h2 id="一、热部署"><a href="#一、热部署" class="headerlink" title="一、热部署"></a>一、热部署</h2><p>在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。</p><a id="more"></a><ul><li>1、模板引擎<br>– 在Spring Boot中开发情况下禁用模板引擎的cache<br>– 页面模板改变ctrl+F9可以重新编译当前页面并生效</li><li>2、Spring Loaded<br>Spring官方提供的热部署程序，实现修改类文件的热部署<br>– 下载Spring Loaded（项目地址<a href="https://github.com/springprojects/spring-loaded）" target="_blank" rel="noopener">https://github.com/springprojects/spring-loaded）</a><br>– 添加运行时参数；<br>– javaagent:C:/springloaded-1.2.5.RELEASE.jar –noverify</li><li>3、JRebel<br>– 收费的一个热部署软件<br>– 安装插件使用即可</li><li>4、Spring Boot Devtools（推荐）<br>– 引入依赖</li></ul><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;  </span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">&lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt; </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>– IDEA使用ctrl+F9<br>– 或做一些小调整 Intellij IEDA 和 Eclipse 不同， Eclipse 设置了自动编译之后，修改类它会自动编译 ，而 IDEA 在非 RUN 或 DEBUG 情况下 才会自动编译（前提是你已经设置了 Auto - Compile ）。</p><ul><li>设置自动编译（settings-compiler-make project automatically）</li><li>ctrl+shift+alt+/（maintenance）</li><li>勾选compiler.automake.allow.when.app.running</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.deploy.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/abc"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><!-- rebuild by neat -->
     
 
     
@@ -722,11 +703,11 @@ setInterval("createtime()",250);
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -818,6 +799,15 @@ setInterval("createtime()",250);
                   <i class="icon-link icon"></i>
                 
                 CSDN
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://ayjcsgm.github.io/resume/resume" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                简历
               </a>
             </li>
           
