@@ -6,26 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="ayjcsgm.github.io">
-  <title>3、Spring Boot笔记整理-日志 | HQP的个人博客</title>
+  <title>面向对象七种设计原则 | HQP的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="三、日志1、日志框架 小张；开发一个大型系统； ​        1、System.out.println(“”)；将关键数据打印在控制台；去掉？写在一个文件？ ​        2、框架来记录系统的一些运行时信息；日志框架 ；  zhanglogging.jar；">
-<meta name="keywords" content="Spring Boot">
+  <meta name="description" content="@[TOC]">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3、Spring Boot笔记整理-日志">
-<meta property="og:url" content="ayjcsgm.github.io/2019/11/02/3、Spring-Boot尚硅谷笔记整理-日志/index.html">
+<meta property="og:title" content="面向对象七种设计原则">
+<meta property="og:url" content="ayjcsgm.github.io/2019/12/19/面向对象七种设计原则/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="三、日志1、日志框架 小张；开发一个大型系统； ​        1、System.out.println(“”)；将关键数据打印在控制台；去掉？写在一个文件？ ​        2、框架来记录系统的一些运行时信息；日志框架 ；  zhanglogging.jar；">
+<meta property="og:description" content="@[TOC]">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191102182232527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191102182404648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191102182449356.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-12-14T11:30:40.467Z">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/05/1336147233_3529.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/05/1336147240_4896.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/05/1336201566_1496.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/05/1336201573_6059.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/06/1336312710_1412.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/06/1336312720_2300.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/13/1336909329_9009.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/13/1336909334_4352.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/13/1336910243_3390.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/13/1336910247_6209.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/14/1336930023_1487.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/14/1336930028_3039.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/14/1336930654_2743.jpg">
+<meta property="og:image" content="https://img-my.csdn.net/uploads/201205/14/1336930673_6550.jpg">
+<meta property="og:updated_time" content="2019-12-19T08:13:41.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3、Spring Boot笔记整理-日志">
-<meta name="twitter:description" content="三、日志1、日志框架 小张；开发一个大型系统； ​        1、System.out.println(“”)；将关键数据打印在控制台；去掉？写在一个文件？ ​        2、框架来记录系统的一些运行时信息；日志框架 ；  zhanglogging.jar；">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191102182232527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="面向对象七种设计原则">
+<meta name="twitter:description" content="@[TOC]">
+<meta name="twitter:image" content="https://img-my.csdn.net/uploads/201205/05/1336147233_3529.jpg">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
   
@@ -255,14 +266,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-3、Spring-Boot尚硅谷笔记整理-日志" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-面向对象七种设计原则" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      3、Spring Boot笔记整理-日志
+      面向对象七种设计原则
     </h1>
   
 
@@ -274,8 +285,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/11/02/3、Spring-Boot尚硅谷笔记整理-日志/" class="archive-article-date">
-        <time datetime="2019-11-02T11:27:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-02</time>
+<a href="/2019/12/19/面向对象七种设计原则/" class="archive-article-date">
+        <time datetime="2019-12-19T08:11:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
 </a>
 
   
@@ -288,7 +299,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.8k字</span>
+      <span class="post-count">9.5k字</span>
     </span>
   </span>
 
@@ -297,7 +308,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">8分</span>
+      <span class="post-count">34分</span>
     </span>
   </span>
 </div>
@@ -308,147 +319,217 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="三、日志"><a href="#三、日志" class="headerlink" title="三、日志"></a>三、日志</h1><h2 id="1、日志框架"><a href="#1、日志框架" class="headerlink" title="1、日志框架"></a>1、日志框架</h2><p> 小张；开发一个大型系统；</p>
-<p>​        1、System.out.println(“”)；将关键数据打印在控制台；去掉？写在一个文件？</p>
-<p>​        2、框架来记录系统的一些运行时信息；日志框架 ；  zhanglogging.jar；</p>
+    <p>@[TOC]</p>
 <a id="more"></a>
-<p>​        3、高大上的几个功能？异步模式？自动归档？xxxx？  zhanglogging-good.jar？</p>
-<p>​        4、将以前框架卸下来？换上新的框架，重新修改之前相关的API；zhanglogging-prefect.jar；</p>
-<p>​        5、JDBC—数据库驱动；</p>
-<p>​            写了一个统一的接口层；日志门面（日志的一个抽象层）；logging-abstract.jar；</p>
-<p>​            给项目中导入具体的日志实现就行了；我们之前的日志框架都是实现的抽象层；</p>
-<p><strong>市面上的日志框架；</strong></p>
-<p>JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j….</p>
-<table>
-<thead>
-<tr>
-<th>日志门面  （日志的抽象层）</th>
-<th>日志实现</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><del>JCL（Jakarta  Commons Logging）</del>    SLF4j（Simple  Logging Facade for Java）    <strong><del>jboss-logging</del></strong></td>
-<td>Log4j  JUL（java.util.logging）  Log4j2  <strong>Logback</strong></td>
-</tr>
-</tbody></table>
-<p>左边选一个门面（抽象层）、右边来选一个实现；</p>
-<p>日志门面：  SLF4J；</p>
-<p>日志实现：Logback；</p>
-<p>SpringBoot：底层是Spring框架，Spring框架默认是用JCL；‘</p>
-<p>​    <strong>==SpringBoot选用 SLF4j和logback；==</strong></p>
-<h2 id="2、SLF4j使用"><a href="#2、SLF4j使用" class="headerlink" title="2、SLF4j使用"></a>2、SLF4j使用</h2><h3 id="1、如何在系统中使用SLF4j-https-www-slf4j-org"><a href="#1、如何在系统中使用SLF4j-https-www-slf4j-org" class="headerlink" title="1、如何在系统中使用SLF4j   https://www.slf4j.org"></a>1、如何在系统中使用SLF4j   <a href="https://www.slf4j.org" target="_blank" rel="noopener">https://www.slf4j.org</a></h3><p>以后开发的时候，日志记录方法的调用，不应该来直接调用日志的实现类，而是调用日志抽象层里面的方法；</p>
-<p>给系统里面导入slf4j的jar和  logback的实现jar</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Logger logger = LoggerFactory.getLogger(HelloWorld.class);</span><br><span class="line">    logger.info(<span class="string">"Hello World"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 
-<p>图示：</p>
-<p><img src="https://img-blog.csdnimg.cn/20191102182232527.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>每一个日志的实现框架都有自己的配置文件。使用slf4j以后，<strong>配置文件还是做成日志实现框架自己本身的配置文件；</strong></p>
-<h3 id="2、遗留问题"><a href="#2、遗留问题" class="headerlink" title="2、遗留问题"></a>2、遗留问题</h3><p>a（slf4j+logback）: Spring（commons-logging）、Hibernate（jboss-logging）、MyBatis、xxxx</p>
-<p>统一日志记录，即使是别的框架和我一起统一使用slf4j进行输出？</p>
-<p>[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-uqQBhn3Y-1571997431579)(images/legacy.png)]</p>
-<p><strong>如何让系统中所有的日志都统一到slf4j；</strong></p>
-<p>==1、将系统中其他日志框架先排除出去；==</p>
-<p>==2、用中间包来替换原有的日志框架；==</p>
-<p>==3、我们导入slf4j其他的实现==</p>
-<h2 id="3、SpringBoot日志关系"><a href="#3、SpringBoot日志关系" class="headerlink" title="3、SpringBoot日志关系"></a>3、SpringBoot日志关系</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="1、面向对象设计原则概述"><a href="#1、面向对象设计原则概述" class="headerlink" title="1、面向对象设计原则概述"></a>1、面向对象设计原则概述</h1><p>&nbsp;&nbsp;&nbsp;&nbsp; 对于面向对象软件系统的设计而言，在支持可维护性的同时，提高系统的可复用性是一个至关重要的问题，<strong>如何同时提高一个软件系统的可维护性和可复用性是面向对象设计需要解决的核心问题之一</strong>。在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。<br><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面向对象设计原则为支持可维护性复用而诞生，这些原则蕴含在很多设计模式中，它们是从许多设计方案中总结出的指导性原则</strong>。面向对象设计原则也是我们用于评价一个设计模式的使用效果的重要指标之一，在设计模式的学习中，大家经常会看到诸如“<span style="font-family:'Times New Roman';">XXX</span>模式符合<span style="font-family:'Times New Roman';">XXX</span>原则”、“<span style="font-family:'Times New Roman';">XXX</span>模式违反了<span style="font-family:'Times New Roman';">XXX</span>原则”这样的语句。</p><p><span style="font-size:16px;"><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 最常见的7种面向对象设计原则如下表所示：</span></span></p><p align="center"><strong>表<span style="font-family:'Times New Roman';">1&nbsp; 7</span>种常用的面向对象设计原则</strong></p><div class="table-box"><table style="width:648px;" border="1" cellspacing="0" cellpadding="0"><tbody><tr><td style="background:rgb(243,243,243);" valign="top"><p align="center"><strong><span style="font-size:16px;">设计原则名称</span></strong></p></td><td style="background:rgb(243,243,243);" valign="top"><p align="center"><span style="font-size:16px;"><strong>定<span style="font-family:'Times New Roman';">&nbsp;&nbsp;</span>义</strong></span></p></td><td style="background:rgb(243,243,243);" valign="top"><p align="center"><strong><span style="font-size:16px;">使用频率</span></strong></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">单一职责原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Single Responsibility Principle, SRP)</span></p></td><td valign="top"><p><span style="font-size:16px;">一个类只负责一个功能领域中的相应职责</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★☆</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">开闭原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Open-Closed Principle, OCP)</span></p></td><td valign="top"><p><span style="font-size:16px;">软件实体应对扩展开放，而对修改关闭</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★★</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">里氏代换原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Liskov Substitution Principle, LSP)</span></p></td><td valign="top"><p><span style="font-size:16px;">所有引用基类对象的地方能够透明地使用其子类的对象</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">&nbsp;</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★★</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">依赖倒转原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Dependence&nbsp; Inversion Principle, DIP)</span></p></td><td valign="top"><p align="left"><span style="font-size:16px;">抽象不应该依赖于细节，细节应该依赖于抽象</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★★</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">接口隔离原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Interface Segregation Principle, ISP)</span></p></td><td valign="top"><p><span style="font-size:16px;">使用多个专门的接口，而不使用单一的总接口</span></p></td><td valign="top"><p><span style="font-size:16px;">★★☆☆☆</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">合成复用原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Composite Reuse Principle, CRP)</span></p></td><td valign="top"><p align="left"><span style="font-size:16px;">尽量使用对象组合，而不是继承来达到复用的目的</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">&nbsp;</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★☆</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">迪米特法则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Law of Demeter, LoD)</span></p></td><td valign="top"><p><span style="font-size:16px;">一个软件实体应当尽可能少地与其他实体发生相互作用</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★☆☆</span></p></td></tr></tbody></table></div><p align="center"></p>
+<h1 id="2、单一职责原则"><a href="#2、单一职责原则" class="headerlink" title="2、单一职责原则"></a>2、单一职责原则</h1><div class="htmledit_views" id="content_views">
 
-<p>SpringBoot使用它来做日志功能；</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>底层依赖关系</p>
-<p><img src="https://img-blog.csdnimg.cn/20191102182404648.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>总结：</p>
-<p>​    1）、SpringBoot底层也是使用slf4j+logback的方式进行日志记录</p>
-<p>​    2）、SpringBoot也把其他的日志都替换成了slf4j；</p>
-<p>​    3）、中间替换包？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"rawtypes"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">LogFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> String UNSUPPORTED_OPERATION_IN_JCL_OVER_SLF4J = <span class="string">"http://www.slf4j.org/codes.html#unsupported_operation_in_jcl_over_slf4j"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> LogFactory logFactory = <span class="keyword">new</span> SLF4JLogFactory();</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20191102182449356.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>​    4）、如果我们要引入其他框架？一定要把这个框架的默认日志依赖移除掉？</p>
-<p>​            Spring框架用的是commons-logging；</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>==SpringBoot能自动适配所有的日志，而且底层使用slf4j+logback的方式记录日志，引入其他框架的时候，只需要把这个框架依赖的日志框架排除掉即可；==</strong></p>
-<h2 id="4、日志使用；"><a href="#4、日志使用；" class="headerlink" title="4、日志使用；"></a>4、日志使用；</h2><h3 id="1、默认配置"><a href="#1、默认配置" class="headerlink" title="1、默认配置"></a>1、默认配置</h3><p>SpringBoot默认帮我们配置好了日志；</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//记录器</span></span><br><span class="line">Logger logger = LoggerFactory.getLogger(getClass());</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//System.out.println();</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//日志的级别；</span></span><br><span class="line">	<span class="comment">//由低到高   trace&lt;debug&lt;info&lt;warn&lt;error</span></span><br><span class="line">	<span class="comment">//可以调整输出的日志级别；日志就只会在这个级别以以后的高级别生效</span></span><br><span class="line">	logger.trace(<span class="string">"这是trace日志..."</span>);</span><br><span class="line">	logger.debug(<span class="string">"这是debug日志..."</span>);</span><br><span class="line">	<span class="comment">//SpringBoot默认给我们使用的是info级别的，没有指定级别的就用SpringBoot默认规定的级别；root级别</span></span><br><span class="line">	logger.info(<span class="string">"这是info日志..."</span>);</span><br><span class="line">	logger.warn(<span class="string">"这是warn日志..."</span>);</span><br><span class="line">	logger.error(<span class="string">"这是error日志..."</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<pre><code>日志输出格式：
-    %d表示日期时间，
-    %thread表示线程名，
-    %-5level：级别从左显示5个字符宽度
-    %logger{50} 表示logger名字最长50个字符，否则按照句点分割。 
-    %msg：日志消息，
-    %n是换行符
---&gt;
-%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</code></pre><p>SpringBoot修改日志的默认配置</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">logging.level.com.atguigu</span>=<span class="string">trace</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#logging.path=</span></span><br><span class="line"><span class="comment"># 不指定路径在当前项目下生成springboot.log日志</span></span><br><span class="line"><span class="comment"># 可以指定完整的路径；</span></span><br><span class="line"><span class="comment">#logging.file=G:/springboot.log</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在当前磁盘的根路径下创建spring文件夹和里面的log文件夹；使用 spring.log 作为默认文件</span></span><br><span class="line"><span class="meta">logging.path</span>=<span class="string">/spring/log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  在控制台输出的日志的格式</span></span><br><span class="line"><span class="meta">logging.pattern.console</span>=<span class="string">%d&#123;yyyy-MM-dd&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n</span></span><br><span class="line"><span class="comment"># 指定文件中日志输出的格式</span></span><br><span class="line"><span class="meta">logging.pattern.file</span>=<span class="string">%d&#123;yyyy-MM-dd&#125; === [%thread] === %-5level === %logger&#123;50&#125; ==== %msg%n</span></span><br></pre></td></tr></table></figure>
-
-<table>
-<thead>
-<tr>
-<th>logging.file</th>
-<th>logging.path</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>(none)</td>
-<td>(none)</td>
-<td></td>
-<td>只在控制台输出</td>
-</tr>
-<tr>
-<td>指定文件名</td>
-<td>(none)</td>
-<td>my.log</td>
-<td>输出日志到my.log文件</td>
-</tr>
-<tr>
-<td>(none)</td>
-<td>指定目录</td>
-<td>/var/log</td>
-<td>输出到指定目录的 spring.log 文件中</td>
-</tr>
-</tbody></table>
-<h3 id="2、指定配置"><a href="#2、指定配置" class="headerlink" title="2、指定配置"></a>2、指定配置</h3><p>给类路径下放上每个日志框架自己的配置文件即可；SpringBoot就不使用他默认配置的了</p>
-<table>
-<thead>
-<tr>
-<th>Logging System</th>
-<th>Customization</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Logback</td>
-<td><code>logback-spring.xml</code>, <code>logback-spring.groovy</code>, <code>logback.xml</code> or <code>logback.groovy</code></td>
-</tr>
-<tr>
-<td>Log4j2</td>
-<td><code>log4j2-spring.xml</code> or <code>log4j2.xml</code></td>
-</tr>
-<tr>
-<td>JDK (Java Util Logging)</td>
-<td><code>logging.properties</code></td>
-</tr>
-</tbody></table>
-<p>logback.xml：直接就被日志框架识别了；</p>
-<p><strong>logback-spring.xml</strong>：日志框架就不直接加载日志的配置项，由SpringBoot解析日志配置，可以使用SpringBoot的高级Profile功能</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">springProfile</span> <span class="attr">name</span>=<span class="string">"staging"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- configuration to be enabled when the "staging" profile is active --&gt;</span></span><br><span class="line">  	可以指定某段配置只在某个环境下生效</span><br><span class="line"><span class="tag">&lt;/<span class="name">springProfile</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"stdout"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">        日志输出格式：</span></span><br><span class="line"><span class="comment">			%d表示日期时间，</span></span><br><span class="line"><span class="comment">			%thread表示线程名，</span></span><br><span class="line"><span class="comment">			%-5level：级别从左显示5个字符宽度</span></span><br><span class="line"><span class="comment">			%logger&#123;50&#125; 表示logger名字最长50个字符，否则按照句点分割。 </span></span><br><span class="line"><span class="comment">			%msg：日志消息，</span></span><br><span class="line"><span class="comment">			%n是换行符</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.classic.PatternLayout"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">springProfile</span> <span class="attr">name</span>=<span class="string">"dev"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; ----&gt; [%thread] ---&gt; %-5level %logger&#123;50&#125; - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">springProfile</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">springProfile</span> <span class="attr">name</span>=<span class="string">"!dev"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; ==== [%thread] ==== %-5level %logger&#123;50&#125; - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">springProfile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果使用logback.xml作为日志配置文件，还要使用profile功能，会有以下错误</p>
-<p> <code>no applicable action for [springProfile]</code></p>
-<h2 id="5、切换日志框架"><a href="#5、切换日志框架" class="headerlink" title="5、切换日志框架"></a>5、切换日志框架</h2><p>可以按照slf4j的日志适配图，进行相关的切换；</p>
-<p>slf4j+log4j的方式；</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-classic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-over-slf4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>切换为log4j2</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-log4j2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 单一职责原则是最简单的面向对象设计原则，它用于控制类的粒度大小。单一职责原则定义如下：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
+<p><span style="font-size:16px;"><strong>单一职责原则<span style="font-family:'Times New Roman';">(Single Responsibility Principle, SRP)</span>：一个类只负责一个功能领域中的相应职责，或者可以定义为：就一个类而言，应该只有一个引起它变化的原因。</strong></span></p>
+</td>
+</tr></tbody></table></div><p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 单一职责原则告诉我们：一个类不能太“累”！在软件系统中，一个类（大到模块，小到方法）承担的职责越多，它被复用的可能性就越小，而且一个类承担的职责过多，就相当于将这些职责耦合在一起，当其中一个职责变化时，可能会影响其他职责的运作，因此要将这些职责进行分离，将不同的职责封装在不同的类中，即将不同的变化原因封装在不同的类中，如果多个职责总是同时发生改变则可将它们封装在同一类中。</span></p>
+<p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#ff0000;">单一职责原则是实现<strong>高内聚、低耦合</strong>的指导方针，它是最简单但又最难运用的原则</span>，需要设计人员发现类的不同职责并将其分离，而发现类的多重职责需要设计人员具有较强的分析设计能力和相关实践经验。</span></p>
+<p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下面通过一个简单实例来进一步分析单一职责原则：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(242,242,242);"><tbody><tr><td valign="top">
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">Sunny</span>软件公司开发人员针对某<span style="font-family:'Times New Roman';">CRM</span>（<span style="font-family:'Times New Roman';">Customer Relationship&nbsp; Management</span>，客户关系管理）系统中客户信息图形统计模块提出了如图<span style="font-family:'Times New Roman';">1</span>所示初始设计方案：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/05/1336147233_3529.jpg" width="294" height="163" style="width:234px;"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">1&nbsp;
+</span>初始设计方案结构图</span></strong></p>
+<p><span style="font-size:16px;">在图<span style="font-family:'Times New Roman';">1</span>中，<span style="font-family:'Times New Roman';">CustomerDataChart</span>类中的方法说明如下：<span style="font-family:'Times New Roman';">getConnection()</span>方法用于连接数据库，<span style="font-family:'Times New Roman';">findCustomers()</span>用于查询所有的客户信息，<span style="font-family:'Times New Roman';">createChart()</span>用于创建图表，<span style="font-family:'Times New Roman';">displayChart()</span>用于显示图表。</span></p>
+<p><span style="font-size:16px;">现使用单一职责原则对其进行重构。</span></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在图<span style="font-family:'Times New Roman';">1</span>中，<span style="font-family:'Times New Roman';">CustomerDataChart</span>类承担了太多的职责，既包含与数据库相关的方法，又包含与图表生成和显示相关的方法。如果在其他类中也需要连接数据库或者使用<span style="font-family:'Times New Roman';">findCustomers()</span>方法查询客户信息，则难以实现代码的重用。无论是修改数据库连接方式还是修改图表显示方式都需要修改该类，它不止一个引起它变化的原因，违背了单一职责原则。因此需要对该类进行拆分，使其满足单一职责原则，类<span style="font-family:'Times New Roman';">CustomerDataChart</span>可拆分为如下三个类：</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) DBUtil</span>：负责连接数据库，包含数据库连接方法<span style="font-family:'Times New Roman';">getConnection()</span>；</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) CustomerDAO</span>：负责操作数据库中的<span style="font-family:'Times New Roman';">Customer</span>表，包含对<span style="font-family:'Times New Roman';">Customer</span>表的增删改查等方法，如<span style="font-family:'Times New Roman';">findCustomers()</span>；</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) CustomerDataChart</span>：负责图表的生成和显示，包含方法<span style="font-family:'Times New Roman';">createChart()</span>和<span style="font-family:'Times New Roman';">displayChart()</span>。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 使用单一职责原则重构后的结构如图<span style="font-family:'Times New Roman';">2</span>所示：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/05/1336147240_4896.jpg" width="592" height="275" style="width:564px;"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">2&nbsp;
+</span>重构后的结构图</span></strong></p>
 
 
+<h1 id="3、开闭原则"><a href="#3、开闭原则" class="headerlink" title="3、开闭原则"></a>3、开闭原则</h1><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 开闭原则是面向对象的可复用设计的第一块基石，它是最重要的面向对象设计原则。开闭原则由<span style="font-family:'Times New Roman';color:#ff0000;"><strong>Bertrand&nbsp; Meyer</strong></span>于<span style="font-family:'Times New Roman';">1988</span>年提出，其定义如下：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
+<p align="left"><span style="font-size:16px;"><strong>开闭原则<span style="font-family:'Times New Roman';">(Open-Closed Principle, OCP)</span>：一个软件实体应当对扩展开放，对修改关闭。即软件实体应尽量在不修改原有代码的情况下进行扩展。</strong></span></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在开闭原则的定义中，<strong>软件实体可以指一个软件模块、一个由多个类组成的局部结构或一个独立的类</strong>。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 任何软件都需要面临一个很重要的问题，即它们的需求会随时间的推移而发生变化。当软件系统需要面对新的需求时，我们应该尽量保证系统的设计框架是稳定的。如果一个软件设计符合开闭原则，那么可以非常方便地对系统进行扩展，而且在扩展时无须修改现有代码，使得软件系统在拥有适应性和灵活性的同时具备较好的稳定性和延续性。随着软件规模越来越大，软件寿命越来越长，软件维护成本越来越高，设计满足开闭原则的软件系统也变得越来越重要。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为了满足开闭原则，需要对系统进行抽象化设计，<strong>抽象化是开闭原则的关键</strong>。在<span style="font-family:'Times New Roman';">Java</span>、<span style="font-family:'Times New Roman';">C#</span>等编程语言中，可以为系统定义一个相对稳定的抽象层，而将不同的实现行为移至具体的实现层中完成。在很多面向对象编程语言中都提供了接口、抽象类等机制，可以通过它们定义系统的抽象层，再通过具体类来进行扩展。如果需要修改系统的行为，无须对抽象层进行任何改动，只需要增加新的具体类来实现新的业务功能即可，实现在不修改已有代码的基础上扩展系统的功能，达到开闭原则的要求。</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(247,247,247);"><tbody><tr><td valign="top">
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sunny</span>软件公司开发的CRM系统可以显示各种类型的图表，如饼状图和柱状图等，为了支持多种图表显示方式，原始设计方案如图1所示：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/05/1336201566_1496.jpg" width="429" height="190"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">1&nbsp;</span>初始设计方案结构图</span></strong></p>
+
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在ChartDisplay类的display()</span>方法中存在如下代码片段：
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">......</span><br><span class="line">if (type.equals(&quot;pie&quot;)) &#123;</span><br><span class="line">PieChart chart = new PieChart();</span><br><span class="line">chart.display();</span><br><span class="line">&#125;</span><br><span class="line">else if (type.equals(&quot;bar&quot;)) &#123;</span><br><span class="line">BarChart chart = new BarChart();</span><br><span class="line">chart.display();</span><br><span class="line">&#125;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+</p><p><span style="font-size:16px;">&nbsp; &nbsp;&nbsp;&nbsp; 在该代码中，如果需要增加一个新的图表类，如折线图<span style="font-family:'Times New Roman';">LineChart</span>，则需要修改<span style="font-family:'Times New Roman';">ChartDisplay</span>类的<span style="font-family:'Times New Roman';">display()</span>方法的源代码，增加新的判断逻辑，违反了开闭原则。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现对该系统进行重构，使之符合开闭原则。</span></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在本实例中，由于在<span style="font-family:'Times New Roman';">ChartDisplay</span>类的<span style="font-family:'Times New Roman';">display()</span>方法中针对每一个图表类编程，因此增加新的图表类不得不修改源代码。可以通过抽象化的方式对系统进行重构，使之增加新的图表类时无须修改源代码，满足开闭原则。具体做法如下：</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1)&nbsp;</span>增加一个抽象图表类<span style="font-family:'Times New Roman';">AbstractChart</span>，将各种具体图表类作为其子类；</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2)&nbsp; ChartDisplay</span>类针对抽象图表类进行编程，由客户端来决定使用哪种具体图表。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 重构后结构如图<span style="font-family:'Times New Roman';">2</span>所示：</span></p>
+<p align="center"><img alt src="https://img-my.csdn.net/uploads/201205/05/1336201573_6059.jpg" width="499" height="238" style="width:566px;"></p>
+<p align="center"><span style="font-size:16px;"><strong>图2 重构后的结构图</strong></span></p>
+<span style="font-size:16px;"></span>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在图<span style="font-family:'Times New Roman';">2</span>中，我们引入了<span style="color:#ff0000;">抽象图表类<span style="font-family:'Times New Roman';">AbstractChart</span></span>，且<span style="font-family:'Times New Roman';">ChartDisplay</span>针对抽象图表类进行编程，并通过<span style="font-family:'Times New Roman';">setChart()</span>方法由客户端来设置实例化的具体图表对象，在<span style="font-family:'Times New Roman';">ChartDisplay</span>的<span style="font-family:'Times New Roman';">display()</span>方法中调用<span style="font-family:'Times New Roman';">chart</span>对象的<span style="font-family:'Times New Roman';">display()</span>方法显示图表。如果需要增加一种新的图表，如折线图<span style="font-family:'Times New Roman';">LineChart</span>，只需要将<span style="font-family:'Times New Roman';">LineChart</span>也作为<span style="font-family:'Times New Roman';">AbstractChart</span>的子类，在客户端向<span style="font-family:'Times New Roman';">ChartDisplay</span>中注入一个<span style="font-family:'Times New Roman';">LineChart</span>对象即可，无须修改现有类库的源代码。</span><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 注意：因为<span style="font-family:'Times New Roman';">xml</span>和<span style="font-family:'Times New Roman';">properties</span>等格式的配置文件是纯文本文件，可以直接通过<span style="font-family:'Times New Roman';">VI</span>编辑器或记事本进行编辑，且无须编译，因此在软件开发中，一般不把对配置文件的修改认为是对系统源代码的修改。如果一个系统在扩展时只涉及到修改配置文件，而原有的<span style="font-family:'Times New Roman';">Java</span>代码或<span style="font-family:'Times New Roman';">C#</span>代码没有做任何修改，该系统即可认为是一个符合开闭原则的系统。</span></p>
+
+<h1 id="4、里氏代换原则"><a href="#4、里氏代换原则" class="headerlink" title="4、里氏代换原则"></a>4、里氏代换原则</h1> <div class="htmledit_views" id="content_views">
+                                            <p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 里氏代换原则由<span style="font-family:'Times New Roman';">2008</span>年图灵奖得主、美国第一位计算机科学女博士<span style="font-family:'Times New Roman';color:#ff0000;"><strong>Barbara Liskov</strong></span>教授和卡内基·梅隆大学<span style="font-family:'Times New Roman';">Jeannette Wing</span>教授于<span style="font-family:'Times New Roman';">1994</span>年提出。其严格表述如下：如果对每一个类型为<span style="font-family:'Times New Roman';">S</span>的对象<span style="font-family:'Times New Roman';">o1</span>，都有类型为<span style="font-family:'Times New Roman';">T</span>的对象<span style="font-family:'Times New Roman';">o2</span>，使得以<span style="font-family:'Times New Roman';">T</span>定义的所有程序<span style="font-family:'Times New Roman';">P</span>在所有的对象<span style="font-family:'Times New Roman';">o1</span>代换<span style="font-family:'Times New Roman';">o2</span>时，程序<span style="font-family:'Times New Roman';">P</span>的行为没有变化，那么类型<span style="font-family:'Times New Roman';">S</span>是类型<span style="font-family:'Times New Roman';">T</span>的子类型。这个定义比较拗口且难以理解，因此我们一般使用它的另一个通俗版定义：</span></p><div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top"><p><span style="font-size:16px;"><strong>里氏代换原则<span style="font-family:'Times New Roman';">(Liskov Substitution Principle, LSP)</span>：所有引用基类（父类）的地方必须能透明地使用其子类的对象。</strong></span></p></td></tr></tbody></table></div><p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 里氏代换原则告诉我们，<span style="color:#ff0000;"><strong>在软件中将一个基类对象替换成它的子类对象，程序将不会产生任何错误和异常，反过来则不成立，如果一个软件实体使用的是一个子类对象的话，那么它不一定能够使用基类对象。</strong></span>例如：我喜欢动物，那我一定喜欢狗，因为狗是动物的子类；但是我喜欢狗，不能据此断定我喜欢动物，因为我并不喜欢老鼠，虽然它也是动物。</span></p><p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 例如有两个类，一个类为<span style="font-family:'Times New Roman';">BaseClass</span>，另一个是<span style="font-family:'Times New Roman';">SubClass</span>类，并且<span style="font-family:'Times New Roman';">SubClass</span>类是<span style="font-family:'Times New Roman';">BaseClass</span>类的子类，那么一个方法如果可以接受一个<span style="font-family:'Times New Roman';">BaseClass</span>类型的基类对象<span style="font-family:'Times New Roman';">base</span>的话，如：<span style="font-family:'Times New Roman';">method1(base)</span>，那么它必然可以接受一个<span style="font-family:'Times New Roman';">BaseClass</span>类型的子类对象<span style="font-family:'Times New Roman';">sub</span>，<span style="font-family:'Times New Roman';">method1(sub)</span>能够正常运行。反过来的代换不成立，如一个方法<span style="font-family:'Times New Roman';">method2</span>接受<span style="font-family:'Times New Roman';">BaseClass</span>类型的子类对象<span style="font-family:'Times New Roman';">sub</span>为参数：<span style="font-family:'Times New Roman';">method2(sub)</span>，那么一般而言不可以有<span style="font-family:'Times New Roman';">method2(base)</span>，除非是重载方法。</span></p><p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 里氏代换原则是实现开闭原则的重要方式之一，由于使用基类对象的地方都可以使用子类对象，因此<strong><span style="color:#ff0000;">在程序中尽量使用基类类型来对对象进行定义，而在运行时再确定其子类类型，用子类对象来替换父类对象</span></strong>。</span></p><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:16px;">在使用里氏代换原则时需要注意如下几个问题：</span></p><p align="left"><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1)</span>子类的所有方法必须在父类中声明，或子类必须实现父类中声明的所有方法。根据里氏代换原则，为了保证系统的扩展性，在程序中通常使用父类来进行定义，如果一个方法只存在子类中，在父类中不提供相应的声明，则无法在以父类定义的对象中使用该方法。</span></p><p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) &nbsp;</span>我们在运用里氏代换原则时，尽量把父类设计为抽象类或者接口，让子类继承父类或实现父接口，并实现在父类中声明的方法，运行时，子类实例替换父类实例，我们可以很方便地扩展系统的功能，同时无须修改原有子类的代码，增加新的功能可以通过增加一个新的子类来实现。里氏代换原则是开闭原则的具体实现手段之一。</span></p><p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) Java</span>语言中，在编译阶段，<span style="font-family:'Times New Roman';">Java</span>编译器会检查一个程序是否符合里氏代换原则，这是一个与实现无关的、纯语法意义上的检查，但<span style="font-family:'Times New Roman';">Java</span>编译器的检查是有局限的。</span></p><div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(247,247,247);"><tbody><tr><td valign="top"><span style="font-family:'Times New Roman';"></span><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在Sunny软件公司开发的<span style="font-family:'Times New Roman';">CRM</span>系统中，客户<span style="font-family:'Times New Roman';">(Customer)</span>可以分为<span style="font-family:'Times New Roman';">VIP</span>客户<span style="font-family:'Times New Roman';">(VIPCustomer)</span>和普通客户<span style="font-family:'Times New Roman';">(CommonCustomer)</span>两类，系统需要提供一个发送<span style="font-family:'Times New Roman';">Email</span>的功能，原始设计方案如图<span style="font-family:'Times New Roman';">1</span>所示：<strong></strong></span></p><p align="center"><strong><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/06/1336312710_1412.jpg" width="507" height="330" style="width:412px;"></span></strong></p><p align="center"><strong><span style="font-size:12px;">图<span style="font-family:'Times New Roman';">1</span>原始结构图</span></strong></p><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在对系统进行进一步分析后发现，无论是普通客户还是<span style="font-family:'Times New Roman';">VIP</span>客户，发送邮件的过程都是相同的，也就是说两个<span style="font-family:'Times New Roman';">send()</span>方法中的代码重复，而且在本系统中还将增加新类型的客户。为了让系统具有更好的扩展性，同时减少代码重复，使用里氏代换原则对其进行重构。</span></p></td></tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在本实例中，可以考虑增加一个新的抽象客户类<span style="font-family:'Times New Roman';">Customer</span>，而将<span style="font-family:'Times New Roman';">CommonCustomer</span>和<span style="font-family:'Times New Roman';">VIPCustomer</span>类作为其子类，邮件发送类<span style="font-family:'Times New Roman';">EmailSender</span>类针对抽象客户类<span style="font-family:'Times New Roman';">Customer</span>编程，根据里氏代换原则，能够接受基类对象的地方必然能够接受子类对象，因此将<span style="font-family:'Times New Roman';">EmailSender</span>中的<span style="font-family:'Times New Roman';">send()</span>方法的参数类型改为<span style="font-family:'Times New Roman';">Customer</span>，如果需要增加新类型的客户，只需将其作为<span style="font-family:'Times New Roman';">Customer</span>类的子类即可。重构后的结构如图<span style="font-family:'Times New Roman';">2</span>所示：</span></p><p align="center"><img alt src="https://img-my.csdn.net/uploads/201205/06/1336312720_2300.jpg" width="199" height="439" style="width:319px;"></p><p align="center"><strong>图2<span style="font-family:'Times New Roman';">&nbsp; </span>重构后的结构图</strong></p><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#ff0000;"><strong>里氏代换原则是实现开闭原则的重要方式之一。</strong></span>在本实例中，在传递参数时使用基类对象，除此以外，在定义成员变量、定义局部变量、确定方法返回类型时都可使用里氏代换原则。针对基类编程，在程序运行时再确定具体子类。</span></p>
+
+<h1 id="5、依赖倒转原则"><a href="#5、依赖倒转原则" class="headerlink" title="5、依赖倒转原则"></a>5、依赖倒转原则</h1><div class="htmledit_views" id="content_views">
+
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:16px;">如果说开闭原则是面向对象设计的目标的话，那么依赖倒转原则就是面向对象设计的主要实现机制之一，它是系统抽象化的具体实现。依赖倒转原则是<span style="font-family:'Times New Roman';color:#ff0000;"><strong>Robert C. Martin</strong></span>在<span style="font-family:'Times New Roman';">1996</span>年为“<span style="font-family:'Times New Roman';">C++Reporter</span>”所写的专栏<span style="font-family:'Times New Roman';">Engineering
+ Notebook</span>的第三篇，后来加入到他在<span style="font-family:'Times New Roman';">2002</span>年出版的经典著作“<span style="font-family:'Times New Roman';color:#ff0000;"><strong>Agile Software Development, Principles, Patterns, and Practices</strong></span>”一书中。依赖倒转原则定义如下：</span></span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
+<p><strong><span style="font-size:16px;">依赖倒转原则<span style="font-family:'Times New Roman';">(Dependency Inversion&nbsp; Principle, DIP)</span>：抽象不应该依赖于细节，细节应当依赖于抽象。换言之，要针对接口编程，而不是针对实现编程。</span></strong></p>
+</td>
+</tr></tbody></table></div><p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000;">&nbsp; 依赖倒转原则要求我们在程序代码中传递参数时或在关联关系中，尽量引用层次高的抽象层类，即使用接口和抽象类进行变量类型声明、参数类型声明、方法返回类型声明，以及数据类型的转换等，而不要用具体类来做这些事情。</span>为了确保该原则的应用，一个具体类应当只实现接口或抽象类中声明过的方法，而不要给出多余的方法，否则将无法调用到在子类中增加的新方法。</span><span style="font-size:16px;"></span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在引入抽象层后，系统将具有很好的灵活性，在程序中尽量使用抽象层进行编程，而将具体类写在配置文件中，这样一来，如果系统行为发生变化，只需要对抽象层进行扩展，并修改配置文件，而无须修改原有系统的源代码，在不修改的情况下来扩展系统的功能，满足开闭原则的要求。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在实现依赖倒转原则时，我们需要针对抽象层编程，而将具体类的对象通过<span style="color:#ff0000;"><strong>依赖注入<span style="font-family:'Times New Roman';">(DependencyInjection, DI)</span></strong></span>的方式注入到其他对象中，<strong><span style="color:#ff0000;">依赖注入是指当一个对象要与其他对象发生依赖关系时，通过抽象来注入所依赖的对象</span></strong>。常用的注入方式有三种，分别是：<span style="color:#ff0000;"><strong>构造注入，设值注入（<span style="font-family:'Times New Roman';">Setter</span>注入）和接口注入</strong></span>。构造注入是指通过构造函数来传入具体类的对象，设值注入是指通过<span style="font-family:'Times New Roman';">Setter</span>方法来传入具体类的对象，而接口注入是指通过在接口中声明的业务方法来传入具体类的对象。这些方法在定义时使用的是抽象类型，在运行时再传入具体类型的对象，由子类对象来覆盖父类对象。</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0"><tbody><tr><td valign="top">
+<div class="table-box"><table border="0" cellspacing="0" cellpadding="0" width="631" style="width:631px;"><tbody><tr><td valign="top">
+<p align="center"><strong></strong>&nbsp;</p>
+</td>
+<td valign="top">
+<p><span style="font-size:16px;"><strong>扩展</strong></span></p>
+<p><span style="font-size:16px;">软件工程大师<span style="font-family:'Times New Roman';">Martin Fowler</span>在其文章<em><span style="font-family:'Times New Roman';">Inversion of&nbsp;&nbsp;&nbsp; Control Containers and the Dependency Injection pattern</span></em>中对依赖注入进行了深入的分析，参考链接：</span></p>
+<p><span style="font-family:'Times New Roman';font-size:16px;">http://martinfowler.com/articles/injection.html</span></p>
+</td>
+</tr></tbody></table></div><p></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下面通过一个简单实例来加深对依赖倒转原则的理解：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(247,247,247);"><tbody><tr><td valign="top">
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sunny</span>软件公司开发人员在开发某<span style="font-family:'Times New Roman';">CRM</span>系统时发现：该系统经常需要将存储在<span style="font-family:'Times New Roman';">TXT</span>或<span style="font-family:'Times New Roman';">Excel</span>文件中的客户信息转存到数据库中，因此需要进行数据格式转换。在客户数据操作类中将调用数据格式转换类的方法实现格式转换和数据库插入操作，初始设计方案结构如图<span style="font-family:'Times New Roman';">1</span>所示：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/13/1336909329_9009.jpg" width="501" height="247"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">1&nbsp;</span>初始设计方案结构图</span></strong></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在编码实现图<span style="font-family:'Times New Roman';">1</span>所示结构时，<span style="font-family:'Times New Roman';">Sunny</span>软件公司开发人员发现该设计方案存在一个非常严重的问题，由于每次转换数据时数据来源不一定相同，因此需要更换数据转换类，如有时候需要将<span style="font-family:'Times New Roman';">TXTDataConvertor</span>改为<span style="font-family:'Times New Roman';">ExcelDataConvertor</span>，此时，需要修改<span style="font-family:'Times New Roman';">CustomerDAO</span>的源代码，而且在引入并使用新的数据转换类时也不得不修改<span style="font-family:'Times New Roman';">CustomerDAO</span>的源代码，系统扩展性较差，违反了开闭原则，现需要对该方案进行重构。</span></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在本实例中，<span style="color:#ff0000;">由于<span style="font-family:'Times New Roman';">CustomerDAO</span>针对具体数据转换类编程，因此在增加新的数据转换类或者更换数据转换类时都不得不修改<span style="font-family:'Times New Roman';">CustomerDAO</span>的源代码</span>。<span style="color:#ff0000;">我们可以通过引入抽象数据转换类解决该问题</span>，在引入抽象数据转换类<span style="font-family:'Times New Roman';">DataConvertor</span>之后，<span style="font-family:'Times New Roman';">CustomerDAO</span>针对抽象类<span style="font-family:'Times New Roman';">DataConvertor</span>编程，而将具体数据转换类名存储在配置文件中，符合依赖倒转原则。根据里氏代换原则，程序运行时，具体数据转换类对象将替换<span style="font-family:'Times New Roman';">DataConvertor</span>类型的对象，程序不会出现任何问题。更换具体数据转换类时无须修改源代码，只需要修改配置文件；如果需要增加新的具体数据转换类，只要将新增数据转换类作为<span style="font-family:'Times New Roman';">DataConvertor</span>的子类并修改配置文件即可，原有代码无须做任何修改，满足开闭原则。重构后的结构如图<span style="font-family:'Times New Roman';">2</span>所示：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/13/1336909334_4352.jpg" width="654" height="315"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">2</span>重构后的结构图</span></strong></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在上述重构过程中，我们使用了开闭原则、里氏代换原则和依赖倒转原则，在大多数情况下，这三个设计原则会同时出现，<span style="color:#ff0000;"><strong>开闭原则是目标，里氏代换原则是基础，依赖倒转原则是手段</strong>，</span>它们相辅相成，相互补充，目标一致，只是分析问题时所站角度不同而已。</span></p>
+
+
+<h1 id="6、接口隔离原则"><a href="#6、接口隔离原则" class="headerlink" title="6、接口隔离原则"></a>6、接口隔离原则</h1><div class="htmledit_views" id="content_views">
+
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 接口隔离原则定义如下：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
+<p align="left"><strong><span style="font-size:16px;">接口隔离原则<span style="font-family:'Times New Roman';">(Interface&nbsp; Segregation Principle, ISP)</span>：使用多个专门的接口，而不使用单一的总接口，即客户端不应该依赖那些它不需要的接口。</span></strong></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+根据接口隔离原则，当一个接口太大时，我们需要将它分割成一些更细小的接口，使用该接口的客户端仅需知道与之相关的方法即可。<strong><span style="color:#ff0000;">每一个接口应该承担一种相对独立的角色，不干不该干的事，该干的事都要干。</span></strong>这里的<span style="font-family:'Times New Roman';">“</span>接口<span style="font-family:'Times New Roman';">”</span>往往有两种不同的含义：一种是指一个类型所具有的方法特征的集合，仅仅是一种逻辑上的抽象；另外一种是指某种语言具体的<span style="font-family:'Times New Roman';">“</span>接口<span style="font-family:'Times New Roman';">”</span>定义，有严格的定义和结构，比如<span style="font-family:'Times New Roman';">Java</span>语言中的<span style="font-family:'Times New Roman';">interface</span>。对于这两种不同的含义，<span style="font-family:'Times New Roman';">ISP</span>的表达方式以及含义都有所不同：</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1)
+</span>当把“接口”理解成一个类型所提供的所有方法特征的集合的时候，这就是一种逻辑上的概念，接口的划分将直接带来类型的划分。可以把接口理解成角色，一个接口只能代表一个角色，每个角色都有它特定的一个接口，此时，这个原则可以叫做<span style="color:#ff0000;">“<strong>角色隔离原则</strong>”</span>。</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2)
+</span>如果把“接口”理解成狭义的特定语言的接口，那么<span style="font-family:'Times New Roman';">ISP</span>表达的意思是指<span style="color:#ff0000;"><strong>接口仅仅提供客户端需要的行为，客户端不需要的行为则隐藏起来，应当为客户端提供尽可能小的单独的接口，而不要提供大的总接口</strong>。</span>在面向对象编程语言中，实现一个接口就需要实现该接口中定义的所有方法，因此大的总接口使用起来不一定很方便，为了使接口的职责单一，需要将大接口中的方法根据其职责不同分别放在不同的小接口中，以确保每个接口使用起来都较为方便，并都承担某一单一角色。接口应该尽量细化，同时接口中的方法应该尽量少，每个接口中只包含一个客户端（如子模块或业务逻辑类）所需的方法即可，这种机制也称为<span style="color:#ff0000;">“<strong>定制服务</strong>”</span>，即为不同的客户端提供宽窄不同的接口。</span></p>
+<p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下面通过一个简单实例来加深对接口隔离原则的理解：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(242,242,242);"><tbody><tr><td valign="top">
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sunny</span>软件公司开发人员针对某<span style="font-family:'Times New Roman';">CRM</span>系统的客户数据显示模块设计了如图<span style="font-family:'Times New Roman';">1</span>所示接口，其中方法<span style="font-family:'Times New Roman';">dataRead()</span>用于从文件中读取数据，方法<span style="font-family:'Times New Roman';">transformToXML()</span>用于将数据转换成<span style="font-family:'Times New Roman';">XML</span>格式，方法<span style="font-family:'Times New Roman';">createChart()</span>用于创建图表，方法<span style="font-family:'Times New Roman';">displayChart()</span>用于显示图表，方法<span style="font-family:'Times New Roman';">createReport()</span>用于创建文字报表，方法<span style="font-family:'Times New Roman';">displayReport()</span>用于显示文字报表。</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/13/1336910243_3390.jpg" width="609" height="165" style="width:557px;"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">1&nbsp;</span>初始设计方案结构图</span></strong></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在实际使用过程中发现该接口很不灵活，例如如果一个具体的数据显示类无须进行数据转换（源文件本身就是<span style="font-family:'Times New Roman';">XML</span>格式），但由于实现了该接口，将不得不实现其中声明的<span style="font-family:'Times New Roman';">transformToXML()</span>方法（至少需要提供一个空实现）；如果需要创建和显示图表，除了需实现与图表相关的方法外，还需要实现创建和显示文字报表的方法，否则程序编译时将报错。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现使用接口隔离原则对其进行重构。</span></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在图<span style="font-family:'Times New Roman';">1</span>中，由于在接口<span style="font-family:'Times New Roman';">CustomerDataDisplay</span>中定义了太多方法，即该接口承担了太多职责，一方面导致该接口的实现类很庞大，在不同的实现类中都不得不实现接口中定义的所有方法，灵活性较差，如果出现大量的空方法，将导致系统中产生大量的无用代码，影响代码质量；另一方面由于客户端针对大接口编程，将在一定程序上破坏程序的封装性，客户端看到了不应该看到的方法，没有为客户端定制接口。因此需要将该接口按照接口隔离原则和单一职责原则进行重构，将其中的一些方法封装在不同的小接口中，确保每一个接口使用起来都较为方便，并都承担某一单一角色，每个接口中只包含一个客户端（如模块或类）所需的方法即可。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 通过使用接口隔离原则，本实例重构后的结构如图<span style="font-family:'Times New Roman';">2</span>所示：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/13/1336910247_6209.jpg" width="624" height="403"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">2
+</span>重构后的结构图</span></strong></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000;"><strong> 在使用接口隔离原则时，我们需要注意控制接口的粒度，接口不能太小，如果太小会导致系统中接口泛滥，不利于维护；接口也不能太大，太大的接口将违背接口隔离原则，灵活性较差，使用起来很不方便。</strong></span>一般而言，接口中仅包含为某一类用户定制的方法即可，不应该强迫客户依赖于那些它们不用的方法。</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="width:572px;"><tbody><tr><td valign="top">
+<p><span style="font-size:16px;"><strong>扩展</strong></span></p>
+<p><span style="font-size:16px;"><span style="font-family:'宋体';">在《敏捷软件开发——原则、模式与实践》一书中，</span>RobertC. Martin从解决“接口污染”的角度对接口隔离原则进行了详细的介绍，大家可以参阅该书第12章——<em>接口隔离原则(ISP)</em>进行深入的学习。</span></p>
+</td>
+</tr></tbody></table></div>
+
+<h1 id="7、合成复用原则"><a href="#7、合成复用原则" class="headerlink" title="7、合成复用原则"></a>7、合成复用原则</h1><div class="htmledit_views" id="content_views">
+
+<p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 合成复用原则又称为组合<span style="font-family:'Times New Roman';">/</span>聚合复用原则<span style="font-family:'Times New Roman';">(Composition/Aggregate Reuse Principle, CARP)</span>，其定义如下：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
+<p align="left"><strong><span style="font-size:16px;">合成复用原则<span style="font-family:'Times New Roman';">(</span><span style="font-family:'Times New Roman';">Composite Reuse Principle, CRP)</span>：尽量使用对象组合，而不是继承来达到复用的目的。</span></strong></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 合成复用原则就是在一个新的对象里通过关联关系（包括组合关系和聚合关系）来使用一些已有的对象，使之成为新对象的一部分；新对象通过委派调用已有对象的方法达到复用功能的目的。简言之：<span style="color:#ff0000;"><strong>复用时要尽量使用组合<span style="font-family:'Times New Roman';">/</span>聚合关系（关联关系），少用继承</strong></span>。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在面向对象设计中，可以通过两种方法在不同的环境中复用已有的设计和实现，即<span style="color:#ff0000;">通过组合<span style="font-family:'Times New Roman';">/</span>聚合关系或通过继承</span><span style="color:#ff0000;">，但首先应该考虑使用组合<span style="font-family:'Times New Roman';">/</span>聚合</span>，组合<span style="font-family:'Times New Roman';">/</span>聚合可以使系统更加灵活，降低类与类之间的耦合度，一个类的变化对其他类造成的影响相对较少；<span style="color:#ff0000;">其次才考虑继承</span>，在使用继承时，需要严格遵循里氏代换原则，有效使用继承会有助于对问题的理解，降低复杂度，而滥用继承反而会增加系统构建和维护的难度以及系统的复杂度，因此<span style="color:#ff0000;">需要慎重使用继承复用</span>。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 通过继承来进行复用的主要问题在于继承复用会破坏系统的封装性，因为继承会将基类的实现细节暴露给子类，由于基类的内部细节通常对子类来说是可见的，所以这种复用又称<span style="font-family:'Times New Roman';">“</span>白箱<span style="font-family:'Times New Roman';">”</span>复用，如果基类发生改变，那么子类的实现也不得不发生改变；从基类继承而来的实现是静态的，不可能在运行时发生改变，没有足够的灵活性；而且继承只能在有限的环境中使用（如类没有声明为不能被继承）。</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0"><tbody><tr><td valign="top">
+<div class="table-box"><table border="0" cellspacing="0" cellpadding="0" width="564"><tbody><tr><td valign="top">
+<p align="center"><strong></strong>&nbsp;</p>
+</td>
+<td valign="top">
+<p><span style="font-size:16px;"><strong>扩展</strong></span></p>
+<span style="font-size:16px;"></span>
+<p><span style="font-size:16px;">对于继承的深入理解，大家可以参考《软件架构设计》一书作者温昱先生的文章——《见山只是山见水只是水——提升对继承的认识》。</span></p>
+</td>
+</tr></tbody></table></div><p></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 由于组合或聚合关系可以将已有的对象（也可称为成员对象）纳入到新对象中，使之成为新对象的一部分，因此新对象可以调用已有对象的功能，这样做可以使得成员对象的内部实现细节对于新对象不可见，所以这种复用又称为<span style="font-family:'Times New Roman';">“</span>黑箱<span style="font-family:'Times New Roman';">”</span>复用，相对继承关系而言，其耦合度相对较低，成员对象的变化对新对象的影响不大，可以在新对象中根据实际需要有选择性地调用成员对象的操作；合成复用可以在运行时动态进行，新对象可以动态地引用与成员对象类型相同的其他对象。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一般而言，<span style="color:#ff0000;">如果两个类之间是<span style="font-family:'Times New Roman';">“Has-A”</span>的关系应使用组合或聚合，如果是<span style="font-family:'Times New Roman';">“Is-A”</span>关系可使用继承</span>。<span style="font-family:'Times New Roman';">"Is-A"</span>是严格的分类学意义上的定义，意思是一个类是另一个类的<span style="font-family:'Times New Roman';">"</span>一种<span style="font-family:'Times New Roman';">"</span>；而<span style="font-family:'Times New Roman';">"Has-A"</span>则不同，它表示某一个角色具有某一项责任。</span></p>
+<p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下面通过一个简单实例来加深对合成复用原则的理解：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(242,242,242);"><tbody><tr><td valign="top">
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sunny</span>软件公司开发人员在初期的<span style="font-family:'Times New Roman';">CRM</span>系统设计中，考虑到客户数量不多，系统采用<span style="font-family:'Times New Roman';">MySQL</span>作为数据库，与数据库操作有关的类如<span style="font-family:'Times New Roman';">CustomerDAO</span>类等都需要连接数据库，连接数据库的方法<span style="font-family:'Times New Roman';">getConnection()</span>封装在<span style="font-family:'Times New Roman';">DBUtil</span>类中，由于需要重用<span style="font-family:'Times New Roman';">DBUtil</span>类的<span style="font-family:'Times New Roman';">getConnection()</span>方法，设计人员将<span style="font-family:'Times New Roman';">CustomerDAO</span>作为<span style="font-family:'Times New Roman';">DBUtil</span>类的子类，初始设计方案结构如图<span style="font-family:'Times New Roman';">1</span>所示：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/14/1336930023_1487.jpg" width="346" height="280" style="width:342px;"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">1&nbsp;
+</span>初始设计方案结构图</span></strong></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 随着客户数量的增加，系统决定升级为<span style="font-family:'Times New Roman';">Oracle</span>数据库，因此需要增加一个新的<span style="font-family:'Times New Roman';">OracleDBUtil</span>类来连接<span style="font-family:'Times New Roman';">Oracle</span>数据库，由于在初始设计方案中<span style="font-family:'Times New Roman';">CustomerDAO</span>和<span style="font-family:'Times New Roman';">DBUtil</span>之间是继承关系，因此在更换数据库连接方式时需要修改<span style="font-family:'Times New Roman';">CustomerDAO</span>类的源代码，将<span style="font-family:'Times New Roman';">CustomerDAO</span>作为<span style="font-family:'Times New Roman';">OracleDBUtil</span>的子类，这将违反开闭原则。【当然也可以修改<span style="font-family:'Times New Roman';">DBUtil</span>类的源代码，同样会违反开闭原则。】</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现使用合成复用原则对其进行重构。</span></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 根据合成复用原则，我们<span style="color:#ff0000;">在实现复用时应该多用关联，少用继承</span>。因此在本实例中我们可以使用关联复用来取代继承复用，重构后的结构如图<span style="font-family:'Times New Roman';">2</span>所示：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/14/1336930028_3039.jpg" width="510" height="252" style="width:509px;"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">2&nbsp;
+</span>重构后的结构图</span></strong></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在图<span style="font-family:'Times New Roman';">2</span>中，<span style="font-family:'Times New Roman';">CustomerDAO</span>和<span style="font-family:'Times New Roman';">DBUtil</span>之间的关系由继承关系变为关联关系，采用依赖注入的方式将<span style="font-family:'Times New Roman';">DBUtil</span>对象注入到<span style="font-family:'Times New Roman';">CustomerDAO</span>中，可以使用构造注入，也可以使用<span style="font-family:'Times New Roman';">Setter</span>注入。如果需要对<span style="font-family:'Times New Roman';">DBUtil</span>的功能进行扩展，可以通过其子类来实现，如通过子类<span style="font-family:'Times New Roman';">OracleDBUtil</span></span><span style="font-size:16px;">来连接<span style="font-family:'Times New Roman';">Oracle</span>数据库。由于<span style="font-family:'Times New Roman';">CustomerDAO</span>针对<span style="font-family:'Times New Roman';">DBUtil</span>编程，根据里氏代换原则，<span style="font-family:'Times New Roman';">DBUtil</span>子类的对象可以覆盖<span style="font-family:'Times New Roman';">DBUtil</span>对象，只需在<span style="font-family:'Times New Roman';">CustomerDAO</span>中注入子类对象即可使用子类所扩展的方法。例如在<span style="font-family:'Times New Roman';">CustomerDAO</span>中注入<span style="font-family:'Times New Roman';">OracleDBUtil</span>对象，即可实现<span style="font-family:'Times New Roman';">Oracle</span>数据库连接，原有代码无须进行修改，而且还可以很灵活地增加新的数据库连接方式。</span></p>
+
+
+<h1 id="8、迪米特法则"><a href="#8、迪米特法则" class="headerlink" title="8、迪米特法则"></a>8、迪米特法则</h1><div class="htmledit_views" id="content_views">
+
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 迪米特法则来自于<span style="font-family:'Times New Roman';">1987</span>年美国东北大学<span style="font-family:'Times New Roman';">(Northeastern University)</span>一个名为“<span style="font-family:'Times New Roman';">Demeter</span>”的研究项目。迪米特法则又称为<span style="color:#ff0000;">最少知识原则<span style="font-family:'Times New Roman';">(LeastKnowledge
+ Principle, LKP)</span>，</span>其定义如下：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
+<p align="left"><strong><span style="font-size:16px;">迪米特法则<span style="font-family:'Times New Roman';">(Law of&nbsp; Demeter, LoD)</span>：一个软件实体应当尽可能少地与其他实体发生相互作用。</span></strong></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 如果一个系统符合迪米特法则，那么当其中某一个模块发生修改时，就会尽量少地影响其他模块，扩展会相对容易，这是对软件实体之间通信的限制，迪米特法则要求限制软件实体之间通信的宽度和深度。<strong><span style="color:#ff0000;">迪米特法则可降低系统的耦合度，使类与类之间保持松散的耦合关系。</span></strong></span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 迪米特法则还有几种定义形式，包括<strong>：</strong><span style="color:#ff0000;"><strong>不要和“陌生人”说话</strong>、<strong>只与你的直接朋友通信</strong></span>等，在迪米特法则中，对于一个对象，其朋友包括以下几类：</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp; &nbsp; (1)
+</span>当前对象本身<span style="font-family:'Times New Roman';">(this)</span>；</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;(2)
+</span>以参数形式传入到当前对象方法中的对象；</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3)
+</span>当前对象的成员对象；</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (4)
+</span>如果当前对象的成员对象是一个集合，那么集合中的元素也都是朋友；</span></p>
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (5)
+</span>当前对象所创建的对象。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 任何一个对象，如果满足上面的条件之一，就是当前对象的“朋友”，否则就是“陌生人”。在应用迪米特法则时，一个对象只能与直接朋友发生交互，不要与“陌生人”发生直接交互，这样做可以降低系统的耦合度，一个对象的改变不会给太多其他对象带来影响。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 迪米特法则要求我们在设计系统时，<strong><span style="color:#ff0000;">应该尽量减少对象之间的交互，如果两个对象之间不必彼此直接通信，那么这两个对象就不应当发生任何直接的相互作用，如果其中的一个对象需要调用另一个对象的某一个方法的话，可以通过第三者转发这个调用</span></strong>。简言之，就是<span style="color:#ff0000;"><strong>通过引入一个合理的第三者来降低现有对象之间的耦合度</strong>。</span></span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在将迪米特法则运用到系统设计中时，要注意下面的几点：<span style="color:#ff0000;"><strong>在类的划分上，应当尽量创建松耦合的类，类之间的耦合度越低，就越有利于复用，一个处在松耦合中的类一旦被修改，不会对关联的类造成太大波及</strong>；<strong>在类的结构设计上，每一个类都应当尽量降低其成员变量和成员函数的访问权限</strong>；<strong>在类的设计上，只要有可能，一个类型应当设计成不变类</strong>；<strong>在对其他类的引用上，一个对象对其他对象的引用应当降到最低</strong>。</span></span></p>
+<p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 下面通过一个简单实例来加深对迪米特法则的理解：</span></p>
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(242,242,242);"><tbody><tr><td valign="top">
+<p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sunny</span>软件公司所开发<span style="font-family:'Times New Roman';">CRM</span>系统包含很多业务操作窗口，在这些窗口中，某些界面控件之间存在复杂的交互关系，一个控件事件的触发将导致多个其他界面控件产生响应，例如，当一个按钮<span style="font-family:'Times New Roman';">(Button)</span>被单击时，对应的列表框<span style="font-family:'Times New Roman';">(List)</span>、组合框<span style="font-family:'Times New Roman';">(ComboBox)</span>、文本框<span style="font-family:'Times New Roman';">(TextBox)</span>、文本标签<span style="font-family:'Times New Roman';">(Label)</span>等都将发生改变，在初始设计方案中，界面控件之间的交互关系可简化为如图<span style="font-family:'Times New Roman';">1</span>所示结构：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/14/1336930654_2743.jpg"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">1&nbsp;</span>初始设计方案结构图</span></strong></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在图<span style="font-family:'Times New Roman';">1</span>中，由于界面控件之间的交互关系复杂，导致在该窗口中增加新的界面控件时需要修改与之交互的其他控件的源代码，系统扩展性较差，也不便于增加和删除新控件。</span></p>
+<p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 现使用迪米特对其进行重构。</span></p>
+</td>
+</tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在本实例中，<span style="color:#ff0000;">可以通过引入一个专门用于控制界面控件交互的中间类<span style="font-family:'Times New Roman';">(Mediator)</span>来降低界面控件之间的耦合度</span>。<span style="color:#ff0000;">引入中间类之后，界面控件之间不再发生直接引用，而是将请求先转发给中间类，再由中间类来完成对其他控件的调用。当需要增加或删除新的控件时，只需修改中间类即可，无须修改新增控件或已有控件的源代码</span>，重构后结构如图<span style="font-family:'Times New Roman';">2</span>所示：</span></p>
+<p align="center"><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/14/1336930673_6550.jpg" width="465" height="392" style="width:463px;"></span></p>
+<p align="center"><strong><span style="font-size:16px;">图<span style="font-family:'Times New Roman';">2 &nbsp;</span>重构后的结构图</span></strong></p>
+
+
+
+<hr>
+
+<blockquote>
+<p>史上最全设计模式导学目录（完整版）<a href="https://blog.csdn.net/LoveLion/article/details/17517213###" target="_blank" rel="noopener">https://blog.csdn.net/LoveLion/article/details/17517213###</a></p>
+</blockquote>
+</div></div></div></div></div></div>
     
 
     
@@ -494,7 +575,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="ayjcsgm.github.io/2019/11/02/3、Spring-Boot尚硅谷笔记整理-日志/" title="3、Spring Boot笔记整理-日志" target="_blank">ayjcsgm.github.io/2019/11/02/3、Spring-Boot尚硅谷笔记整理-日志/</a>
+          <a href="ayjcsgm.github.io/2019/12/19/面向对象七种设计原则/" title="面向对象七种设计原则" target="_blank">ayjcsgm.github.io/2019/12/19/面向对象七种设计原则/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -513,7 +594,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -569,7 +650,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http:ayjcsgm.github.io/2019/11/02/3、Spring-Boot尚硅谷笔记整理-日志/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http:ayjcsgm.github.io/2019/12/19/面向对象七种设计原则/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -584,18 +665,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/02/4、Spring-Boot尚硅谷笔记整理-Web开发/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          4、Spring Boot笔记整理-Web开发
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/02/2、Spring-Boot尚硅谷笔记整理-配置文件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2、Spring Boot笔记整理-配置文件</div>
+    <a href="/2019/12/14/美化Hexo-个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">美化Hexo 个人博客</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -636,9 +708,9 @@
     <script src="/lib/gitment.js"></script>
   
   <script>
-    <!-- id: "3、Spring Boot笔记整理-日志" -->
+    <!-- id: "面向对象七种设计原则" -->
     var gitment = new Gitment({
-      id: "20191102192749",
+      id: "20191219161115",
       owner: 'AYJCSGM',
       repo: 'AYJCSGM.github.io',
       oauth: {
