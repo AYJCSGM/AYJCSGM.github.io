@@ -10,13 +10,13 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="@[TOC]">
+  <meta name="description" content="1、面向对象设计原则概述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 对于面向对象软件系统的设计而言，在支持可维护性的同时，提高系统的可复用性是一个至关重要的问题，如何同时提高一个软件系统的可维护性和可复用性是面向对象设计需要解决的核心问题之一。在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象七种设计原则">
 <meta property="og:url" content="ayjcsgm.github.io/2019/12/19/面向对象七种设计原则/index.html">
 <meta property="og:site_name" content="HQP的个人博客">
-<meta property="og:description" content="@[TOC]">
+<meta property="og:description" content="1、面向对象设计原则概述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 对于面向对象软件系统的设计而言，在支持可维护性的同时，提高系统的可复用性是一个至关重要的问题，如何同时提高一个软件系统的可维护性和可复用性是面向对象设计需要解决的核心问题之一。在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-my.csdn.net/uploads/201205/05/1336147233_3529.jpg">
 <meta property="og:image" content="https://img-my.csdn.net/uploads/201205/05/1336147240_4896.jpg">
@@ -32,10 +32,10 @@
 <meta property="og:image" content="https://img-my.csdn.net/uploads/201205/14/1336930028_3039.jpg">
 <meta property="og:image" content="https://img-my.csdn.net/uploads/201205/14/1336930654_2743.jpg">
 <meta property="og:image" content="https://img-my.csdn.net/uploads/201205/14/1336930673_6550.jpg">
-<meta property="og:updated_time" content="2019-12-19T08:13:41.537Z">
+<meta property="og:updated_time" content="2019-12-19T08:20:46.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象七种设计原则">
-<meta name="twitter:description" content="@[TOC]">
+<meta name="twitter:description" content="1、面向对象设计原则概述&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 对于面向对象软件系统的设计而言，在支持可维护性的同时，提高系统的可复用性是一个至关重要的问题，如何同时提高一个软件系统的可维护性和可复用性是面向对象设计需要解决的核心问题之一。在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。">
 <meta name="twitter:image" content="https://img-my.csdn.net/uploads/201205/05/1336147233_3529.jpg">
   
     <link rel="alternative" href="/atom.xml" title="HQP的个人博客" type="application/atom+xml">
@@ -308,7 +308,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">34分</span>
+      <span class="post-count">33分</span>
     </span>
   </span>
 </div>
@@ -319,12 +319,10 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>@[TOC]</p>
+    <h3 id="1、面向对象设计原则概述"><a href="#1、面向对象设计原则概述" class="headerlink" title="1、面向对象设计原则概述"></a>1、面向对象设计原则概述</h3><p>&nbsp;&nbsp;&nbsp;&nbsp; 对于面向对象软件系统的设计而言，在支持可维护性的同时，提高系统的可复用性是一个至关重要的问题，<strong>如何同时提高一个软件系统的可维护性和可复用性是面向对象设计需要解决的核心问题之一</strong>。在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。</p>
 <a id="more"></a>
-<hr>
-
-<h1 id="1、面向对象设计原则概述"><a href="#1、面向对象设计原则概述" class="headerlink" title="1、面向对象设计原则概述"></a>1、面向对象设计原则概述</h1><p>&nbsp;&nbsp;&nbsp;&nbsp; 对于面向对象软件系统的设计而言，在支持可维护性的同时，提高系统的可复用性是一个至关重要的问题，<strong>如何同时提高一个软件系统的可维护性和可复用性是面向对象设计需要解决的核心问题之一</strong>。在面向对象设计中，可维护性的复用是以设计原则为基础的。每一个原则都蕴含一些面向对象设计的思想，可以从不同的角度提升一个软件结构的设计水平。<br><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面向对象设计原则为支持可维护性复用而诞生，这些原则蕴含在很多设计模式中，它们是从许多设计方案中总结出的指导性原则</strong>。面向对象设计原则也是我们用于评价一个设计模式的使用效果的重要指标之一，在设计模式的学习中，大家经常会看到诸如“<span style="font-family:'Times New Roman';">XXX</span>模式符合<span style="font-family:'Times New Roman';">XXX</span>原则”、“<span style="font-family:'Times New Roman';">XXX</span>模式违反了<span style="font-family:'Times New Roman';">XXX</span>原则”这样的语句。</p><p><span style="font-size:16px;"><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 最常见的7种面向对象设计原则如下表所示：</span></span></p><p align="center"><strong>表<span style="font-family:'Times New Roman';">1&nbsp; 7</span>种常用的面向对象设计原则</strong></p><div class="table-box"><table style="width:648px;" border="1" cellspacing="0" cellpadding="0"><tbody><tr><td style="background:rgb(243,243,243);" valign="top"><p align="center"><strong><span style="font-size:16px;">设计原则名称</span></strong></p></td><td style="background:rgb(243,243,243);" valign="top"><p align="center"><span style="font-size:16px;"><strong>定<span style="font-family:'Times New Roman';">&nbsp;&nbsp;</span>义</strong></span></p></td><td style="background:rgb(243,243,243);" valign="top"><p align="center"><strong><span style="font-size:16px;">使用频率</span></strong></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">单一职责原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Single Responsibility Principle, SRP)</span></p></td><td valign="top"><p><span style="font-size:16px;">一个类只负责一个功能领域中的相应职责</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★☆</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">开闭原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Open-Closed Principle, OCP)</span></p></td><td valign="top"><p><span style="font-size:16px;">软件实体应对扩展开放，而对修改关闭</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★★</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">里氏代换原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Liskov Substitution Principle, LSP)</span></p></td><td valign="top"><p><span style="font-size:16px;">所有引用基类对象的地方能够透明地使用其子类的对象</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">&nbsp;</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★★</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">依赖倒转原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Dependence&nbsp; Inversion Principle, DIP)</span></p></td><td valign="top"><p align="left"><span style="font-size:16px;">抽象不应该依赖于细节，细节应该依赖于抽象</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★★</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">接口隔离原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Interface Segregation Principle, ISP)</span></p></td><td valign="top"><p><span style="font-size:16px;">使用多个专门的接口，而不使用单一的总接口</span></p></td><td valign="top"><p><span style="font-size:16px;">★★☆☆☆</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">合成复用原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Composite Reuse Principle, CRP)</span></p></td><td valign="top"><p align="left"><span style="font-size:16px;">尽量使用对象组合，而不是继承来达到复用的目的</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">&nbsp;</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★☆</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">迪米特法则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Law of Demeter, LoD)</span></p></td><td valign="top"><p><span style="font-size:16px;">一个软件实体应当尽可能少地与其他实体发生相互作用</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★☆☆</span></p></td></tr></tbody></table></div><p align="center"></p>
-<h1 id="2、单一职责原则"><a href="#2、单一职责原则" class="headerlink" title="2、单一职责原则"></a>2、单一职责原则</h1><div class="htmledit_views" id="content_views">
+<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面向对象设计原则为支持可维护性复用而诞生，这些原则蕴含在很多设计模式中，它们是从许多设计方案中总结出的指导性原则</strong>。面向对象设计原则也是我们用于评价一个设计模式的使用效果的重要指标之一，在设计模式的学习中，大家经常会看到诸如“<span style="font-family:'Times New Roman';">XXX</span>模式符合<span style="font-family:'Times New Roman';">XXX</span>原则”、“<span style="font-family:'Times New Roman';">XXX</span>模式违反了<span style="font-family:'Times New Roman';">XXX</span>原则”这样的语句。</p><p><span style="font-size:16px;"><span style="font-size:18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 最常见的7种面向对象设计原则如下表所示：</span></span></p><p align="center"><strong>表<span style="font-family:'Times New Roman';">1&nbsp; 7</span>种常用的面向对象设计原则</strong></p><div class="table-box"><table style="width:648px;" border="1" cellspacing="0" cellpadding="0"><tbody><tr><td style="background:rgb(243,243,243);" valign="top"><p align="center"><strong><span style="font-size:16px;">设计原则名称</span></strong></p></td><td style="background:rgb(243,243,243);" valign="top"><p align="center"><span style="font-size:16px;"><strong>定<span style="font-family:'Times New Roman';">&nbsp;&nbsp;</span>义</strong></span></p></td><td style="background:rgb(243,243,243);" valign="top"><p align="center"><strong><span style="font-size:16px;">使用频率</span></strong></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">单一职责原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Single Responsibility Principle, SRP)</span></p></td><td valign="top"><p><span style="font-size:16px;">一个类只负责一个功能领域中的相应职责</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★☆</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">开闭原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Open-Closed Principle, OCP)</span></p></td><td valign="top"><p><span style="font-size:16px;">软件实体应对扩展开放，而对修改关闭</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★★</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">里氏代换原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Liskov Substitution Principle, LSP)</span></p></td><td valign="top"><p><span style="font-size:16px;">所有引用基类对象的地方能够透明地使用其子类的对象</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">&nbsp;</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★★</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">依赖倒转原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Dependence&nbsp; Inversion Principle, DIP)</span></p></td><td valign="top"><p align="left"><span style="font-size:16px;">抽象不应该依赖于细节，细节应该依赖于抽象</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★★</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">接口隔离原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Interface Segregation Principle, ISP)</span></p></td><td valign="top"><p><span style="font-size:16px;">使用多个专门的接口，而不使用单一的总接口</span></p></td><td valign="top"><p><span style="font-size:16px;">★★☆☆☆</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">合成复用原则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Composite Reuse Principle, CRP)</span></p></td><td valign="top"><p align="left"><span style="font-size:16px;">尽量使用对象组合，而不是继承来达到复用的目的</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">&nbsp;</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★★☆</span></p></td></tr><tr><td valign="top"><p><span style="font-size:16px;">迪米特法则</span></p><p><span style="font-family:'Times New Roman';font-size:16px;">(Law of Demeter, LoD)</span></p></td><td valign="top"><p><span style="font-size:16px;">一个软件实体应当尽可能少地与其他实体发生相互作用</span></p></td><td valign="top"><p><span style="font-size:16px;">★★★☆☆</span></p></td></tr></tbody></table></div><p align="center"></p>
+<h3 id="2、单一职责原则"><a href="#2、单一职责原则" class="headerlink" title="2、单一职责原则"></a>2、单一职责原则</h3><div class="htmledit_views" id="content_views">
 
 <p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 单一职责原则是最简单的面向对象设计原则，它用于控制类的粒度大小。单一职责原则定义如下：</span></p>
 <div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
@@ -351,7 +349,7 @@
 </span>重构后的结构图</span></strong></p>
 
 
-<h1 id="3、开闭原则"><a href="#3、开闭原则" class="headerlink" title="3、开闭原则"></a>3、开闭原则</h1><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 开闭原则是面向对象的可复用设计的第一块基石，它是最重要的面向对象设计原则。开闭原则由<span style="font-family:'Times New Roman';color:#ff0000;"><strong>Bertrand&nbsp; Meyer</strong></span>于<span style="font-family:'Times New Roman';">1988</span>年提出，其定义如下：</span></p>
+<h3 id="3、开闭原则"><a href="#3、开闭原则" class="headerlink" title="3、开闭原则"></a>3、开闭原则</h3><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 开闭原则是面向对象的可复用设计的第一块基石，它是最重要的面向对象设计原则。开闭原则由<span style="font-family:'Times New Roman';color:#ff0000;"><strong>Bertrand&nbsp; Meyer</strong></span>于<span style="font-family:'Times New Roman';">1988</span>年提出，其定义如下：</span></p>
 <div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
 <p align="left"><span style="font-size:16px;"><strong>开闭原则<span style="font-family:'Times New Roman';">(Open-Closed Principle, OCP)</span>：一个软件实体应当对扩展开放，对修改关闭。即软件实体应尽量在不修改原有代码的情况下进行扩展。</strong></span></p>
 </td>
@@ -380,10 +378,10 @@
 <p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在图<span style="font-family:'Times New Roman';">2</span>中，我们引入了<span style="color:#ff0000;">抽象图表类<span style="font-family:'Times New Roman';">AbstractChart</span></span>，且<span style="font-family:'Times New Roman';">ChartDisplay</span>针对抽象图表类进行编程，并通过<span style="font-family:'Times New Roman';">setChart()</span>方法由客户端来设置实例化的具体图表对象，在<span style="font-family:'Times New Roman';">ChartDisplay</span>的<span style="font-family:'Times New Roman';">display()</span>方法中调用<span style="font-family:'Times New Roman';">chart</span>对象的<span style="font-family:'Times New Roman';">display()</span>方法显示图表。如果需要增加一种新的图表，如折线图<span style="font-family:'Times New Roman';">LineChart</span>，只需要将<span style="font-family:'Times New Roman';">LineChart</span>也作为<span style="font-family:'Times New Roman';">AbstractChart</span>的子类，在客户端向<span style="font-family:'Times New Roman';">ChartDisplay</span>中注入一个<span style="font-family:'Times New Roman';">LineChart</span>对象即可，无须修改现有类库的源代码。</span><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 <p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 注意：因为<span style="font-family:'Times New Roman';">xml</span>和<span style="font-family:'Times New Roman';">properties</span>等格式的配置文件是纯文本文件，可以直接通过<span style="font-family:'Times New Roman';">VI</span>编辑器或记事本进行编辑，且无须编译，因此在软件开发中，一般不把对配置文件的修改认为是对系统源代码的修改。如果一个系统在扩展时只涉及到修改配置文件，而原有的<span style="font-family:'Times New Roman';">Java</span>代码或<span style="font-family:'Times New Roman';">C#</span>代码没有做任何修改，该系统即可认为是一个符合开闭原则的系统。</span></p>
 
-<h1 id="4、里氏代换原则"><a href="#4、里氏代换原则" class="headerlink" title="4、里氏代换原则"></a>4、里氏代换原则</h1> <div class="htmledit_views" id="content_views">
+<h3 id="4、里氏代换原则"><a href="#4、里氏代换原则" class="headerlink" title="4、里氏代换原则"></a>4、里氏代换原则</h3> <div class="htmledit_views" id="content_views">
                                             <p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 里氏代换原则由<span style="font-family:'Times New Roman';">2008</span>年图灵奖得主、美国第一位计算机科学女博士<span style="font-family:'Times New Roman';color:#ff0000;"><strong>Barbara Liskov</strong></span>教授和卡内基·梅隆大学<span style="font-family:'Times New Roman';">Jeannette Wing</span>教授于<span style="font-family:'Times New Roman';">1994</span>年提出。其严格表述如下：如果对每一个类型为<span style="font-family:'Times New Roman';">S</span>的对象<span style="font-family:'Times New Roman';">o1</span>，都有类型为<span style="font-family:'Times New Roman';">T</span>的对象<span style="font-family:'Times New Roman';">o2</span>，使得以<span style="font-family:'Times New Roman';">T</span>定义的所有程序<span style="font-family:'Times New Roman';">P</span>在所有的对象<span style="font-family:'Times New Roman';">o1</span>代换<span style="font-family:'Times New Roman';">o2</span>时，程序<span style="font-family:'Times New Roman';">P</span>的行为没有变化，那么类型<span style="font-family:'Times New Roman';">S</span>是类型<span style="font-family:'Times New Roman';">T</span>的子类型。这个定义比较拗口且难以理解，因此我们一般使用它的另一个通俗版定义：</span></p><div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top"><p><span style="font-size:16px;"><strong>里氏代换原则<span style="font-family:'Times New Roman';">(Liskov Substitution Principle, LSP)</span>：所有引用基类（父类）的地方必须能透明地使用其子类的对象。</strong></span></p></td></tr></tbody></table></div><p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 里氏代换原则告诉我们，<span style="color:#ff0000;"><strong>在软件中将一个基类对象替换成它的子类对象，程序将不会产生任何错误和异常，反过来则不成立，如果一个软件实体使用的是一个子类对象的话，那么它不一定能够使用基类对象。</strong></span>例如：我喜欢动物，那我一定喜欢狗，因为狗是动物的子类；但是我喜欢狗，不能据此断定我喜欢动物，因为我并不喜欢老鼠，虽然它也是动物。</span></p><p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 例如有两个类，一个类为<span style="font-family:'Times New Roman';">BaseClass</span>，另一个是<span style="font-family:'Times New Roman';">SubClass</span>类，并且<span style="font-family:'Times New Roman';">SubClass</span>类是<span style="font-family:'Times New Roman';">BaseClass</span>类的子类，那么一个方法如果可以接受一个<span style="font-family:'Times New Roman';">BaseClass</span>类型的基类对象<span style="font-family:'Times New Roman';">base</span>的话，如：<span style="font-family:'Times New Roman';">method1(base)</span>，那么它必然可以接受一个<span style="font-family:'Times New Roman';">BaseClass</span>类型的子类对象<span style="font-family:'Times New Roman';">sub</span>，<span style="font-family:'Times New Roman';">method1(sub)</span>能够正常运行。反过来的代换不成立，如一个方法<span style="font-family:'Times New Roman';">method2</span>接受<span style="font-family:'Times New Roman';">BaseClass</span>类型的子类对象<span style="font-family:'Times New Roman';">sub</span>为参数：<span style="font-family:'Times New Roman';">method2(sub)</span>，那么一般而言不可以有<span style="font-family:'Times New Roman';">method2(base)</span>，除非是重载方法。</span></p><p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 里氏代换原则是实现开闭原则的重要方式之一，由于使用基类对象的地方都可以使用子类对象，因此<strong><span style="color:#ff0000;">在程序中尽量使用基类类型来对对象进行定义，而在运行时再确定其子类类型，用子类对象来替换父类对象</span></strong>。</span></p><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size:16px;">在使用里氏代换原则时需要注意如下几个问题：</span></p><p align="left"><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1)</span>子类的所有方法必须在父类中声明，或子类必须实现父类中声明的所有方法。根据里氏代换原则，为了保证系统的扩展性，在程序中通常使用父类来进行定义，如果一个方法只存在子类中，在父类中不提供相应的声明，则无法在以父类定义的对象中使用该方法。</span></p><p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) &nbsp;</span>我们在运用里氏代换原则时，尽量把父类设计为抽象类或者接口，让子类继承父类或实现父接口，并实现在父类中声明的方法，运行时，子类实例替换父类实例，我们可以很方便地扩展系统的功能，同时无须修改原有子类的代码，增加新的功能可以通过增加一个新的子类来实现。里氏代换原则是开闭原则的具体实现手段之一。</span></p><p><span style="font-size:16px;"><span style="font-family:'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) Java</span>语言中，在编译阶段，<span style="font-family:'Times New Roman';">Java</span>编译器会检查一个程序是否符合里氏代换原则，这是一个与实现无关的、纯语法意义上的检查，但<span style="font-family:'Times New Roman';">Java</span>编译器的检查是有局限的。</span></p><div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(247,247,247);"><tbody><tr><td valign="top"><span style="font-family:'Times New Roman';"></span><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在Sunny软件公司开发的<span style="font-family:'Times New Roman';">CRM</span>系统中，客户<span style="font-family:'Times New Roman';">(Customer)</span>可以分为<span style="font-family:'Times New Roman';">VIP</span>客户<span style="font-family:'Times New Roman';">(VIPCustomer)</span>和普通客户<span style="font-family:'Times New Roman';">(CommonCustomer)</span>两类，系统需要提供一个发送<span style="font-family:'Times New Roman';">Email</span>的功能，原始设计方案如图<span style="font-family:'Times New Roman';">1</span>所示：<strong></strong></span></p><p align="center"><strong><span style="font-size:16px;"><img alt src="https://img-my.csdn.net/uploads/201205/06/1336312710_1412.jpg" width="507" height="330" style="width:412px;"></span></strong></p><p align="center"><strong><span style="font-size:12px;">图<span style="font-family:'Times New Roman';">1</span>原始结构图</span></strong></p><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在对系统进行进一步分析后发现，无论是普通客户还是<span style="font-family:'Times New Roman';">VIP</span>客户，发送邮件的过程都是相同的，也就是说两个<span style="font-family:'Times New Roman';">send()</span>方法中的代码重复，而且在本系统中还将增加新类型的客户。为了让系统具有更好的扩展性，同时减少代码重复，使用里氏代换原则对其进行重构。</span></p></td></tr></tbody></table></div><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在本实例中，可以考虑增加一个新的抽象客户类<span style="font-family:'Times New Roman';">Customer</span>，而将<span style="font-family:'Times New Roman';">CommonCustomer</span>和<span style="font-family:'Times New Roman';">VIPCustomer</span>类作为其子类，邮件发送类<span style="font-family:'Times New Roman';">EmailSender</span>类针对抽象客户类<span style="font-family:'Times New Roman';">Customer</span>编程，根据里氏代换原则，能够接受基类对象的地方必然能够接受子类对象，因此将<span style="font-family:'Times New Roman';">EmailSender</span>中的<span style="font-family:'Times New Roman';">send()</span>方法的参数类型改为<span style="font-family:'Times New Roman';">Customer</span>，如果需要增加新类型的客户，只需将其作为<span style="font-family:'Times New Roman';">Customer</span>类的子类即可。重构后的结构如图<span style="font-family:'Times New Roman';">2</span>所示：</span></p><p align="center"><img alt src="https://img-my.csdn.net/uploads/201205/06/1336312720_2300.jpg" width="199" height="439" style="width:319px;"></p><p align="center"><strong>图2<span style="font-family:'Times New Roman';">&nbsp; </span>重构后的结构图</strong></p><p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#ff0000;"><strong>里氏代换原则是实现开闭原则的重要方式之一。</strong></span>在本实例中，在传递参数时使用基类对象，除此以外，在定义成员变量、定义局部变量、确定方法返回类型时都可使用里氏代换原则。针对基类编程，在程序运行时再确定具体子类。</span></p>
 
-<h1 id="5、依赖倒转原则"><a href="#5、依赖倒转原则" class="headerlink" title="5、依赖倒转原则"></a>5、依赖倒转原则</h1><div class="htmledit_views" id="content_views">
+<h3 id="5、依赖倒转原则"><a href="#5、依赖倒转原则" class="headerlink" title="5、依赖倒转原则"></a>5、依赖倒转原则</h3><div class="htmledit_views" id="content_views">
 
 <p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:16px;">如果说开闭原则是面向对象设计的目标的话，那么依赖倒转原则就是面向对象设计的主要实现机制之一，它是系统抽象化的具体实现。依赖倒转原则是<span style="font-family:'Times New Roman';color:#ff0000;"><strong>Robert C. Martin</strong></span>在<span style="font-family:'Times New Roman';">1996</span>年为“<span style="font-family:'Times New Roman';">C++Reporter</span>”所写的专栏<span style="font-family:'Times New Roman';">Engineering
  Notebook</span>的第三篇，后来加入到他在<span style="font-family:'Times New Roman';">2002</span>年出版的经典著作“<span style="font-family:'Times New Roman';color:#ff0000;"><strong>Agile Software Development, Principles, Patterns, and Practices</strong></span>”一书中。依赖倒转原则定义如下：</span></span></p>
@@ -418,7 +416,7 @@
 <p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在上述重构过程中，我们使用了开闭原则、里氏代换原则和依赖倒转原则，在大多数情况下，这三个设计原则会同时出现，<span style="color:#ff0000;"><strong>开闭原则是目标，里氏代换原则是基础，依赖倒转原则是手段</strong>，</span>它们相辅相成，相互补充，目标一致，只是分析问题时所站角度不同而已。</span></p>
 
 
-<h1 id="6、接口隔离原则"><a href="#6、接口隔离原则" class="headerlink" title="6、接口隔离原则"></a>6、接口隔离原则</h1><div class="htmledit_views" id="content_views">
+<h3 id="6、接口隔离原则"><a href="#6、接口隔离原则" class="headerlink" title="6、接口隔离原则"></a>6、接口隔离原则</h3><div class="htmledit_views" id="content_views">
 
 <p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 接口隔离原则定义如下：</span></p>
 <div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
@@ -450,7 +448,7 @@
 </td>
 </tr></tbody></table></div>
 
-<h1 id="7、合成复用原则"><a href="#7、合成复用原则" class="headerlink" title="7、合成复用原则"></a>7、合成复用原则</h1><div class="htmledit_views" id="content_views">
+<h3 id="7、合成复用原则"><a href="#7、合成复用原则" class="headerlink" title="7、合成复用原则"></a>7、合成复用原则</h3><div class="htmledit_views" id="content_views">
 
 <p align="left"><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 合成复用原则又称为组合<span style="font-family:'Times New Roman';">/</span>聚合复用原则<span style="font-family:'Times New Roman';">(Composition/Aggregate Reuse Principle, CARP)</span>，其定义如下：</span></p>
 <div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="background:rgb(231,239,249);"><tbody><tr><td valign="top">
@@ -488,7 +486,7 @@
 <p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在图<span style="font-family:'Times New Roman';">2</span>中，<span style="font-family:'Times New Roman';">CustomerDAO</span>和<span style="font-family:'Times New Roman';">DBUtil</span>之间的关系由继承关系变为关联关系，采用依赖注入的方式将<span style="font-family:'Times New Roman';">DBUtil</span>对象注入到<span style="font-family:'Times New Roman';">CustomerDAO</span>中，可以使用构造注入，也可以使用<span style="font-family:'Times New Roman';">Setter</span>注入。如果需要对<span style="font-family:'Times New Roman';">DBUtil</span>的功能进行扩展，可以通过其子类来实现，如通过子类<span style="font-family:'Times New Roman';">OracleDBUtil</span></span><span style="font-size:16px;">来连接<span style="font-family:'Times New Roman';">Oracle</span>数据库。由于<span style="font-family:'Times New Roman';">CustomerDAO</span>针对<span style="font-family:'Times New Roman';">DBUtil</span>编程，根据里氏代换原则，<span style="font-family:'Times New Roman';">DBUtil</span>子类的对象可以覆盖<span style="font-family:'Times New Roman';">DBUtil</span>对象，只需在<span style="font-family:'Times New Roman';">CustomerDAO</span>中注入子类对象即可使用子类所扩展的方法。例如在<span style="font-family:'Times New Roman';">CustomerDAO</span>中注入<span style="font-family:'Times New Roman';">OracleDBUtil</span>对象，即可实现<span style="font-family:'Times New Roman';">Oracle</span>数据库连接，原有代码无须进行修改，而且还可以很灵活地增加新的数据库连接方式。</span></p>
 
 
-<h1 id="8、迪米特法则"><a href="#8、迪米特法则" class="headerlink" title="8、迪米特法则"></a>8、迪米特法则</h1><div class="htmledit_views" id="content_views">
+<h3 id="8、迪米特法则"><a href="#8、迪米特法则" class="headerlink" title="8、迪米特法则"></a>8、迪米特法则</h3><div class="htmledit_views" id="content_views">
 
 <p><span style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 迪米特法则来自于<span style="font-family:'Times New Roman';">1987</span>年美国东北大学<span style="font-family:'Times New Roman';">(Northeastern University)</span>一个名为“<span style="font-family:'Times New Roman';">Demeter</span>”的研究项目。迪米特法则又称为<span style="color:#ff0000;">最少知识原则<span style="font-family:'Times New Roman';">(LeastKnowledge
  Principle, LKP)</span>，</span>其定义如下：</span></p>
@@ -524,11 +522,6 @@
 
 
 
-<hr>
-
-<blockquote>
-<p>史上最全设计模式导学目录（完整版）<a href="https://blog.csdn.net/LoveLion/article/details/17517213###" target="_blank" rel="noopener">https://blog.csdn.net/LoveLion/article/details/17517213###</a></p>
-</blockquote>
 </div></div></div></div></div></div>
     
 
@@ -895,11 +888,11 @@ setInterval("createtime()",250);
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -923,19 +916,19 @@ setInterval("createtime()",250);
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
