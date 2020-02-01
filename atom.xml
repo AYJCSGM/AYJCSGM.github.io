@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="ayjcsgm.github.io/"/>
-  <updated>2020-01-10T03:59:54.236Z</updated>
+  <updated>2020-02-01T11:55:04.093Z</updated>
   <id>ayjcsgm.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一款免费并且好用的VPN</title>
+    <link href="ayjcsgm.github.io/2020/02/01/%E4%B8%80%E6%AC%BE%E5%85%8D%E8%B4%B9%E5%B9%B6%E4%B8%94%E5%A5%BD%E7%94%A8%E7%9A%84VPN/"/>
+    <id>ayjcsgm.github.io/2020/02/01/%E4%B8%80%E6%AC%BE%E5%85%8D%E8%B4%B9%E5%B9%B6%E4%B8%94%E5%A5%BD%E7%94%A8%E7%9A%84VPN/</id>
+    <published>2020-02-01T11:43:53.000Z</published>
+    <updated>2020-02-01T11:55:04.093Z</updated>
+    
+    <content type="html"><![CDATA[<p>安卓,苹果,Mac,Windows 好用的加速器 刷INS、访推特，完美支持高清1080P视频，无任何流量限制,真正免费的加速器 <a href="https://my.laihuluwa.com/aff/TpWz" target="_blank" rel="noopener">https://my.laihuluwa.com/aff/TpWz</a></p><a id="more"></a><p>记得填写下邀请码<strong>TpWz</strong>哦。</p><p>下载安装即可使用，简单无脑。</p><p><img src="https://img-blog.csdnimg.cn/20200201194825940.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/20200201195154567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p><img src="https://img-blog.csdnimg.cn/2020020119541343.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY2NDQxOA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;安卓,苹果,Mac,Windows 好用的加速器 刷INS、访推特，完美支持高清1080P视频，无任何流量限制,真正免费的加速器 &lt;a href=&quot;https://my.laihuluwa.com/aff/TpWz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://my.laihuluwa.com/aff/TpWz&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>破解IDEA最新版教程</title>
@@ -415,28 +434,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;八、Spring-Boot与监控管理&quot;&gt;&lt;a href=&quot;#八、Spring-Boot与监控管理&quot; class=&quot;headerlink&quot; title=&quot;八、Spring Boot与监控管理&quot;&gt;&lt;/a&gt;八、Spring Boot与监控管理&lt;/h1&gt;&lt;h2 id=&quot;一、监控管理&quot;&gt;&lt;a href=&quot;#一、监控管理&quot; class=&quot;headerlink&quot; title=&quot;一、监控管理&quot;&gt;&lt;/a&gt;一、监控管理&lt;/h2&gt;&lt;p&gt;通过引入spring-boot-starter-actuator，可以使用Spring Boot为我们提供的准 生产环境下的应用监控和管理功能。我们可以通过HTTP，JMX，SSH协议来进 行操作，自动得到审计、健康及指标信息等&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Spring Boot" scheme="ayjcsgm.github.io/tags/Spring-Boot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>7、Spring Boot笔记整理高级篇-热部署</title>
-    <link href="ayjcsgm.github.io/2019/11/08/7%E3%80%81Spring-Boot%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%E9%AB%98%E7%BA%A7%E7%AF%87-%E7%83%AD%E9%83%A8%E7%BD%B2/"/>
-    <id>ayjcsgm.github.io/2019/11/08/7%E3%80%81Spring-Boot%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%E9%AB%98%E7%BA%A7%E7%AF%87-%E7%83%AD%E9%83%A8%E7%BD%B2/</id>
-    <published>2019-11-08T10:39:24.000Z</published>
-    <updated>2019-12-14T11:28:30.722Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="七、Spring-Boot与开发热部署"><a href="#七、Spring-Boot与开发热部署" class="headerlink" title="七、Spring Boot与开发热部署"></a>七、Spring Boot与开发热部署</h1><p><strong>热部署</strong></p><h2 id="一、热部署"><a href="#一、热部署" class="headerlink" title="一、热部署"></a>一、热部署</h2><p>在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。</p><a id="more"></a><ul><li>1、模板引擎<br>– 在Spring Boot中开发情况下禁用模板引擎的cache<br>– 页面模板改变ctrl+F9可以重新编译当前页面并生效</li><li>2、Spring Loaded<br>Spring官方提供的热部署程序，实现修改类文件的热部署<br>– 下载Spring Loaded（项目地址<a href="https://github.com/springprojects/spring-loaded）" target="_blank" rel="noopener">https://github.com/springprojects/spring-loaded）</a><br>– 添加运行时参数；<br>– javaagent:C:/springloaded-1.2.5.RELEASE.jar –noverify</li><li>3、JRebel<br>– 收费的一个热部署软件<br>– 安装插件使用即可</li><li>4、Spring Boot Devtools（推荐）<br>– 引入依赖</li></ul><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;  </span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">&lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt; </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>– IDEA使用ctrl+F9<br>– 或做一些小调整 Intellij IEDA 和 Eclipse 不同， Eclipse 设置了自动编译之后，修改类它会自动编译 ，而 IDEA 在非 RUN 或 DEBUG 情况下 才会自动编译（前提是你已经设置了 Auto - Compile ）。 </p><ul><li>设置自动编译（settings-compiler-make project automatically） </li><li>ctrl+shift+alt+/（maintenance） </li><li>勾选compiler.automake.allow.when.app.running</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.deploy.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/abc"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;七、Spring-Boot与开发热部署&quot;&gt;&lt;a href=&quot;#七、Spring-Boot与开发热部署&quot; class=&quot;headerlink&quot; title=&quot;七、Spring Boot与开发热部署&quot;&gt;&lt;/a&gt;七、Spring Boot与开发热部署&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;热部署&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;一、热部署&quot;&gt;&lt;a href=&quot;#一、热部署&quot; class=&quot;headerlink&quot; title=&quot;一、热部署&quot;&gt;&lt;/a&gt;一、热部署&lt;/h2&gt;&lt;p&gt;在开发中我们修改一个Java文件后想看到效果不得不重启应用，这导致大量时间 花费，我们希望不重启应用的情况下，程序可以自动部署（热部署）。有以下四 种情况，如何能实现热部署。&lt;/p&gt;
     
     </summary>
     
